@@ -50,8 +50,11 @@ Open improvement tasks for this base are GitHub issues labelled `kb-improvement`
 4. Link a new topic from at least one existing topic's `## Related`, or agents
    following links never reach it.
 5. Run `python build_index.py` (stdlib only) and commit what it writes. It
-   regenerates `INDEX.md` and `llms.txt`, fails on missing frontmatter or a
-   broken `[[link]]` (in topics and `glossary.md`), and warns on orphan topics
+   regenerates `INDEX.md` and `llms.txt`, fails on invalid frontmatter
+   (`category` must match the folder, `status` must be a value listed below,
+   `last_verified` a YYYY-MM-DD date, `sources` and `use_cases` non-empty), a
+   missing `_template.md` section, or a broken `[[link]]` (in topics and
+   `glossary.md`), and warns on orphan topics
    and on stale topics: `last_verified` older than 180 days, or 90 days for
    `reliability/` and `security/`. Re-check a stale topic's sources, then bump
    its date. CI fails if the committed `INDEX.md`/`llms.txt` are out of date.

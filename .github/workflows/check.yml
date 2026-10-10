@@ -12,7 +12,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build index (fails on bad frontmatter or broken [[links]])
+      - name: build_index validation self-test
+        run: python test_build_index.py
+      - name: Build index (fails on bad frontmatter, missing sections or broken [[links]])
         run: python build_index.py
       - name: Install packages topic code imports
         run: pip install -r requirements-check.txt

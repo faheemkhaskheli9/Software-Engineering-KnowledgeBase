@@ -2,7 +2,9 @@
 
 Run after adding or editing a topic:  python build_index.py
 Stdlib only; parses the simple frontmatter shape used in _template.md.
-Fails on missing frontmatter or a broken [[link]] (topics and glossary.md);
+Fails on invalid frontmatter (missing keys, category not the folder, unknown
+status, undated last_verified, empty sources/use_cases), a missing template
+section, or a broken [[link]] (topics and glossary.md);
 warns on orphan topics and on topics whose last_verified is older than STALE_DAYS.
 """
 import re
@@ -14,6 +16,9 @@ GLOSSARY = "glossary.md"  # not a topic, but its [[links]] are checked
 SKIP = {"README.md", "AGENTS.md", "CLAUDE.md", "INDEX.md", "ROADMAP.md", "_template.md", GLOSSARY}
 STALE_DAYS = {"reliability": 90, "security": 90}  # cite versions and limits that move fast
 DEFAULT_STALE_DAYS = 180
+STATUSES = ("draft", "stable", "needs-review")
+SECTIONS = ("Summary", "Key concepts", "When to use / scenarios", "How it works / example",
+            "Trade-offs", "Gotchas", "Related", "References")  # as in _template.md
 
 
 def links(text):
@@ -48,6 +53,29 @@ def summary_line(text):
     return re.split(r"(?<=[.!?])\s", " ".join(m.group(1).split()), maxsplit=1)[0]
 
 
+def problems(rel, text):
+    """Frontmatter and template-section errors for one topic file; [] if it is valid."""
+    meta = frontmatter(text)
+    if not meta:
+        return ["no frontmatter"]
+    errs = [f"missing {k}" for k in ("title", "category", "status", "last_verified") if k not in meta]
+    folder = rel.split("/")[0]
+    if "category" in meta and meta["category"] != folder:
+        errs.append(f"category {meta['category']!r} does not match folder {folder!r}")
+    if "status" in meta and meta["status"] not in STATUSES:
+        errs.append(f"status {meta['status']!r} not one of {', '.join(STATUSES)}")
+    if "last_verified" in meta:
+        try:
+            date.fromisoformat(meta["last_verified"])
+        except ValueError:
+            errs.append(f"last_verified {meta['last_verified']!r} is not a YYYY-MM-DD date")
+    errs += [f"{k} is empty" for k in ("sources", "use_cases") if not meta.get(k)]
+    prose = re.sub(r"```.*?```", "", text.replace("\r\n", "\n"), flags=re.S)
+    errs += [f"missing section ## {s}" for s in SECTIONS
+             if not re.search(rf"^## {re.escape(s)}[ \t]*$", prose, re.M)]
+    return errs
+
+
 def stale_days(category, verified, today):
     """Days past the category's threshold, or None if fresh/undated."""
     try:
@@ -67,10 +95,11 @@ def build(today=None):
             continue
         text = path.read_text(encoding="utf-8")
         out_links[path.stem] = (rel, links(text))
-        meta = frontmatter(text)
-        if not meta or "title" not in meta:
-            bad.append(rel)
+        errs = problems(rel, text)
+        if errs:
+            bad += [f"{rel}: {e}" for e in errs]
             continue
+        meta = frontmatter(text)
         cat = meta.get("category", rel.split("/")[0])
         verified = meta.get("last_verified", "?")
         uses = meta.get("use_cases", [])
@@ -139,4 +168,5 @@ if __name__ == "__main__":
         print(f"warning: {len(stale)} topic(s) due for re-verification:")
         print("\n".join(f"  {s}" for s in stale))
     if bad or broken:
-        raise SystemExit(f"missing/invalid frontmatter: {bad}\nbroken [[links]]: {broken}")
+        raise SystemExit("\n".join(["invalid topics:", *(f"  {b}" for b in bad),
+                                    "broken [[links]]:", *(f"  {b}" for b in broken)]))
