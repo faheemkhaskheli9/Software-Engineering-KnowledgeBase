@@ -7,7 +7,7 @@ use_cases:
   - "pick between a list scan, a set lookup and a sorted index for a membership check"
   - "review a pull request for accidental quadratic behavior in a loop"
   - "estimate whether a nightly job over 100M rows can finish in its time window"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "Introduction to Algorithms (CLRS), Cormen, Leiserson, Rivest, Stein - chapters 3 and 17 (amortized analysis)"

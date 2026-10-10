@@ -7,7 +7,7 @@ use_cases:
   - "scale read traffic by adding read replicas without breaking read-your-writes"
   - "run active-active across two regions and handle conflicting writes"
   - "decide between synchronous and asynchronous replication for a financial ledger"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "Kleppmann, Designing Data-Intensive Applications, ch. 5 (Replication)"

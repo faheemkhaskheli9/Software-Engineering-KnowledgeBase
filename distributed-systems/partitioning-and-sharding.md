@@ -7,7 +7,7 @@ use_cases:
   - "choose a shard key for a multi-tenant SaaS or an orders table"
   - "one shard is overloaded by a celebrity user or hot key, fix the hot spot"
   - "add nodes to a sharded cluster without downtime or a massive data shuffle"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "Kleppmann, Designing Data-Intensive Applications, ch. 6 (Partitioning)"

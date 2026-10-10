@@ -7,7 +7,7 @@ use_cases:
   - "make a message consumer safe when the broker redelivers messages"
   - "design a POST endpoint that clients can safely retry after a timeout"
   - "explain whether Kafka exactly-once means our side effects happen once"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "Stripe API docs, Idempotent requests https://docs.stripe.com/api/idempotent_requests"

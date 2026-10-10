@@ -7,7 +7,7 @@ use_cases:
   - "decide between URL, header or date-based API versioning"
   - "deprecate and retire an old API version with notice to clients"
   - "detect breaking changes automatically in CI"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.rfc-editor.org/rfc/rfc8594

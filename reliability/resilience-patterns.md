@@ -8,7 +8,7 @@ use_cases:
   - add retries with exponential backoff and jitter to an HTTP client
   - degrade gracefully when a recommendation or payment service is down
   - protect an API from overload by shedding load instead of falling over
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://sre.google/sre-book/handling-overload/

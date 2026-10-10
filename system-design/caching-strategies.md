@@ -7,7 +7,7 @@ use_cases:
   - "choose between cache-aside, write-through and write-back for a new service"
   - "prevent a cache stampede when a hot key expires"
   - "decide how to invalidate cached data when the source of truth changes"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://redis.io/docs/latest/develop/use/patterns/

@@ -7,7 +7,7 @@ use_cases:
   - "protect a downstream service or database from overload by a noisy client"
   - "implement a distributed rate limiter shared across many app servers"
   - "choose between token bucket, fixed window and sliding window algorithms"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.rfc-editor.org/rfc/rfc6585

@@ -8,7 +8,7 @@ use_cases:
   - "check whether a username or URL was already seen without storing every key"
   - "build autocomplete suggestions over a few million strings"
   - "model dependencies between build steps and find a valid execution order"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "Introduction to Algorithms (CLRS), Cormen et al."

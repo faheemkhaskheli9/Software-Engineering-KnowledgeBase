@@ -7,7 +7,7 @@ use_cases:
   - "fan out one event to several independent consumers"
   - "choose between RabbitMQ, SQS and Kafka for a new workload"
   - "handle poison messages, retries and duplicates in consumers"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://kafka.apache.org/documentation/

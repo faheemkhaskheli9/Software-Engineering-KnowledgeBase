@@ -7,7 +7,7 @@ use_cases:
   - "detect concurrent conflicting edits to the same record across replicas"
   - "explain why last-write-wins lost a user's update"
   - "generate timestamps for a multi-region database that respect causality"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "Lamport, Time, Clocks, and the Ordering of Events in a Distributed System (CACM 1978) https://lamport.azurewebsites.net/pubs/time-clocks.pdf"

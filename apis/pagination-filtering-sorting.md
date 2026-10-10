@@ -7,7 +7,7 @@ use_cases:
   - "implement infinite scroll without skipped or duplicated items"
   - "choose between offset and cursor pagination"
   - "let clients filter and sort a collection safely"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://use-the-index-luke.com/no-offset

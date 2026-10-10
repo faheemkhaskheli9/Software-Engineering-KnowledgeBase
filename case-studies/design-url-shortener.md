@@ -8,7 +8,7 @@ use_cases:
   - "generate compact unique IDs for public-facing resources without collisions"
   - "design a read-heavy redirect service that must answer in a few milliseconds"
   - "practice a classic system design interview question end to end"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "System Design Interview, Vol. 1 (Alex Xu), ch. 8 'Design a URL Shortener'"

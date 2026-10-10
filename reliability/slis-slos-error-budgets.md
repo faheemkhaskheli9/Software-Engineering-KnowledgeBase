@@ -8,7 +8,7 @@ use_cases:
   - replace noisy threshold alerts with alerts based on user impact
   - write an SLA for customers without promising more than the system can deliver
   - argue with product about how many nines we actually need
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://sre.google/sre-book/service-level-objectives/

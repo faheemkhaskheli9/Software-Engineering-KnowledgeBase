@@ -64,6 +64,21 @@ Open improvement tasks for this base are GitHub issues labelled `kb-improvement`
    then only compiled. Prefer a self-contained block that runs.
 7. Use LF line endings and UTF-8.
 
+## Status values
+
+- `draft` - the default for a new or changed topic.
+- `stable` - all three hold: (1) every URL in `sources` resolves and the
+  non-URL sources (books, papers) are real and cited at the right chapter;
+  (2) `python check_code.py <file>` passes; (3) someone other than the author
+  has read the whole file once and found no wrong claims, numbers or code.
+  Promote by changing only the `status:` line.
+- `needs-review` - a reader found a likely error, or a stale source; say what
+  in the commit or an issue, and fix it before setting `stable` again.
+
+A substantive edit to a `stable` topic (new claims, numbers or code) sets it
+back to `draft` until it is reviewed again; fixing a typo or adding a Related
+link does not.
+
 ## Categories
 
 | Folder | Holds |

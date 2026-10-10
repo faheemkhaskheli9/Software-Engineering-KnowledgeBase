@@ -7,7 +7,7 @@ use_cases:
   - "decide whether one database is enough or we need sharding and caching"
   - "sanity check a proposed design against expected traffic"
   - "size a cache or a queue for a given request rate"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "Jeff Dean, Numbers Everyone Should Know, LADIS 2009 keynote (Designs, Lessons and Advice from Building Large Distributed Systems)"

@@ -8,7 +8,7 @@ use_cases:
   - "track down an intermittent bug where a counter or balance is occasionally wrong under load"
   - "decide between threads, processes and async for a new component"
   - "avoid deadlocks when two jobs need the same pair of resources"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "https://docs.python.org/3/library/concurrent.futures.html"

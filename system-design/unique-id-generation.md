@@ -7,7 +7,7 @@ use_cases:
   - "choose between auto-increment, UUIDv4, UUIDv7, ULID and Snowflake IDs for a table primary key"
   - "create short URL slugs without collisions"
   - "avoid leaking record counts or enabling ID enumeration in public URLs"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.rfc-editor.org/rfc/rfc9562
