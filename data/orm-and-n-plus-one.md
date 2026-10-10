@@ -40,7 +40,7 @@ An ORM maps rows to objects so code manipulates models instead of SQL strings. I
 
 ## How it works / example
 The bug (SQLAlchemy 2.x style):
-```python
+```python fragment
 # 1 query
 authors = session.scalars(select(Author).limit(50)).all()
 for a in authors:
@@ -48,7 +48,7 @@ for a in authors:
 ```
 
 Fixes:
-```python
+```python fragment
 from sqlalchemy.orm import selectinload, joinedload
 
 # Collections: batch with IN (2 queries total)
@@ -68,7 +68,7 @@ rows = session.execute(
 ```
 
 Django equivalents:
-```python
+```python fragment
 Book.objects.select_related("author")            # JOIN for FK / one-to-one
 Author.objects.prefetch_related("books")          # separate IN query for collections
 Author.objects.annotate(n=Count("books")).values("name", "n")   # aggregate in SQL

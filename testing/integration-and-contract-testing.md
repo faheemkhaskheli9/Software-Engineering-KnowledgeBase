@@ -91,7 +91,7 @@ in the fixture so migration bugs are caught too.
 
 Consumer-side contract with pact-python (sketch; check current API in docs):
 
-```python
+```python fragment
 from pact import Consumer, Provider
 
 pact = Consumer("OrderUI").has_pact_with(Provider("OrderService"), port=1234)

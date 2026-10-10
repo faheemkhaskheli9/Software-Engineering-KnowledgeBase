@@ -4,10 +4,12 @@ Usage:  python check_code.py [topic.md ...]   (default: every topic)
 Every ```python block must compile. A topic's runnable blocks are then joined
 and run as one script in a temp dir, with a timeout. A block whose info string
 is ```python fragment is only compiled (use it for snippets that need a server,
-network, third-party package or surrounding code). Topics importing anything
-outside the stdlib are compiled but not run. Stdlib only; exits 1 on any failure.
+network or surrounding code). Topics importing a package that is not installed
+are compiled but not run; CI installs requirements-check.txt so most third-party
+topics run there. Stdlib only; exits 1 on any failure.
 """
 import ast
+import importlib.util
 import os
 import re
 import subprocess
@@ -51,7 +53,7 @@ def check(path):
     code = "\n\n".join(c for frag, c in found if not frag)
     if not code.strip():
         return "pass", "fragments only"
-    extra = imports(code) - set(sys.stdlib_module_names)
+    extra = {m for m in imports(code) - set(sys.stdlib_module_names) if importlib.util.find_spec(m) is None}
     if extra:
         return "skip", f"compiled; not run, needs {', '.join(sorted(extra))}"
     with tempfile.TemporaryDirectory() as tmp:

@@ -87,7 +87,7 @@ output "uploads_bucket" { value = aws_s3_bucket.uploads.bucket }
 
 The same idea in Pulumi with Python (a real language gives loops, functions and tests):
 
-```python
+```python fragment
 import pulumi, pulumi_aws as aws
 
 env = pulumi.get_stack()

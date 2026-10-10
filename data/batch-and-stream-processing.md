@@ -47,7 +47,7 @@ Batch processing runs a computation over a bounded, complete dataset on a schedu
 ```
 
 Batch job in Python with DuckDB (bounded input, simple and fast on one machine):
-```python
+```python fragment
 import duckdb
 duckdb.sql("""
   COPY (

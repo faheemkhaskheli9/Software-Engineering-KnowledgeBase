@@ -51,7 +51,7 @@ Observability is the ability to ask new questions about a running system from th
 
 Minimal Python instrumentation (Flask-style service, OTLP export to a Collector on localhost):
 
-```python
+```python fragment
 import logging, json, time
 from opentelemetry import trace, metrics
 from opentelemetry.sdk.resources import Resource

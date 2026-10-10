@@ -1,0 +1,13 @@
+# Packages that let check_code.py run topics importing them (CI installs this file).
+# Only pure-library imports belong here; topics needing a live service stay skipped.
+aiodataloader==0.4.3
+alembic==1.20.0
+argon2-cffi==25.1.0
+cryptography==50.0.2
+fastapi==0.143.0
+hypothesis==6.168.5
+PyJWT==2.15.1
+pytest==9.1.1
+PyYAML==6.0.3
+requests==2.34.2
+SQLAlchemy==2.1.4

@@ -59,7 +59,7 @@ move is to need fewer long-lived secrets at all.
 Load at start-up from the environment (injected by the platform from the
 secret store), fail fast, never log:
 
-```python
+```python fragment
 import os, sys
 
 def require(name: str) -> str:

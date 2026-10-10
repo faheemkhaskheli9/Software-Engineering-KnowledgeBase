@@ -59,7 +59,7 @@ Direct-to-storage upload keeps large bytes off your app servers:
 
 Python (boto3) presigned upload and download, runnable with credentials:
 
-```python
+```python fragment
 import boto3
 
 s3 = boto3.client("s3")
