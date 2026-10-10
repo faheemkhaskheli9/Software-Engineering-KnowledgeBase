@@ -4,7 +4,9 @@ A reference on software engineering and system design, written as plain
 Markdown so people and AI coding agents (Claude Code, Codex, Cursor, Copilot)
 can look things up before they build.
 
-- **Start here:** [INDEX.md](INDEX.md) lists every topic with its tags and use cases.
+- **Start here:** [INDEX.md](INDEX.md) lists every topic by category with its tags, use cases and verified date.
+- **Terms:** [glossary.md](glossary.md) defines common terms and links each to its topic.
+- **For LLM tools:** [llms.txt](llms.txt) is a one-line-per-topic list.
 - **By problem:** [scenarios/](scenarios/) maps a requirement to the recommended approach.
 - **Design practice:** [case-studies/](case-studies/) holds worked system designs.
 - **For agents:** [AGENTS.md](AGENTS.md) explains how to consult and extend the base.
@@ -21,4 +23,5 @@ Key concepts, When to use, How it works, Trade-offs, Gotchas, Related, Reference
 ## Contributing
 
 Copy [_template.md](_template.md) to start a topic, then run
-`python build_index.py` to regenerate the index and check `[[links]]`.
+`python build_index.py` to regenerate `INDEX.md` and `llms.txt` and check
+`[[links]]`. CI runs the same check on every push.

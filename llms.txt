@@ -1,0 +1,145 @@
+# Software Engineering Knowledge Base
+
+> Reference on software engineering and system design for people and AI coding agents.
+> One topic per Markdown file; INDEX.md has tags and use cases, glossary.md defines terms.
+
+## apis
+
+- [API versioning and evolution](apis/api-versioning-and-evolution.md): Once clients you do not control depend on your API, every change is a compatibility question.
+- [GraphQL](apis/graphql.md): GraphQL is a query language and runtime for APIs where the client sends a query describing the exact shape of data it wants, against a strongly typed schema, usually through one HTTP endpoint.
+- [gRPC and Protocol Buffers](apis/grpc-and-protobuf.md): Protocol Buffers (protobuf) is a compact, schema-first binary serialisation format with generated code; gRPC is an RPC framework that uses protobuf over HTTP/2 to give typed unary and streaming calls across languages.
+- [Pagination, filtering and sorting](apis/pagination-filtering-sorting.md): List endpoints must never return unbounded results.
+- [REST API design](apis/rest-api-design.md): REST-style HTTP APIs expose resources (nouns) at stable URLs and manipulate them with standard methods and status codes.
+- [Webhooks](apis/webhooks.md): A webhook is an HTTP callback: when something happens in system A, A sends an HTTP POST with an event payload to a URL registered by system B.
+
+## architecture
+
+- [CQRS and event sourcing](architecture/cqrs-and-event-sourcing.md): CQRS (Command Query Responsibility Segregation) separates the model that handles writes (commands) from the model(s) that serve reads (queries), so each can be shaped and scaled for its job.
+- [Domain-driven design](architecture/domain-driven-design.md): DDD is an approach to software for complicated domains: build a shared language with domain experts, split the problem into bounded contexts, and model the core with entities, value objects and aggregates that enforce business invariants.
+- [Event-driven architecture](architecture/event-driven-architecture.md): In an event-driven architecture, components communicate by publishing events (facts about something that happened) to a broker, and interested components react asynchronously.
+- [Layered, hexagonal and clean architecture](architecture/layered-hexagonal-clean-architecture.md): These are three related ways to organize code inside one service.
+- [Monolith vs microservices](architecture/monolith-vs-microservices.md): A monolith is one deployable unit; microservices are many independently deployable services, each owning its data and one business capability.
+- [Serverless architecture](architecture/serverless-architecture.md): Serverless means you run code and use managed services without provisioning or patching servers; the platform scales to demand, including to zero, and bills by use.
+- [The twelve-factor app](architecture/twelve-factor-app.md): Twelve-factor is a methodology (from Heroku engineers) for building services that deploy cleanly to cloud platforms, scale horizontally, and minimise divergence between dev and production.
+
+## case-studies
+
+- [Design a chat system](case-studies/design-chat-system.md): A chat system delivers messages between users in near real time over persistent connections, supports 1:1 and group conversations, stores history, and syncs across devices.
+- [Design a distributed key-value store](case-studies/design-key-value-store.md): A distributed key-value store exposes `put(key, value)` and `get(key)` over a cluster, partitioning data across nodes and replicating each key for durability and availability.
+- [Design a news feed](case-studies/design-news-feed.md): A news feed shows each user a reverse-chronological or ranked list of recent posts from accounts they follow.
+- [Design a notification system](case-studies/design-notification-system.md): A notification platform accepts "notify this user about X" requests from internal services and delivers them over push (APNs, FCM), SMS, email and in-app channels.
+- [Design a payment system](case-studies/design-payment-system.md): A payment system moves money on behalf of a merchant or platform: it takes a customer's payment instrument, authorises and captures funds through a payment service provider (PSP) or acquirer, records everything in an auditable ledger, and reconciles with external statements.
+- [Design a ride-sharing service](case-studies/design-ride-sharing.md): A ride-sharing platform connects riders to nearby available drivers in real time.
+- [Design a URL shortener](case-studies/design-url-shortener.md): A service that turns a long URL into a short alias (`https://sho.rt/aZ3kP9q`) and redirects visitors who open the alias.
+- [Design a video streaming platform](case-studies/design-video-streaming.md): A video platform lets creators upload videos, converts them into many renditions, and delivers them to viewers worldwide with adaptive bitrate streaming.
+- [Design a web crawler](case-studies/design-web-crawler.md): A web crawler discovers and downloads pages by following links from seed URLs, feeding a search index, an ML corpus or an archive.
+
+## data
+
+- [Batch and stream processing](data/batch-and-stream-processing.md): Batch processing runs a computation over a bounded, complete dataset on a schedule (nightly report, model training, backfill).
+- [Data modeling and schema design](data/data-modeling-and-schema-design.md): Schema design decides what your data can express and what bad states the database refuses to store.
+- [Data warehousing and OLAP](data/data-warehousing-and-olap.md): OLTP databases serve many small transactional reads and writes; OLAP systems serve fewer, heavy analytical queries that scan and aggregate large volumes.
+- [Database indexing](data/database-indexing.md): An index is a separate, ordered (or hashed) structure that lets the database find rows without scanning the whole table.
+- [ORMs and the N+1 query problem](data/orm-and-n-plus-one.md): An ORM maps rows to objects so code manipulates models instead of SQL strings.
+- [Schema migrations](data/schema-migrations.md): A migration is a versioned, repeatable change to the database schema (and sometimes data), stored in source control and applied by tooling in order.
+- [SQL vs NoSQL](data/sql-vs-nosql.md): "SQL" databases are relational systems with a fixed schema, joins, and ACID transactions.
+- [Transactions and isolation levels](data/transactions-and-isolation-levels.md): A transaction groups several operations so they succeed or fail together (atomicity) and, while running, appear isolated from concurrent work.
+
+## design
+
+- [Clean code and naming](design/clean-code-and-naming.md): Code is read many more times than it is written, so optimize for the next reader.
+- [Coupling, cohesion and core design principles](design/coupling-cohesion-and-design-principles.md): Good design makes change cheap.
+- [Design patterns (GoF) in practice](design/design-patterns-gof.md): Design patterns are named, reusable solutions to recurring design problems, mostly about reducing coupling and making variation explicit.
+- [Error handling strategies](design/error-handling-strategies.md): Error handling is deciding, for each failure, who detects it, who can fix it, what the caller sees and what gets recorded.
+- [Refactoring and code smells](design/refactoring-and-code-smells.md): Refactoring is changing the internal structure of code without changing its observable behavior, in small steps, each verified by tests.
+- [SOLID principles](design/solid-principles.md): Five heuristics for organizing classes and modules so that change stays local: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.
+
+## distributed-systems
+
+- [CAP theorem and PACELC](distributed-systems/cap-and-pacelc.md): CAP says that when a network partition happens, a replicated system must choose between answering every request (availability) and answering them all correctly as if there were one copy (linearizable consistency).
+- [Consensus (Raft and Paxos)](distributed-systems/consensus-raft-paxos.md): Consensus lets a group of nodes agree on a value (or an ordered log of values) even when some nodes crash and messages are delayed or lost, as long as a majority is alive and connected.
+- [Consistency models](distributed-systems/consistency-models.md): A consistency model is a contract about which values a read may return given the history of writes across replicas and clients.
+- [Consistent hashing](distributed-systems/consistent-hashing.md): Consistent hashing maps keys and nodes into the same hash space so that when a node is added or removed only about `1/N` of the keys move, instead of nearly all of them as with `hash(key) % N`.
+- [Distributed transactions and sagas](distributed-systems/distributed-transactions-and-sagas.md): When one business operation spans several databases or services, you cannot rely on a single ACID transaction.
+- [Failure modes and the fallacies of distributed computing](distributed-systems/failure-modes-and-fallacies.md): A distributed system is one where a computer you did not know existed can make your own work fail.
+- [Idempotency and exactly-once processing](distributed-systems/idempotency-and-exactly-once.md): Networks lose requests and responses, so clients and brokers retry, and the same operation arrives more than once.
+- [Partitioning and sharding](distributed-systems/partitioning-and-sharding.md): Partitioning splits a dataset into disjoint pieces (partitions/shards), each stored on different nodes, so that storage, writes and queries scale beyond one machine.
+- [Replication](distributed-systems/replication.md): Replication keeps copies of the same data on several nodes to survive failures, serve reads closer to users and add read throughput.
+- [Time, clocks and ordering](distributed-systems/time-clocks-and-ordering.md): In a distributed system there is no shared clock, and wall clocks on different machines disagree and can jump.
+
+## fundamentals
+
+- [Algorithm patterns (reusable problem-solving techniques)](fundamentals/algorithm-patterns.md): Most practical algorithm problems are variations on a dozen patterns.
+- [Big-O complexity and cost analysis](fundamentals/big-o-complexity.md): Big-O describes how the cost (time or memory) of an operation grows with input size n, ignoring constants and lower-order terms.
+- [Concurrency and parallelism](fundamentals/concurrency-and-parallelism.md): Concurrency is structuring a program as independently progressing tasks (dealing with many things at once); parallelism is executing tasks literally simultaneously on multiple cores.
+- [Core data structures and when to pick each](fundamentals/core-data-structures.md): Most performance and correctness problems at the code level reduce to picking the wrong container.
+- [Memory and performance engineering](fundamentals/memory-and-performance.md): Performance work is a measurement discipline: find the real bottleneck with a profiler, change one thing, re-measure.
+- [Networking fundamentals for application engineers](fundamentals/networking-fundamentals.md): Application engineers need a working model of the layers between code and wire: DNS resolves names, TCP (or QUIC) gives reliable streams, TLS secures them, HTTP carries requests.
+
+## practices
+
+- [Agile, Scrum and Kanban](practices/agile-scrum-kanban.md): Agile is a set of values for delivering software in small increments with fast feedback; Scrum and Kanban are two concrete frameworks for it.
+- [Architecture decision records (ADRs)](practices/architecture-decision-records.md): An ADR is a short, immutable document capturing one significant architectural decision: the context, the options considered, the choice made, and its consequences.
+- [Code review](practices/code-review.md): Code review is a second engineer examining a change before it lands, to catch defects, keep the design coherent, spread knowledge and maintain shared standards.
+- [Documentation practices](practices/documentation-practices.md): Good documentation lets someone other than the author use, operate and change the system without asking.
+- [Estimation and planning](practices/estimation-and-planning.md): Estimation predicts effort or duration under uncertainty; planning turns those predictions into a sequenced, adjustable commitment.
+- [Git workflows and branching](practices/git-workflows-and-branching.md): A branching workflow is the team agreement on where work happens, how it gets to the shared mainline, and how releases are cut.
+- [Technical debt management](practices/technical-debt-management.md): Technical debt is the future cost of past design and implementation shortcuts: extra effort every time you change the affected code.
+
+## reliability
+
+- [Capacity planning and autoscaling](reliability/capacity-planning-and-autoscaling.md): Capacity planning is predicting how much compute, memory, storage and network a system needs to meet its SLOs at forecast demand plus headroom; autoscaling adjusts that capacity automatically as load changes.
+- [CI/CD pipelines](reliability/ci-cd-pipelines.md): Continuous integration merges and verifies small changes frequently with automated build and test; continuous delivery keeps every green main-branch commit deployable, and continuous deployment ships it to production automatically.
+- [Containers and Docker](reliability/containers-and-docker.md): A container is a regular Linux process isolated with namespaces and limited with cgroups, started from an immutable layered image that bundles the app and its userspace dependencies.
+- [Deployment strategies - rolling, blue-green, canary, feature flags](reliability/deployment-strategies.md): A deployment strategy defines how a new version replaces the old one and how you limit the damage if it is bad.
+- [Incident response and postmortems](reliability/incident-response-and-postmortems.md): Incident response is a rehearsed process for detecting, coordinating, mitigating and communicating during a production problem; the postmortem is the blameless written review afterwards that turns the failure into lasting fixes.
+- [Infrastructure as code](reliability/infrastructure-as-code.md): Infrastructure as code (IaC) defines servers, networks, databases, permissions and clusters in versioned text files that tools apply automatically and repeatably.
+- [Kubernetes basics](reliability/kubernetes-basics.md): Kubernetes is a declarative container orchestrator: you describe desired state (N replicas of this image, exposed on this port) and controllers continuously reconcile reality toward it, scheduling, restarting, scaling and rolling out workloads across a cluster of nodes.
+- [Observability - logs, metrics, traces](reliability/observability-logs-metrics-traces.md): Observability is the ability to ask new questions about a running system from the telemetry it emits, without shipping new code.
+- [Resilience patterns - timeouts, retries, circuit breakers, bulkheads](reliability/resilience-patterns.md): In a distributed system dependencies will be slow or down; resilience patterns keep a partial failure from becoming a total one.
+- [SLIs, SLOs and error budgets](reliability/slis-slos-error-budgets.md): An SLI is a measured indicator of service health from the user's perspective (for example the fraction of requests that succeed fast enough).
+
+## scenarios
+
+- [Choosing a database](scenarios/choosing-a-database.md): Pick the database by access patterns, consistency needs, data shape and scale, in that order, then by team familiarity and operational cost.
+- [Choosing a communication style](scenarios/choosing-communication-style.md): Decide along two axes: does the caller need the answer now (synchronous request/response) or can work happen later (asynchronous messaging and events), and who are the consumers (public, internal, browsers)?
+- [Scaling from zero to millions of users](scenarios/scaling-from-zero-to-millions.md): Scale in stages, each triggered by a measured bottleneck, not in advance.
+- [Scenario chooser - what approach for X](scenarios/scenario-chooser.md): A router from concrete problems and requirements to the topic files that answer them.
+
+## security
+
+- [Authentication and sessions](security/authentication-and-sessions.md): Authentication proves who a caller is; a session carries that proof across requests.
+- [Authorization models (RBAC, ABAC, ReBAC)](security/authorization-models.md): Authorization decides whether an authenticated principal may perform an action on a resource.
+- [Cryptography and TLS](security/cryptography-and-tls.md): Applied cryptography for engineers is mostly about choosing the right primitive, using a vetted library with safe defaults, and managing keys.
+- [OAuth 2.0 and OpenID Connect](security/oauth2-and-oidc.md): OAuth 2.0 is a delegation framework: a user (resource owner) lets a client application obtain a limited access token for an API without sharing their password.
+- [OWASP Top 10 (2025 edition)](security/owasp-top-10.md): The OWASP Top 10 is a consensus awareness list of the most critical web application security risks.
+- [Secrets management](security/secrets-management.md): Secrets are credentials that grant access: API keys, DB passwords, signing keys, tokens, certificates.
+- [Threat modeling](security/threat-modeling.md): Threat modeling is structured thinking about what can go wrong in a system before (and while) it is built, so security work targets real risks and is cheap to act on.
+
+## system-design
+
+- [API gateway and service mesh](system-design/api-gateway-and-service-mesh.md): An **API gateway** is the single entry point for external (north-south) traffic: routing, authentication, rate limiting, TLS termination, request shaping.
+- [Back-of-envelope estimation](system-design/back-of-envelope-estimation.md): Quick order-of-magnitude arithmetic that turns "100M users" into QPS, storage and bandwidth so you can pick an architecture on evidence.
+- [Blob and object storage](system-design/blob-object-storage.md): Object storage (Amazon S3, Google Cloud Storage, Azure Blob, MinIO, Ceph) stores immutable-ish blobs addressed by key in flat buckets, accessed over HTTP.
+- [Caching strategies](system-design/caching-strategies.md): A cache stores the result of expensive work (DB query, computation, remote call) in faster memory to cut latency and backend load.
+- [CDN and edge](system-design/cdn-and-edge.md): A content delivery network is a globally distributed set of cache servers (points of presence, PoPs) that serve content from a location near the user and shield the origin.
+- [Load balancing](system-design/load-balancing.md): A load balancer (LB) distributes incoming requests across a pool of backends, removes failed backends via health checks, and gives clients a single stable address.
+- [Message queues and streams](system-design/message-queues-and-streams.md): Messaging systems move data asynchronously between producers and consumers.
+- [Rate limiting](system-design/rate-limiting.md): Rate limiting caps how much work a client (user, API key, IP, tenant) can request per unit time.
+- [Realtime with WebSockets, SSE and polling](system-design/realtime-websockets-sse.md): HTTP is request/response, so servers cannot spontaneously push to a client.
+- [Search systems](system-design/search-systems.md): A search system answers free-text queries over a corpus by building an **inverted index** (term to the list of documents containing it) and ranking matches by relevance (TF-IDF/BM25 plus business signals).
+- [System design interview framework](system-design/system-design-interview-framework.md): A repeatable sequence for designing a large system from an ambiguous prompt: clarify requirements, estimate scale, sketch a high-level design, deep-dive the hard parts, then discuss bottlenecks and trade-offs.
+- [Unique ID generation](system-design/unique-id-generation.md): Every entity needs an identifier that is unique, cheap to produce, and ideally well behaved in the database index.
+
+## testing
+
+- [Integration and contract testing](testing/integration-and-contract-testing.md): Integration tests check that your code works with real collaborators: database, message broker, filesystem, HTTP framework.
+- [Performance and load testing](testing/performance-and-load-testing.md): Performance testing measures how a system behaves under load: throughput, latency percentiles, error rate and resource use.
+- [Property-based and fuzz testing](testing/property-based-and-fuzz-testing.md): Property-based testing states a rule that must hold for all inputs (a *property*) and lets a framework generate hundreds of inputs, then shrinks any failure to a minimal counterexample.
+- [TDD and BDD](testing/tdd-and-bdd.md): Test-driven development (TDD) is a design and implementation loop: write a failing test, make it pass with the simplest code, then refactor.
+- [Testing strategy and the test pyramid](testing/testing-strategy-and-pyramid.md): A testing strategy decides which kinds of tests you write, in what proportions, and what each is responsible for, so that the suite gives fast, trustworthy feedback at a sustainable maintenance cost.
+- [Unit testing and test doubles](testing/unit-testing-and-test-doubles.md): A unit test exercises a small piece of behaviour in isolation, fast and deterministically, and fails for exactly one reason.
+
+## Optional
+
+- [Glossary](glossary.md): terms linked to the topic that explains each

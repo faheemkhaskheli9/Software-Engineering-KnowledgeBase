@@ -7,7 +7,9 @@ worked system-design case studies.
 
 ## Consulting it
 
-1. Read `INDEX.md`. Match your task against the **Tags** and **Use when** columns.
+1. Read `INDEX.md` (one section per category). Match your task against the
+   **Tags** and **Use when** columns. `llms.txt` is a shorter one-line-per-topic
+   list; `glossary.md` maps terms to the topic that explains each.
 2. Read the **full** matched file(s), not just the index row. Follow `[[links]]`
    in the `## Related` section when they apply.
 3. For "which approach/architecture/database for X?" start in
@@ -15,7 +17,8 @@ worked system-design case studies.
 4. For "design system X" start with `system-design/system-design-interview-framework.md`
    and check `case-studies/` for a close match.
 5. Volatile facts (tool versions, cloud limits, prices) are only as fresh as
-   the file's `last_verified` date. Check the cited source before relying on one.
+   the file's `last_verified` date (the **Verified** column). Check the cited
+   source before relying on one.
 6. Mention which file(s) informed your work.
 
 Quick search without reading the index: `grep -ril "<keyword>" --include=*.md .`
@@ -33,8 +36,13 @@ Open improvement tasks for this base are GitHub issues labelled `kb-improvement`
    Do not invent numbers, benchmarks or limits; leave them out instead.
 4. Link a new topic from at least one existing topic's `## Related`, or agents
    following links never reach it.
-5. Run `python build_index.py` (stdlib only). It regenerates `INDEX.md`, fails
-   on missing frontmatter or a broken `[[link]]`, and warns on orphan topics.
+5. Run `python build_index.py` (stdlib only) and commit what it writes. It
+   regenerates `INDEX.md` and `llms.txt`, fails on missing frontmatter or a
+   broken `[[link]]` (in topics and `glossary.md`), and warns on orphan topics
+   and on stale topics: `last_verified` older than 180 days, or 90 days for
+   `reliability/` and `security/`. Re-check a stale topic's sources, then bump
+   its date. CI fails if the committed `INDEX.md`/`llms.txt` are out of date.
+   New terms worth defining go in `glossary.md` as `- **Term** - definition. [[topic]]`.
 6. Use LF line endings and UTF-8.
 
 ## Categories
