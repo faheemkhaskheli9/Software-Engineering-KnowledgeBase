@@ -101,7 +101,7 @@ Better: "must-fix: this query runs per row (N+1). Could we batch via IN (...)? S
 
 Small automation that enforces a size nudge (Python, runs in CI):
 
-```python
+```python fragment
 import subprocess, sys
 base = "origin/main"
 stat = subprocess.check_output(["git", "diff", "--shortstat", base]).decode()

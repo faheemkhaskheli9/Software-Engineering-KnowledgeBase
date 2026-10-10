@@ -78,7 +78,7 @@ that fit the budget. Keep it crude; precision is fake here.
 
 Finding hotspots with git (churn) plus a complexity tool:
 
-```python
+```python fragment
 import subprocess, collections
 log = subprocess.check_output(
     ["git", "log", "--since=6 months ago", "--name-only", "--pretty=format:"]).decode()

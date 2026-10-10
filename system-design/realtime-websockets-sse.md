@@ -67,7 +67,7 @@ messages between nodes.
 
 Minimal SSE endpoint (FastAPI-free, stdlib only) and browser client:
 
-```python
+```python fragment
 # server: python sse.py  -> curl -N http://localhost:8000
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer

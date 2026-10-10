@@ -43,7 +43,13 @@ Open improvement tasks for this base are GitHub issues labelled `kb-improvement`
    `reliability/` and `security/`. Re-check a stale topic's sources, then bump
    its date. CI fails if the committed `INDEX.md`/`llms.txt` are out of date.
    New terms worth defining go in `glossary.md` as `- **Term** - definition. [[topic]]`.
-6. Use LF line endings and UTF-8.
+6. Run `python check_code.py [topic.md ...]` (stdlib only, also in CI). Every
+   ` ```python ` block must compile; a topic's blocks are joined and run as one
+   script (60 s timeout) unless they import a non-stdlib package. Open a block
+   with ` ```python fragment ` when it cannot run on its own (needs a server,
+   network, database, git repo, or names defined outside the block); it is
+   then only compiled. Prefer a self-contained block that runs.
+7. Use LF line endings and UTF-8.
 
 ## Categories
 

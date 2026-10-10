@@ -88,7 +88,7 @@ def discount(user, cart):
 
 Comments: what vs why.
 
-```python
+```python fragment
 x += 1  # increment x                                   <- noise
 retry_delay = 2 ** attempt  # vendor rate-limits at 429; back off per their docs (see ticket #482)  <- useful
 ```

@@ -79,7 +79,7 @@ for stat in after.compare_to(before, "lineno")[:3]:
 
 Streaming instead of loading everything:
 
-```python
+```python fragment
 def total_bytes(path):
     n = 0
     with open(path, "rb") as f:

@@ -65,7 +65,7 @@ GROUP BY sku ORDER BY 2 DESC LIMIT 10;
 ```
 
 Document (MongoDB):
-```python
+```python fragment
 db.orders.insert_one({
     "_id": 1001,
     "customer_id": 42,

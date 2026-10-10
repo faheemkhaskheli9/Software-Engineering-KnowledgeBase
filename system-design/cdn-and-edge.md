@@ -75,7 +75,7 @@ HTML.
 
 Minimal Python check of what an origin sends (use before blaming the CDN):
 
-```python
+```python fragment
 import urllib.request
 
 def cache_headers(url: str) -> dict:

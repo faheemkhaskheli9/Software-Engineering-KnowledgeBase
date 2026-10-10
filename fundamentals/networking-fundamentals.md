@@ -63,7 +63,7 @@ Roughly 3 RTTs plus DNS before the first byte on a cold connection; a reused con
 
 Python client with explicit timeouts and connection reuse (stdlib only):
 
-```python
+```python fragment
 import http.client
 
 conn = http.client.HTTPSConnection("example.com", timeout=3.0)  # connect+read timeout
@@ -77,7 +77,7 @@ conn.close()
 
 Minimal TCP echo server showing the socket lifecycle:
 
-```python
+```python fragment
 import socket
 
 srv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

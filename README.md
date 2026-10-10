@@ -24,4 +24,5 @@ Key concepts, When to use, How it works, Trade-offs, Gotchas, Related, Reference
 
 Copy [_template.md](_template.md) to start a topic, then run
 `python build_index.py` to regenerate `INDEX.md` and `llms.txt` and check
-`[[links]]`. CI runs the same check on every push.
+`[[links]]`, and `python check_code.py` to compile and run the Python
+examples. CI runs both on every push.
