@@ -137,6 +137,8 @@ Precompute top-K completions per prefix from query logs (offline job), store in 
 - [[pagination-filtering-sorting]] - cursor-based paging for result sets.
 - [[caching-strategies]] - caching popular queries and typeahead prefixes.
 - [[sql-vs-nosql]] - search engines as a specialised secondary store.
+- [[design-search-autocomplete]] - case study: precomputed top-k typeahead.
+- [[design-rag-chat]] - case study: hybrid retrieval feeding an LLM chat product.
 - See also (AI KB): [RAG basics](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/rag-basics.md) and [Vector databases](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/vector-databases.md) - semantic and hybrid search feeding an LLM.
 
 ## References

@@ -171,6 +171,7 @@ Context ---has-a---> Strategy (interface)
 - [[refactoring-and-code-smells]] - refactoring toward a pattern when a smell appears
 - [[event-driven-architecture]] - Observer and Command at system scale
 - [[resilience-patterns]] - retry, circuit breaker and bulkhead are decorator/proxy-style patterns
+- [[state-machines]] - the State pattern next to table-driven machines and statecharts
 
 ## References
 - Gamma, Helm, Johnson, Vlissides, "Design Patterns" (1994)

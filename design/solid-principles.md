@@ -116,6 +116,7 @@ ISP with protocols: a function that only reads should take `Reader`, not the ful
 - [[layered-hexagonal-clean-architecture]] - DIP applied at architecture scale
 - [[unit-testing-and-test-doubles]] - the payoff: substitutable dependencies
 - [[refactoring-and-code-smells]] - how to get from a god class to SRP safely
+- [[dependency-injection]] - the mechanism that supplies implementations behind DIP
 
 ## References
 - Martin, "Agile Software Development: Principles, Patterns, and Practices"

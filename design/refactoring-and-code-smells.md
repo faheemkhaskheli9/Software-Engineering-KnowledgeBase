@@ -152,6 +152,7 @@ Tools: IDE rename/extract (automated refactorings are safer than manual), linter
 - [[unit-testing-and-test-doubles]] - the safety net
 - [[technical-debt-management]] - deciding what to refactor and when
 - [[code-review]] - where smells are usually caught
+- [[functional-core-imperative-shell]] - a target shape when extracting logic from I/O-heavy code
 
 ## References
 - Fowler, "Refactoring", 2nd ed. (2018)

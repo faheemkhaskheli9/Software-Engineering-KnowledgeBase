@@ -115,6 +115,7 @@ def run_tx(conn, fn, retries=5):
 - [[idempotency-and-exactly-once]] - safe retries after conflicts and failures
 - [[database-indexing]] - indexes shape which rows are locked
 - [[replication]] - replica lag and read-your-writes
+- [[design-ticket-booking]] - case study: avoiding double booking with atomic seat holds
 
 ## References
 - Kleppmann, Designing Data-Intensive Applications, chapter 7 (Transactions).

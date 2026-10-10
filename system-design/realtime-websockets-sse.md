@@ -136,6 +136,7 @@ socket is a delivery optimisation, the database is the truth.
 - [[load-balancing]] - long-lived connection balancing and timeouts.
 - [[networking-fundamentals]] - TCP, HTTP upgrade and keep-alive behaviour.
 - [[choosing-communication-style]] - when realtime push beats request/response.
+- [[design-collaborative-editor]] - case study: OT/CRDT operations and presence over WebSockets.
 
 ## References
 - RFC 6455 The WebSocket Protocol: https://www.rfc-editor.org/rfc/rfc6455

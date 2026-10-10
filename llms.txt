@@ -25,11 +25,19 @@
 ## case-studies
 
 - [Design a chat system](case-studies/design-chat-system.md): A chat system delivers messages between users in near real time over persistent connections, supports 1:1 and group conversations, stores history, and syncs across devices.
+- [Design a collaborative editor (Google Docs-like)](case-studies/design-collaborative-editor.md): Several users edit the same document at once, each seeing their own typing instantly and everyone else's within a fraction of a second, and all copies must converge to the same content without anyone's edits being lost.
+- [Design a file sync service (Dropbox-like)](case-studies/design-file-sync.md): Users drop files into a folder on one device and the same tree appears on their other devices and on the web, with sharing and version history.
+- [Design a distributed job scheduler](case-studies/design-job-scheduler.md): A job scheduler stores job definitions (one-off at a time, delayed, or recurring on a cron schedule), triggers each run when it is due, hands it to a worker, retries failures and records the outcome.
 - [Design a distributed key-value store](case-studies/design-key-value-store.md): A distributed key-value store exposes `put(key, value)` and `get(key)` over a cluster, partitioning data across nodes and replicating each key for durability and availability.
+- [Design a metrics and logging pipeline](case-studies/design-metrics-logging-pipeline.md): An observability platform collects **metrics** (numeric time series), **logs** (timestamped events) and often traces from every host and service, ships them through a buffered pipeline, stores them in purpose-built stores, and serves dashboards, queries and alerts.
 - [Design a news feed](case-studies/design-news-feed.md): A news feed shows each user a reverse-chronological or ranked list of recent posts from accounts they follow.
 - [Design a notification system](case-studies/design-notification-system.md): A notification platform accepts "notify this user about X" requests from internal services and delivers them over push (APNs, FCM), SMS, email and in-app channels.
 - [Design a payment system](case-studies/design-payment-system.md): A payment system moves money on behalf of a merchant or platform: it takes a customer's payment instrument, authorises and captures funds through a payment service provider (PSP) or acquirer, records everything in an auditable ledger, and reconciles with external statements.
+- [Design an LLM-backed RAG chat product](case-studies/design-rag-chat.md): A chat product where users ask questions in natural language and get answers grounded in a private corpus (docs, tickets, wiki pages), with citations.
+- [Design a rate limiter service](case-studies/design-rate-limiter.md): A shared service (or library plus shared store) that decides, per request, whether a caller identified by a key (user, API key, IP, tenant, route) is within its quota, and answers in a millisecond or two.
 - [Design a ride-sharing service](case-studies/design-ride-sharing.md): A ride-sharing platform connects riders to nearby available drivers in real time.
+- [Design search autocomplete (typeahead)](case-studies/design-search-autocomplete.md): As the user types, return the k most relevant completions for the current prefix (usually 5-10), fast enough to keep up with typing.
+- [Design a ticket booking system with seat holds](case-studies/design-ticket-booking.md): Users browse an event, pick specific seats (or a quantity in a section), hold them for a few minutes while they pay, and receive tickets.
 - [Design a URL shortener](case-studies/design-url-shortener.md): A service that turns a long URL into a short alias (`https://sho.rt/aZ3kP9q`) and redirects visitors who open the alias.
 - [Design a video streaming platform](case-studies/design-video-streaming.md): A video platform lets creators upload videos, converts them into many renditions, and delivers them to viewers worldwide with adaptive bitrate streaming.
 - [Design a web crawler](case-studies/design-web-crawler.md): A web crawler discovers and downloads pages by following links from seed URLs, feeding a search index, an ML corpus or an archive.
@@ -49,10 +57,14 @@
 
 - [Clean code and naming](design/clean-code-and-naming.md): Code is read many more times than it is written, so optimize for the next reader.
 - [Coupling, cohesion and core design principles](design/coupling-cohesion-and-design-principles.md): Good design makes change cheap.
+- [Dependency injection](design/dependency-injection.md): Dependency injection (DI) means a component receives its collaborators from outside instead of constructing or looking them up itself.
 - [Design patterns (GoF) in practice](design/design-patterns-gof.md): Design patterns are named, reusable solutions to recurring design problems, mostly about reducing coupling and making variation explicit.
 - [Error handling strategies](design/error-handling-strategies.md): Error handling is deciding, for each failure, who detects it, who can fix it, what the caller sees and what gets recorded.
+- [Functional core, imperative shell](design/functional-core-imperative-shell.md): Split a program into a pure core that makes all the decisions from plain values, and a thin imperative shell that gathers inputs (DB, network, clock, files), calls the core, and carries out its results.
+- [API design for libraries](design/library-api-design.md): A library's public API is a promise: once others depend on it, every name, parameter, default, exception and observable behavior is hard to change.
 - [Refactoring and code smells](design/refactoring-and-code-smells.md): Refactoring is changing the internal structure of code without changing its observable behavior, in small steps, each verified by tests.
 - [SOLID principles](design/solid-principles.md): Five heuristics for organizing classes and modules so that change stays local: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.
+- [State machines](design/state-machines.md): A finite state machine (FSM) models something that is always in exactly one of a fixed set of states and moves between them only through named transitions triggered by events.
 
 ## distributed-systems
 
@@ -73,8 +85,12 @@
 - [Big-O complexity and cost analysis](fundamentals/big-o-complexity.md): Big-O describes how the cost (time or memory) of an operation grows with input size n, ignoring constants and lower-order terms.
 - [Concurrency and parallelism](fundamentals/concurrency-and-parallelism.md): Concurrency is structuring a program as independently progressing tasks (dealing with many things at once); parallelism is executing tasks literally simultaneously on multiple cores.
 - [Core data structures and when to pick each](fundamentals/core-data-structures.md): Most performance and correctness problems at the code level reduce to picking the wrong container.
+- [CPU caches and the memory hierarchy](fundamentals/cpu-caches-and-memory-hierarchy.md): Storage is arranged in levels: registers, several levels of CPU cache, main memory, then SSD/disk and the network, each level larger and slower than the one above.
+- [Graph algorithms](fundamentals/graph-algorithms.md): Many engineering problems are graphs in disguise: dependencies, networks, routes, social links, state transitions.
 - [Memory and performance engineering](fundamentals/memory-and-performance.md): Performance work is a measurement discipline: find the real bottleneck with a profiler, change one thing, re-measure.
 - [Networking fundamentals for application engineers](fundamentals/networking-fundamentals.md): Application engineers need a working model of the layers between code and wire: DNS resolves names, TCP (or QUIC) gives reliable streams, TLS secures them, HTTP carries requests.
+- [OS processes, threads and I/O models](fundamentals/processes-threads-and-io-models.md): A process is an isolated address space with its own resources; a thread is a schedulable flow of execution inside a process that shares its memory.
+- [Strings and text encoding](fundamentals/strings-and-text-encoding.md): Text is a sequence of Unicode code points; bytes are what files, sockets and databases store.
 
 ## practices
 
@@ -101,8 +117,15 @@
 
 ## scenarios
 
+- [Background jobs and queues - choosing an approach](scenarios/background-jobs-and-queues.md): Anything the user does not need to wait for should leave the request path: accept the request, record the work durably, return, and let a worker do it.
+- [Choosing a caching strategy](scenarios/choosing-a-caching-strategy.md): Decide three things in order: whether to cache at all (measure and fix the query first), at which layer (browser/HTTP, CDN, in-process, distributed cache, materialised view), and how staleness is bounded (TTL, explicit invalidation, versioned keys, or validation with ETags).
 - [Choosing a database](scenarios/choosing-a-database.md): Pick the database by access patterns, consistency needs, data shape and scale, in that order, then by team familiarity and operational cost.
+- [Choosing a multi-tenancy model](scenarios/choosing-a-multi-tenancy-model.md): Multi-tenancy serves many customers (tenants) from shared software.
+- [Choosing an auth approach](scenarios/choosing-an-auth-approach.md): Split the question in three: who is the caller (a person in a browser, a mobile app, another service, a third-party developer), who proves their identity (you, or an identity provider), and how the proof travels on each request (session cookie, access token, API key, client certificate).
 - [Choosing a communication style](scenarios/choosing-communication-style.md): Decide along two axes: does the caller need the answer now (synchronous request/response) or can work happen later (asynchronous messaging and events), and who are the consumers (public, internal, browsers)?
+- [Choosing file and media storage](scenarios/choosing-file-and-media-storage.md): Put file bytes in object storage and file metadata (owner, key, size, type, status) in your database.
+- [Choosing real-time updates - polling vs SSE vs WebSockets](scenarios/choosing-realtime-updates.md): Pick by direction, frequency and who the receiver is.
+- [Migrating a monolith to services](scenarios/migrating-monolith-to-services.md): Migrate incrementally, one capability at a time, and only for a stated reason (team contention, different scaling or isolation needs), never as a rewrite.
 - [Scaling from zero to millions of users](scenarios/scaling-from-zero-to-millions.md): Scale in stages, each triggered by a measured bottleneck, not in advance.
 - [Scenario chooser - what approach for X](scenarios/scenario-chooser.md): A router from concrete problems and requirements to the topic files that answer them.
 
@@ -133,10 +156,14 @@
 
 ## testing
 
+- [Flaky test handling](testing/flaky-tests.md): A flaky test passes and fails on the same code.
 - [Integration and contract testing](testing/integration-and-contract-testing.md): Integration tests check that your code works with real collaborators: database, message broker, filesystem, HTTP framework.
+- [Mutation testing](testing/mutation-testing.md): Mutation testing measures how good your tests are by deliberately introducing small bugs (mutants) into the code, such as flipping `<` to `<=` or replacing `+` with `-`, and running the suite against each one.
 - [Performance and load testing](testing/performance-and-load-testing.md): Performance testing measures how a system behaves under load: throughput, latency percentiles, error rate and resource use.
 - [Property-based and fuzz testing](testing/property-based-and-fuzz-testing.md): Property-based testing states a rule that must hold for all inputs (a *property*) and lets a framework generate hundreds of inputs, then shrinks any failure to a minimal counterexample.
+- [Snapshot and golden-file testing](testing/snapshot-and-golden-testing.md): A snapshot (golden-file, approval) test runs code, serializes its output, and compares it to a stored reference that a human approved earlier.
 - [TDD and BDD](testing/tdd-and-bdd.md): Test-driven development (TDD) is a design and implementation loop: write a failing test, make it pass with the simplest code, then refactor.
+- [Test data management](testing/test-data-management.md): Test data management is how tests get the inputs and stored state they need: building objects, seeding databases, and isolating each test's data from every other test's.
 - [Testing strategy and the test pyramid](testing/testing-strategy-and-pyramid.md): A testing strategy decides which kinds of tests you write, in what proportions, and what each is responsible for, so that the suite gives fast, trustworthy feedback at a sustainable maintenance cost.
 - [Unit testing and test doubles](testing/unit-testing-and-test-doubles.md): A unit test exercises a small piece of behaviour in isolation, fast and deterministically, and fails for exactly one reason.
 

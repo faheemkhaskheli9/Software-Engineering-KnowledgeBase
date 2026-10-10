@@ -157,6 +157,7 @@ enumerate all?         -> backtracking + pruning
 - [[concurrency-and-parallelism]] - divide and conquer maps onto parallel map-reduce
 - [[property-based-and-fuzz-testing]] - checking an optimized algorithm against a brute-force oracle
 - [[consistent-hashing]] - a pattern combining hashing and binary search on a ring
+- [[graph-algorithms]] - the full graph toolkit: topological sort, union-find, Bellman-Ford, MST, SCC
 
 ## References
 - CLRS, "Introduction to Algorithms", 4th ed.

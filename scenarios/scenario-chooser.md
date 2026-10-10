@@ -19,7 +19,7 @@ sources:
 # Scenario chooser - what approach for X
 
 ## Summary
-A router from concrete problems and requirements to the topic files that answer them. Find the row closest to your situation, read the linked topics in order, and apply them. For the three big cross-cutting decisions there are dedicated guides: [[choosing-a-database]], [[choosing-communication-style]], and [[scaling-from-zero-to-millions]].
+A router from concrete problems and requirements to the topic files that answer them. Find the row closest to your situation, read the linked topics in order, and apply them. For the big cross-cutting decisions there are dedicated guides: [[choosing-a-database]], [[choosing-communication-style]], [[scaling-from-zero-to-millions]], [[choosing-an-auth-approach]], [[choosing-a-caching-strategy]], [[background-jobs-and-queues]], [[choosing-a-multi-tenancy-model]], [[migrating-monolith-to-services]], [[choosing-realtime-updates]], and [[choosing-file-and-media-storage]].
 
 ## Key concepts
 - Match on the **problem**, not on a technology name. Requirements (latency, consistency, volume, team size) decide the approach.
@@ -44,6 +44,9 @@ Read the tables by category. Each row: situation, then topics to read.
 | Spiky or low traffic, tiny ops team | [[serverless-architecture]], [[twelve-factor-app]] |
 | Make a service portable and cloud-ready | [[twelve-factor-app]], [[containers-and-docker]], [[kubernetes-basics]] |
 | Choose how services talk | [[choosing-communication-style]], [[rest-api-design]], [[grpc-and-protobuf]] |
+| Split an existing monolith into services incrementally | [[migrating-monolith-to-services]], [[monolith-vs-microservices]], [[distributed-transactions-and-sagas]] |
+| Slow work (emails, reports, media) should leave the request path | [[background-jobs-and-queues]], [[message-queues-and-streams]], [[idempotency-and-exactly-once]] |
+| Many customers share one SaaS, data must stay isolated | [[choosing-a-multi-tenancy-model]], [[authorization-models]], [[partitioning-and-sharding]] |
 
 ### Data
 | Situation | Read |
@@ -56,6 +59,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Process events or logs continuously | [[batch-and-stream-processing]], [[message-queues-and-streams]] |
 | Full-text or relevance search | [[search-systems]], [[sql-vs-nosql]] |
 | Store images, videos, backups | [[blob-object-storage]], [[cdn-and-edge]] |
+| User uploads: validate, process, serve public or private files | [[choosing-file-and-media-storage]], [[blob-object-storage]], [[cdn-and-edge]] |
 
 ### APIs
 | Situation | Read |
@@ -77,7 +81,9 @@ Read the tables by category. Each row: situation, then topics to read.
 | Single DB cannot hold the data or write rate | [[partitioning-and-sharding]], [[consistent-hashing]] |
 | Global users, static assets, latency | [[cdn-and-edge]], [[caching-strategies]] |
 | Absorb bursts, smooth load | [[message-queues-and-streams]], [[rate-limiting]], [[capacity-planning-and-autoscaling]] |
+| Where and how to cache (HTTP, CDN, in-process, Redis) | [[choosing-a-caching-strategy]], [[caching-strategies]], [[cdn-and-edge]] |
 | Live updates, chat, presence | [[realtime-websockets-sse]], [[design-chat-system]] |
+| Polling vs SSE vs WebSockets for live updates | [[choosing-realtime-updates]], [[realtime-websockets-sse]] |
 | Need ids that are unique across machines | [[unique-id-generation]] |
 | Estimate size, QPS, storage | [[back-of-envelope-estimation]] |
 | Code is slow or memory-hungry | [[big-o-complexity]], [[memory-and-performance]], [[concurrency-and-parallelism]] |
@@ -101,6 +107,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Situation | Read |
 |---|---|
 | Review a web app for vulnerabilities | [[owasp-top-10]], [[threat-modeling]] |
+| Pick an auth approach (sessions, JWT, OIDC/SSO, API keys, mTLS) | [[choosing-an-auth-approach]], [[authentication-and-sessions]], [[oauth2-and-oidc]] |
 | Login, sessions, passwords, MFA | [[authentication-and-sessions]], [[cryptography-and-tls]] |
 | Login with Google, API access delegation | [[oauth2-and-oidc]] |
 | Who can do what (roles, ownership, tenants) | [[authorization-models]] |
@@ -151,6 +158,7 @@ Read the tables by category. Each row: situation, then topics to read.
 - [[scaling-from-zero-to-millions]] - ordered growth path across many of these rows.
 - [[choosing-a-database]] - the data decision in detail.
 - [[choosing-communication-style]] - the interaction-style decision in detail.
+- [[choosing-an-auth-approach]], [[choosing-a-caching-strategy]], [[background-jobs-and-queues]], [[choosing-a-multi-tenancy-model]], [[migrating-monolith-to-services]], [[choosing-realtime-updates]], [[choosing-file-and-media-storage]] - further problem-to-approach guides.
 - [[system-design-interview-framework]] - structured method for open-ended design.
 - [[monolith-vs-microservices]] - the first architecture decision most projects face.
 - [[owasp-top-10]] - the security baseline that applies to every row.

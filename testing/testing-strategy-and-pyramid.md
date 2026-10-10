@@ -139,6 +139,10 @@ Test design rules of thumb:
 - [[property-based-and-fuzz-testing]] - generated inputs for unit-level rigor.
 - [[performance-and-load-testing]] - non-functional tier of the strategy.
 - [[ci-cd-pipelines]] - staging the tiers into fast and slow gates.
+- [[flaky-tests]] - detecting, quarantining and fixing nondeterministic tests.
+- [[mutation-testing]] - measuring whether tests catch injected bugs, beyond coverage.
+- [[test-data-management]] - builders, factories and isolation for test state.
+- [[snapshot-and-golden-testing]] - output-level regression tests and their review discipline.
 - See also (AI KB): [LLM evaluation](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/llm-evaluation.md) - testing non-deterministic LLM output with eval sets instead of exact asserts.
 
 ## References

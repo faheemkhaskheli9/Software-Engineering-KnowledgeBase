@@ -153,6 +153,7 @@ Write scenarios declaratively ("Given a gold customer") not procedurally
 - [[domain-driven-design]] - ubiquitous language feeds BDD scenarios.
 - [[agile-scrum-kanban]] - acceptance criteria and definition of done.
 - [[property-based-and-fuzz-testing]] - complements example-based tests.
+- [[mutation-testing]] - checks that the tests TDD produced actually catch bugs.
 
 ## References
 - Kent Beck, Test-Driven Development: By Example (2002).

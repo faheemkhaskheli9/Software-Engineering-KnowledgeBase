@@ -131,6 +131,7 @@ Benchmark properly: warm up, repeat, take the median or min of several runs, use
 - [[observability-logs-metrics-traces]] - production profiling and percentile metrics
 - [[performance-and-load-testing]] - measuring under realistic load
 - [[capacity-planning-and-autoscaling]] - when the answer is more hardware
+- [[cpu-caches-and-memory-hierarchy]] - cache lines, locality, false sharing and NUMA in depth
 
 ## References
 - Gregg, "Systems Performance", 2nd ed.

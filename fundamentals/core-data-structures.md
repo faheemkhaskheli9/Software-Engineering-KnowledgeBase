@@ -144,6 +144,8 @@ Trie sketch: each node is a `dict[char, node]` plus an `end` flag; insert and pr
 - [[database-indexing]] - B-trees and hash indexes on disk
 - [[caching-strategies]] - LRU and eviction structures in practice
 - [[consistent-hashing]] - hash ring as a distributed data structure
+- [[graph-algorithms]] - what to run on a graph once you have built one
+- [[strings-and-text-encoding]] - strings as bytes, code points and graphemes
 
 ## References
 - CLRS, "Introduction to Algorithms", 4th ed.

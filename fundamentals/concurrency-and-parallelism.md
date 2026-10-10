@@ -145,6 +145,7 @@ producers --> [ Queue(maxsize=100) ] --> consumers
 - [[idempotency-and-exactly-once]] - retries in concurrent/distributed settings
 - [[transactions-and-isolation-levels]] - database-level answers to the same race conditions
 - [[resilience-patterns]] - bulkheads, timeouts and bounded pools
+- [[processes-threads-and-io-models]] - the OS layer underneath: processes, threads, epoll and io_uring
 
 ## References
 - Python docs: concurrent.futures, asyncio, threading, multiprocessing; free-threading HOWTO

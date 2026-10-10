@@ -131,6 +131,8 @@ retry topics, then DLQ. Do not retry forever in place; it blocks a partition.
 - [[batch-and-stream-processing]] - consuming logs for analytics and derived data.
 - [[design-notification-system]] - queue-driven fan-out case study.
 - [[webhooks]] - outbound async delivery with retries.
+- [[design-job-scheduler]] - case study: delayed and recurring jobs with leases and retries.
+- [[design-metrics-logging-pipeline]] - case study: Kafka as the buffer for telemetry ingest.
 - See also (AI KB): [Cost and latency](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/cost-and-latency.md) - batching and async processing for LLM workloads behind a queue.
 
 ## References

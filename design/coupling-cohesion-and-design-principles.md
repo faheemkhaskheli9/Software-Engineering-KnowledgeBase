@@ -132,6 +132,7 @@ Heuristic checklist for a review: Can I change this module's internals without t
 - [[clean-code-and-naming]] - readability as the human side of the same goal
 - [[layered-hexagonal-clean-architecture]] - coupling control at system scale
 - [[monolith-vs-microservices]] - module boundaries become service boundaries
+- [[library-api-design]] - information hiding applied to a package's public surface
 
 ## References
 - Ousterhout, "A Philosophy of Software Design"
