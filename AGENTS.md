@@ -20,6 +20,9 @@ worked system-design case studies.
 
 Quick search without reading the index: `grep -ril "<keyword>" --include=*.md .`
 
+Open improvement tasks for this base are GitHub issues labelled `kb-improvement`:
+`gh issue list --label kb-improvement`.
+
 ## Adding or editing a topic
 
 1. Copy `_template.md` into the right category folder. One topic per file,
