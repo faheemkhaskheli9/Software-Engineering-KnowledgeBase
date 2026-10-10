@@ -69,6 +69,9 @@ Open improvement tasks for this base are GitHub issues labelled `kb-improvement`
    network, database, git repo, or names defined outside the block); it is
    then only compiled. Prefer a self-contained block that runs.
 7. Use LF line endings and UTF-8.
+8. Optional, needs network: `python check_links.py [topic.md ...]` lists every
+   `sources` URL that does not return 2xx; 403/429 (bot blocking) are warnings.
+   It runs weekly in CI (`links` workflow), not on every push.
 
 ## Status values
 

@@ -10,7 +10,7 @@ use_cases:
 status: draft
 last_verified: 2026-10-10
 sources:
-  - "Brewer, Towards Robust Distributed Systems (PODC 2000 keynote) https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf"
+  - "Brewer, Towards Robust Distributed Systems (PODC 2000 keynote) https://web.archive.org/web/20160310162304/http://www.cs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf"
   - "Gilbert and Lynch, Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services (2002) https://dl.acm.org/doi/10.1145/564585.564601"
   - "Abadi, Consistency Tradeoffs in Modern Distributed Database System Design (IEEE Computer, 2012) https://www.cs.umd.edu/~abadi/papers/abadi-pacelc.pdf"
   - "Kleppmann, Please stop calling databases CP or AP https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html"

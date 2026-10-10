@@ -13,7 +13,7 @@ last_verified: 2026-10-10
 sources:
   - https://martinfowler.com/bliki/TechnicalDebt.html
   - https://martinfowler.com/bliki/TechnicalDebtQuadrant.html
-  - https://www.ward.c2.com/wiki/WardExplainsDebtMetaphor
+  - https://wiki.c2.com/?WardExplainsDebtMetaphor
   - "Working Effectively with Legacy Code (Michael Feathers), 2004"
   - "Refactoring, 2nd ed. (Martin Fowler), 2018"
   - "Accelerate (Forsgren, Humble, Kim), 2018"
@@ -154,7 +154,7 @@ Is the tech/platform unsupported or unfixable? yes -> staged migration, not a fr
 
 ## References
 - Martin Fowler, "Technical Debt" and "Technical Debt Quadrant": https://martinfowler.com/bliki/TechnicalDebt.html , https://martinfowler.com/bliki/TechnicalDebtQuadrant.html
-- Ward Cunningham, "The WyCash Portfolio Management System" / debt metaphor: https://www.ward.c2.com/wiki/WardExplainsDebtMetaphor
+- Ward Cunningham, "The WyCash Portfolio Management System" / debt metaphor: https://wiki.c2.com/?WardExplainsDebtMetaphor
 - Michael Feathers, *Working Effectively with Legacy Code* (2004)
 - Martin Fowler, *Refactoring*, 2nd ed. (2018)
 - Forsgren, Humble, Kim, *Accelerate* (2018) for delivery-performance metrics

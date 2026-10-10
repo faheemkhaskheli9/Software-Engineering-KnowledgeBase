@@ -15,7 +15,7 @@ sources:
   - https://martinfowler.com/articles/consumerDrivenContracts.html
   - https://docs.pact.io/
   - https://testcontainers.com/
-  - https://martinfowler.com/articles/microservices-testing/
+  - https://martinfowler.com/articles/microservice-testing/
 ---
 
 # Integration and contract testing
@@ -150,4 +150,4 @@ can-i-deploy gate in both pipelines.
 - Martin Fowler, "IntegrationTest" and "Consumer-Driven Contracts".
 - Pact documentation, https://docs.pact.io/
 - Testcontainers, https://testcontainers.com/
-- Fowler, "Testing Strategies in a Microservice Architecture".
+- Toby Clemson, "Testing Strategies in a Microservice Architecture" (martinfowler.com, 2014).

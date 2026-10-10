@@ -15,7 +15,7 @@ sources:
   - https://adr.github.io/
   - https://github.com/joelparkerhenderson/architecture-decision-record
   - https://adr.github.io/madr/
-  - https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html
+  - https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html
 ---
 
 # Architecture decision records (ADRs)
@@ -179,4 +179,4 @@ revisit it (a trigger such as "if write QPS exceeds one primary").
 - ADR GitHub organisation (tools, templates): https://adr.github.io/
 - MADR, Markdown Architectural Decision Records: https://adr.github.io/madr/
 - Joel Parker Henderson, ADR examples and templates: https://github.com/joelparkerhenderson/architecture-decision-record
-- AWS Prescriptive Guidance, ADR process: https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html
+- AWS Prescriptive Guidance, ADR process: https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html

@@ -15,7 +15,7 @@ sources:
   - https://grafana.com/docs/k6/latest/
   - https://sre.google/sre-book/monitoring-distributed-systems/
   - https://www.brendangregg.com/usemethod.html
-  - https://www.azul.com/files/HowNotToMeasureLatency.pdf
+  - https://www.infoq.com/presentations/latency-response-time/
 ---
 
 # Performance and load testing

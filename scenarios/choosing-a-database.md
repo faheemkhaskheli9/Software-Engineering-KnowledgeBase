@@ -13,7 +13,7 @@ sources:
   - https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/
   - https://www.postgresql.org/docs/current/
   - https://martinfowler.com/articles/nosql-intro.html
-  - https://docs.aws.amazon.com/whitepapers/latest/choosing-database/choosing-database.html
+  - https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html
 ---
 
 # Choosing a database
@@ -127,4 +127,4 @@ Polyglot done safely: one writer for each fact. Write to the system of record, d
 ## References
 - Martin Kleppmann, *Designing Data-Intensive Applications*, ch. 2-3, 5-7.
 - PostgreSQL documentation (postgresql.org/docs).
-- AWS whitepaper "Choosing a database" and Martin Fowler, "Introduction to NoSQL".
+- AWS Decision Guides, "Choosing an AWS database service", and Martin Fowler, "Introduction to NoSQL".

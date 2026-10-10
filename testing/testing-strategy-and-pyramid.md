@@ -15,7 +15,7 @@ sources:
   - https://martinfowler.com/bliki/TestPyramid.html
   - https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html
   - https://abseil.io/resources/swe-book/html/ch11.html
-  - https://martinfowler.com/articles/microservices-testing/
+  - https://martinfowler.com/articles/microservice-testing/
 ---
 
 # Testing strategy and the test pyramid
@@ -149,4 +149,4 @@ Test design rules of thumb:
 - Martin Fowler, "The Practical Test Pyramid", https://martinfowler.com/articles/practical-test-pyramid.html
 - Winters, Manshreck, Wright, Software Engineering at Google, ch. 11-14 (Testing).
 - Google Testing Blog, "Just Say No to More End-to-End Tests".
-- Fowler, "Testing Strategies in a Microservice Architecture".
+- Toby Clemson, "Testing Strategies in a Microservice Architecture" (martinfowler.com, 2014).

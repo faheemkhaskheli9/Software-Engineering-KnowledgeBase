@@ -15,7 +15,7 @@ sources:
   - "Designing Data-Intensive Applications (Martin Kleppmann), 2017"
   - https://www.rfc-editor.org/rfc/rfc6455.html
   - https://discord.com/blog/how-discord-stores-trillions-of-messages
-  - https://engineering.fb.com/2012/03/14/core-data/building-mobile-first-infrastructure-for-messenger/
+  - https://engineering.fb.com/2014/10/09/production-engineering/building-mobile-first-infrastructure-for-messenger/
 ---
 
 # Design a chat system
