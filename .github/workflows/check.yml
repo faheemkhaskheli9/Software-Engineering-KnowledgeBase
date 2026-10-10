@@ -1,0 +1,24 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build index (fails on bad frontmatter or broken [[links]])
+        run: python build_index.py
+      - name: Generated files are committed and current
+        run: |
+          git diff --exit-code -- INDEX.md llms.txt
+          if [ -n "$(git status --porcelain -- INDEX.md llms.txt)" ]; then
+            git status --short -- INDEX.md llms.txt
+            echo "Generated files are stale: run python build_index.py and commit the result."
+            exit 1
+          fi
