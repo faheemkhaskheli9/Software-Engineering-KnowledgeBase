@@ -68,7 +68,7 @@ message Item { string sku = 1; int32 qty = 2; int64 unit_price_cents = 3; }
 ```
 
 Python server and client (`grpcio`, generated `order_pb2*`):
-```python
+```python fragment
 import grpc
 from concurrent import futures
 import order_pb2, order_pb2_grpc

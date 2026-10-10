@@ -131,7 +131,7 @@ TestCache = CacheMachine.TestCase
 
 Coverage-guided fuzzing with Atheris (`pip install atheris`):
 
-```python
+```python fragment
 import sys, atheris
 with atheris.instrument_imports():
     import mylib                       # code under test

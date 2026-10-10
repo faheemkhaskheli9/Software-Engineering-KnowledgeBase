@@ -63,8 +63,7 @@ One red-green-refactor cycle in pytest, building a `slugify` function.
 
 ```python
 # Step 1 RED: write the test, run it, watch it fail (ImportError/NameError)
-# test_slug.py
-from slug import slugify
+# test_slug.py (imports slugify from slug.py; both files live in one block here)
 
 def test_lowercases_and_hyphenates():
     assert slugify("Hello World") == "hello-world"
@@ -101,7 +100,7 @@ Feature: Loyalty discount
       | none   | 100   | 100  |
 ```
 
-```python
+```python fragment
 from pytest_bdd import scenarios, given, when, then, parsers
 scenarios("features/discount.feature")
 
