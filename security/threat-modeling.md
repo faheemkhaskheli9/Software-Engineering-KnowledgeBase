@@ -132,6 +132,7 @@ password-reset link" becomes an acceptance test.
 - [[system-design-interview-framework]] - add a security pass to any design.
 - [[failure-modes-and-fallacies]] - the availability side of "what can go wrong".
 - [[incident-response-and-postmortems]] - incidents feed the next model.
+- See also (AI KB): [AI security, privacy and compliance](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/ai-security-privacy-compliance.md) - threats specific to LLM features (prompt injection, data leakage, model supply chain).
 
 ## References
 - Adam Shostack, Threat Modeling: Designing for Security (Wiley, 2014).

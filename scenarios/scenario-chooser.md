@@ -154,6 +154,7 @@ Read the tables by category. Each row: situation, then topics to read.
 - [[system-design-interview-framework]] - structured method for open-ended design.
 - [[monolith-vs-microservices]] - the first architecture decision most projects face.
 - [[owasp-top-10]] - the security baseline that applies to every row.
+- See also (AI KB): [AI scenario chooser](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/scenarios/scenario-chooser.md) - the same router for LLM and ML features (RAG, agents, model choice, serving, evals).
 
 ## References
 - Martin Kleppmann, *Designing Data-Intensive Applications*.

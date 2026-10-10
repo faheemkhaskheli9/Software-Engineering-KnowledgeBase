@@ -134,6 +134,7 @@ Prometheus-style alert on a symptom, not a cause:
 - [[failure-modes-and-fallacies]] - the failure classes that telemetry must make visible.
 - [[performance-and-load-testing]] - load tests are only useful when you can see saturation and latency.
 - [[capacity-planning-and-autoscaling]] - utilization and saturation metrics drive scaling decisions.
+- See also (AI KB): [LLM observability](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/llm-observability.md) - tracing prompts, tokens, cost and quality of LLM calls.
 
 ## References
 - Google SRE Book, ch. 6 "Monitoring Distributed Systems": https://sre.google/sre-book/monitoring-distributed-systems/

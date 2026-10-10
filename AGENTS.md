@@ -23,6 +23,19 @@ worked system-design case studies.
 
 Quick search without reading the index: `grep -ril "<keyword>" --include=*.md .`
 
+## Which knowledge base answers what
+
+| Question | Go to |
+|---|---|
+| Architecture, databases, APIs, scaling, caching, queues, reliability, security, testing, process | this base |
+| Which AI model, library or technique; RAG, embeddings and vector DBs, LLM serving, prompt and semantic caching, evals, agents, fine-tuning, prompt injection | [AI Knowledge Base](https://github.com/faheemkhaskheli9/AI-Knowledge-Base) (start at its `INDEX.md` or `scenarios/scenario-chooser.md`) |
+
+An LLM feature usually needs both: the AI KB for the model side, this base
+for the system around it. Topics that border AI work end their `## Related`
+section with a `See also (AI KB):` line pointing at the matching AI KB file.
+Link to the AI KB with plain GitHub URLs, never `[[links]]` (those resolve
+only inside this repo).
+
 Open improvement tasks for this base are GitHub issues labelled `kb-improvement`:
 `gh issue list --label kb-improvement`.
 

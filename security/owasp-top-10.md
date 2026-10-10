@@ -184,6 +184,7 @@ artifacts. Never `pickle.loads` or `yaml.load` untrusted data; use
 - [[threat-modeling]] - the practice that addresses A06 Insecure Design.
 - [[secrets-management]] - avoids hard-coded credentials feeding A02/A07.
 - [[ci-cd-pipelines]] - where A03/A08 controls (scanning, signing) live.
+- See also (AI KB): [Prompt injection](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/prompt-injection.md) - the injection class specific to LLM features, which parameterised queries do not stop.
 
 ## References
 - OWASP Top 10:2025, https://top10.owasp.org/2025/en/ and the per-category

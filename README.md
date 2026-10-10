@@ -26,3 +26,11 @@ Copy [_template.md](_template.md) to start a topic, then run
 `python build_index.py` to regenerate `INDEX.md` and `llms.txt` and check
 `[[links]]`, and `python check_code.py` to compile and run the Python
 examples. CI runs both on every push.
+
+## Related knowledge base
+
+Building an LLM or ML feature? This base covers the system around it
+(APIs, queues, caching, observability, security). For the AI side (model
+choice, RAG and vector databases, LLM serving, semantic caching, evals,
+agents) use the [AI Knowledge Base](https://github.com/faheemkhaskheli9/AI-Knowledge-Base).
+Topics that border AI work link to the matching AI KB file from their Related section.
