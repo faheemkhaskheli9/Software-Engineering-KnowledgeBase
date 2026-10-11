@@ -9,13 +9,15 @@ use_cases:
   - "argue against a speculative abstraction that no requirement asks for"
   - "choose between inheritance and composition for sharing behavior"
 status: draft
-last_verified: 2026-10-10
+last_verified: 2026-10-11
 sources:
-  - "A Philosophy of Software Design, John Ousterhout"
-  - "The Pragmatic Programmer, Hunt and Thomas"
-  - "On the Criteria To Be Used in Decomposing Systems into Modules, David Parnas, 1972"
-  - "Structured Design, Yourdon and Constantine"
-  - "Design Patterns, Gamma et al. (composition over inheritance)"
+  - https://wstomv.win.tue.nl/edu/2ip30/references/criteria_for_modularization.pdf
+  - https://doi.org/10.1147/sj.132.0115
+  - https://www.ccs.neu.edu/home/lieber/LoD.html
+  - "A Philosophy of Software Design, John Ousterhout, chapters 4-5"
+  - "The Pragmatic Programmer, 20th anniversary ed., Hunt and Thomas, topics 9 and 28"
+  - "Structured Design, Yourdon and Constantine, chapters 6-7"
+  - "Design Patterns, Gamma et al., chapter 1, section 1.6 (composition over inheritance)"
 ---
 
 # Coupling, cohesion and core design principles
@@ -135,7 +137,10 @@ Heuristic checklist for a review: Can I change this module's internals without t
 - [[library-api-design]] - information hiding applied to a package's public surface
 
 ## References
-- Ousterhout, "A Philosophy of Software Design"
-- Hunt and Thomas, "The Pragmatic Programmer"
-- Parnas, "On the Criteria To Be Used in Decomposing Systems into Modules" (1972)
-- Gamma et al., "Design Patterns"
+- Parnas, "On the Criteria To Be Used in Decomposing Systems into Modules", CACM 15(12), 1972: https://wstomv.win.tue.nl/edu/2ip30/references/criteria_for_modularization.pdf
+- Stevens, Myers and Constantine, "Structured design", IBM Systems Journal 13(2), 1974 (origin of coupling and cohesion): https://doi.org/10.1147/sj.132.0115
+- Lieberherr, "Law of Demeter" (Northeastern University): https://www.ccs.neu.edu/home/lieber/LoD.html
+- Ousterhout, "A Philosophy of Software Design", chapters 4 "Modules Should Be Deep" and 5 "Information Hiding (and Leakage)".
+- Hunt and Thomas, "The Pragmatic Programmer", 20th anniversary ed. (2019), topic 9 "DRY - The Evils of Duplication" and topic 28 "Decoupling".
+- Yourdon and Constantine, "Structured Design" (1979), chapters 6 (coupling) and 7 (cohesion).
+- Gamma et al., "Design Patterns" (1994), chapter 1, section 1.6 (favor object composition over class inheritance).

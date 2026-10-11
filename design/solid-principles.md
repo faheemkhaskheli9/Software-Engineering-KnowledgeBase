@@ -9,12 +9,14 @@ use_cases:
   - "review a PR where a subclass breaks callers that expect the base type"
   - "decide when to introduce an interface and when it is over-engineering"
 status: draft
-last_verified: 2026-10-10
+last_verified: 2026-10-11
 sources:
-  - "Agile Software Development, Principles, Patterns, and Practices, Robert C. Martin"
-  - "Clean Architecture, Robert C. Martin"
-  - "A Behavioral Notion of Subtyping, Liskov and Wing, 1994"
-  - "Object-Oriented Software Construction, Bertrand Meyer"
+  - http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
+  - https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html
+  - https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf
+  - "Agile Software Development, Principles, Patterns, and Practices, Robert C. Martin, chapters 8-12"
+  - "Clean Architecture, Robert C. Martin, part III, chapters 7-11"
+  - "Object-Oriented Software Construction, 2nd ed., Bertrand Meyer, chapter 3"
 ---
 
 # SOLID principles
@@ -119,7 +121,9 @@ ISP with protocols: a function that only reads should take `Reader`, not the ful
 - [[dependency-injection]] - the mechanism that supplies implementations behind DIP
 
 ## References
-- Martin, "Agile Software Development: Principles, Patterns, and Practices"
-- Martin, "Clean Architecture"
-- Liskov and Wing, "A Behavioral Notion of Subtyping" (1994)
-- Meyer, "Object-Oriented Software Construction" (open/closed)
+- Robert C. Martin, "The Principles of OOD" (index of his original articles): http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
+- Robert C. Martin, "The Single Responsibility Principle" (2014): https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html
+- Martin, "Agile Software Development: Principles, Patterns, and Practices" (2002), chapters 8 (SRP), 9 (OCP), 10 (LSP), 11 (DIP), 12 (ISP).
+- Martin, "Clean Architecture" (2017), part III "Design Principles", chapters 7-11.
+- Liskov and Wing, "A Behavioral Notion of Subtyping", ACM TOPLAS 16(6), 1994: https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf
+- Meyer, "Object-Oriented Software Construction", 2nd ed. (1997), chapter 3 "Modularity" (the open-closed principle).
