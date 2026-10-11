@@ -34,3 +34,7 @@ Building an LLM or ML feature? This base covers the system around it
 choice, RAG and vector databases, LLM serving, semantic caching, evals,
 agents) use the [AI Knowledge Base](https://github.com/faheemkhaskheli9/AI-Knowledge-Base).
 Topics that border AI work link to the matching AI KB file from their Related section.
+
+## License
+
+Content is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); scripts and code samples are MIT. See [LICENSE](LICENSE).
