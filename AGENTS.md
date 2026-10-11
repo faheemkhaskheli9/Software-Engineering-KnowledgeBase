@@ -73,6 +73,13 @@ Open improvement tasks for this base are GitHub issues labelled `kb-improvement`
    `sources` URL that does not return 2xx; 403/429 (bot blocking) are warnings.
    It runs weekly in CI (`links` workflow), not on every push.
 
+Before every commit, run the same offline checks CI runs, then commit any
+`INDEX.md`/`llms.txt` change it makes:
+
+```sh
+python test_build_index.py && python build_index.py && python check_code.py
+```
+
 ## Status values
 
 - `draft` - the default for a new or changed topic.
