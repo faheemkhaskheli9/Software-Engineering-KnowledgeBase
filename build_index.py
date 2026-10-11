@@ -5,7 +5,8 @@ Stdlib only; parses the simple frontmatter shape used in _template.md.
 Fails on invalid frontmatter (missing keys, category not the folder, unknown
 status, undated last_verified, empty sources/use_cases), a missing template
 section, a thin section (under MIN_WORDS words, or a ## Related with no
-[[links]]), or a broken [[link]] (topics and glossary.md);
+[[links]]), a broken [[link]] (topics and glossary.md), or a relative
+Markdown link in any .md file whose target file or #anchor does not exist;
 warns on orphan topics and on topics whose last_verified is older than STALE_DAYS;
 prints an info line for topics only one other topic links to.
 """
@@ -25,10 +26,40 @@ SECTIONS = ("Summary", "Key concepts", "When to use / scenarios", "How it works 
 MIN_WORDS = 15  # per section; words, not lines, since a Summary is often one long line
 
 
+def strip_code(text):
+    return re.sub(r"`[^`\n]*`", "", re.sub(r"```.*?```", "", text, flags=re.S))
+
+
 def links(text):
     """[[wiki-links]] in prose; code is stripped so `[[1, 2]]` lists don't count."""
-    prose = re.sub(r"`[^`\n]*`", "", re.sub(r"```.*?```", "", text, flags=re.S))
-    return [l.strip() for l in re.findall(r"\[\[([^\]|#]+)", prose)]
+    return [l.strip() for l in re.findall(r"\[\[([^\]|#]+)", strip_code(text))]
+
+
+def anchors(text):
+    """GitHub-style heading anchors: lowercase, punctuation dropped, spaces to '-', -1 on repeats."""
+    seen, out = Counter(), set()
+    for h in re.findall(r"^#{1,6}[ \t]+(.+?)[ \t#]*$", strip_code(text.replace("\r\n", "\n")), re.M):
+        slug = re.sub(r"[^\w\- ]", "", h.lower()).replace(" ", "-")
+        out.add(f"{slug}-{seen[slug]}" if seen[slug] else slug)
+        seen[slug] += 1
+    return out
+
+
+def md_link_errors(path, text):
+    """Relative Markdown links in prose ([x](../a.md#b), [x](#b)) whose file or anchor is missing."""
+    errs = []
+    for target in re.findall(r"\]\(<?([^)\s>]+)", strip_code(text)):
+        if re.match(r"[a-z][a-z0-9+.-]*:", target, re.I):  # http:, mailto:, ...
+            continue
+        file, _, anchor = target.partition("#")
+        file = file.split("?")[0]
+        dest = path.parent / file
+        if file and not dest.exists():
+            errs.append(f"{target} (no such file)")
+        elif anchor and (not file or dest.suffix == ".md") and anchor not in anchors(
+                dest.read_text(encoding="utf-8") if file else text):
+            errs.append(f"{target} (no such anchor)")
+    return errs
 
 
 def frontmatter(text):
@@ -166,6 +197,10 @@ def build(today=None):
     if gloss.exists():
         broken += [f"{GLOSSARY} -> [[{l}]]" for l in links(gloss.read_text(encoding="utf-8"))
                    if l not in out_links]
+    for path in sorted(ROOT.rglob("*.md")):  # every Markdown file, generated INDEX.md included
+        rel = path.relative_to(ROOT).as_posix()
+        if not rel.startswith("."):
+            broken += [f"{rel} -> {e}" for e in md_link_errors(path, path.read_text(encoding="utf-8"))]
     inbound = Counter(l for stem, (_, ls) in out_links.items() for l in set(ls) if l != stem)
     orphans = sorted(rel for stem, (rel, _) in out_links.items() if not inbound[stem])
     weak = sorted(rel for stem, (rel, _) in out_links.items() if inbound[stem] == 1)
@@ -184,4 +219,4 @@ if __name__ == "__main__":
         print("\n".join(f"  {s}" for s in stale))
     if bad or broken:
         raise SystemExit("\n".join(["invalid topics:", *(f"  {b}" for b in bad),
-                                    "broken [[links]]:", *(f"  {b}" for b in broken)]))
+                                    "broken links:", *(f"  {b}" for b in broken)]))
