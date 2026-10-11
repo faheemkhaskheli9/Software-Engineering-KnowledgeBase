@@ -141,6 +141,14 @@ Read the tables by category. Each row: situation, then topics to read.
 | Uber/Lyft style | [[design-ride-sharing]] |
 | Payments and ledgers | [[design-payment-system]] |
 | Distributed KV store | [[design-key-value-store]] |
+| Several users edit one document at once (Google Docs style) | [[design-collaborative-editor]] |
+| Files appear on all of a user's devices (Dropbox style) | [[design-file-sync]] |
+| Run delayed, recurring or cron jobs reliably | [[design-job-scheduler]] |
+| Collect metrics and logs from every service, dashboards, alerts | [[design-metrics-logging-pipeline]] |
+| Chat answers grounded in private documents (LLM + retrieval) | [[design-rag-chat]] |
+| Shared quota service for an API fleet | [[design-rate-limiter]] |
+| Suggestions as the user types (typeahead) | [[design-search-autocomplete]] |
+| Sell limited seats under contention without double booking | [[design-ticket-booking]] |
 | Any new design | [[system-design-interview-framework]] |
 
 ## Trade-offs

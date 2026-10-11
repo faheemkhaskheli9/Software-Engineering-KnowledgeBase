@@ -101,6 +101,26 @@ latency and write availability matter more than reading our own writes
 instantly; we route a user's reads to the primary for a few seconds after they
 write."
 
+### Worked examples
+Each case study applies these steps to one prompt. Read the closest one before a new design.
+- [[design-url-shortener]] - read-heavy key lookup, id generation, caching.
+- [[design-chat-system]] - persistent connections, message ordering, presence.
+- [[design-news-feed]] - fan-out on write vs read, ranking, celebrity accounts.
+- [[design-notification-system]] - multi-channel delivery, retries, user preferences.
+- [[design-web-crawler]] - URL frontier, politeness, deduplication at scale.
+- [[design-video-streaming]] - upload pipeline, transcoding, adaptive streaming via CDN.
+- [[design-ride-sharing]] - geospatial matching, location updates, trip state.
+- [[design-payment-system]] - ledgers, idempotency keys, reconciliation.
+- [[design-key-value-store]] - partitioning, replication, quorums, storage engine.
+- [[design-collaborative-editor]] - concurrent edits with OT/CRDTs, real-time sync.
+- [[design-file-sync]] - chunking, deduplication, conflict handling across devices.
+- [[design-job-scheduler]] - durable schedules, leases, at-least-once execution.
+- [[design-metrics-logging-pipeline]] - high-volume ingestion, aggregation, retention.
+- [[design-rag-chat]] - retrieval, LLM calls, streaming answers, cost control.
+- [[design-rate-limiter]] - distributed counters, algorithms, failure behaviour.
+- [[design-search-autocomplete]] - prefix lookup, ranking, low-latency serving.
+- [[design-ticket-booking]] - seat holds, contention, no double booking.
+
 ## Trade-offs
 - **Breadth vs depth**: covering every box shallowly scores worse than two components explained well. Let the interviewer steer the deep dive.
 - **Simplicity vs future scale**: design for ~10x the stated load, not 1000x; mention what you would change at the next order of magnitude.
