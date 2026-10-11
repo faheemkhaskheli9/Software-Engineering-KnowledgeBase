@@ -184,6 +184,8 @@ artifacts. Never `pickle.loads` or `yaml.load` untrusted data; use
 - [[threat-modeling]] - the practice that addresses A06 Insecure Design.
 - [[secrets-management]] - avoids hard-coded credentials feeding A02/A07.
 - [[ci-cd-pipelines]] - where A03/A08 controls (scanning, signing) live.
+- [[software-supply-chain-security]] - the controls behind A03 Software Supply Chain Failures.
+- [[privacy-and-pii-handling]] - minimising, protecting and erasing the personal data a breach exposes.
 - See also (AI KB): [Prompt injection](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/prompt-injection.md) - the injection class specific to LLM features, which parameterised queries do not stop.
 
 ## References
