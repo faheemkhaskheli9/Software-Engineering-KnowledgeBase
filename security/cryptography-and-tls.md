@@ -8,7 +8,7 @@ use_cases:
   - "choose between hashing, HMAC, encryption and digital signatures"
   - "verify a webhook signature safely"
   - "decide how to rotate encryption keys"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html

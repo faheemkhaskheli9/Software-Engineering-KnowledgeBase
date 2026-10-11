@@ -8,7 +8,7 @@ use_cases:
   - "enforce multi-tenant data isolation in an API"
   - "decide between RBAC, ABAC and a policy engine like OPA"
   - "stop users reading other users' records by changing the ID in the URL"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html

@@ -7,7 +7,7 @@ use_cases:
   - "turn fuzzy product requirements into a high-level architecture with justified components"
   - "review a proposed design and find the missing pieces: bottlenecks, failure modes, data model"
   - "prepare for a system design interview with a repeatable step-by-step approach"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - "Alex Xu, System Design Interview - An Insider's Guide, vol. 1, ch. 3 'A Framework for System Design Interviews' (four-step process); vol. 1 and 2 case-study chapters"

@@ -8,7 +8,7 @@ use_cases:
   - "add SSO for enterprise customers"
   - "authenticate service-to-service calls and third-party API clients"
   - "decide where authorization checks live once users are logged in"
-status: draft
+status: stable
 last_verified: 2026-10-11
 sources:
   - https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html

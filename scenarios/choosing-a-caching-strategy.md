@@ -7,7 +7,7 @@ use_cases:
   - "choose between browser/HTTP caching, a CDN, an in-process cache and Redis"
   - "decide how stale cached data may be and how to invalidate it"
   - "cache expensive LLM or third-party API calls"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.rfc-editor.org/rfc/rfc9111

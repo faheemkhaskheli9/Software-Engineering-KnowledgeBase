@@ -8,7 +8,7 @@ use_cases:
   - "choose between environment variables, a cloud secret manager and HashiCorp Vault"
   - "respond to a leaked credential in a public repository"
   - "give CI/CD jobs cloud access without long-lived keys"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html

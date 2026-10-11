@@ -7,7 +7,7 @@ use_cases:
   - "choose between synchronous calls and asynchronous events for a workflow"
   - "pick an API style for a public API versus an internal one"
   - "push live updates to browsers: polling, SSE, or WebSockets"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.enterpriseintegrationpatterns.com/

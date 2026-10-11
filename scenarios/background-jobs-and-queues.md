@@ -8,7 +8,7 @@ use_cases:
   - "run scheduled jobs reliably on more than one server"
   - "retry failed jobs without running them twice"
   - "choose between Celery/RQ, SQS, RabbitMQ and Kafka for background work"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.postgresql.org/docs/current/sql-select.html

@@ -8,7 +8,7 @@ use_cases:
   - "secure a single-page app or mobile app login with PKCE"
   - "authenticate machine-to-machine calls between our services"
   - "decide how to validate access tokens in our API"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.rfc-editor.org/rfc/rfc6749

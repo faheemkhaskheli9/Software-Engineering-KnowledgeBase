@@ -8,7 +8,7 @@ use_cases:
   - "serve private files securely and public media fast"
   - "generate thumbnails and video renditions after upload"
   - "validate uploads so users cannot upload malware or oversized files"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
