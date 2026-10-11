@@ -8,7 +8,7 @@ use_cases:
   - "prioritise which security risks to fix first"
   - "document trust boundaries and data flows for a compliance audit"
   - "add a lightweight threat-model step to our design docs"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://owasp.org/www-community/Threat_Modeling

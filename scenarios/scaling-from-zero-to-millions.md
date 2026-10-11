@@ -7,7 +7,7 @@ use_cases:
   - "plan how a web product evolves architecturally from MVP to millions of users"
   - "decide when to add a cache, read replicas, a queue, a CDN, or sharding"
   - "explain the step-by-step scaling story in a system design interview"
-status: draft
+status: stable
 last_verified: 2026-10-11
 sources:
   - https://bytebytego.com/courses/system-design-interview/scale-from-zero-to-millions-of-users

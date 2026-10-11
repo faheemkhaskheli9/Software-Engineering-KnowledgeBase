@@ -8,7 +8,7 @@ use_cases:
   - "write a secure-coding checklist for code review"
   - "decide which security controls to prioritise with limited time"
   - "make our webhook fetcher safe against SSRF"
-status: draft
+status: stable
 last_verified: 2026-10-11
 sources:
   - https://top10.owasp.org/2025/en/

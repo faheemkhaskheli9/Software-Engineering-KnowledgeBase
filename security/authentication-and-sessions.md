@@ -8,7 +8,7 @@ use_cases:
   - "add TOTP two-factor authentication"
   - "stop credential stuffing and brute-force attacks on the login endpoint"
   - "set cookie flags correctly for a session cookie"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html

@@ -8,7 +8,7 @@ use_cases:
   - "stop one large customer from slowing everyone else down"
   - "offer a dedicated deployment to an enterprise customer"
   - "make sure a query can never return another tenant's rows"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://docs.aws.amazon.com/whitepapers/latest/saas-tenant-isolation-strategies/saas-tenant-isolation-strategies.html

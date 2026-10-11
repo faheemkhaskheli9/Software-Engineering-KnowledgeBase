@@ -8,7 +8,7 @@ use_cases:
   - "stream LLM tokens or job progress to a browser"
   - "build chat or collaborative editing that needs two-way low latency"
   - "deliver updates to a mobile app in the background"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.rfc-editor.org/rfc/rfc6202

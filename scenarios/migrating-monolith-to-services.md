@@ -8,7 +8,7 @@ use_cases:
   - "move a module's data out of the shared database safely"
   - "shift traffic gradually from the old code path to a new service and roll back if needed"
   - "should we split the monolith at all, or modularise it first"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://martinfowler.com/bliki/StranglerFigApplication.html

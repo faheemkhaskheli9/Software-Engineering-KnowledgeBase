@@ -7,7 +7,7 @@ use_cases:
   - "do we need NoSQL or is Postgres enough"
   - "pick storage for sessions, caches, time series, search, or files"
   - "our current database cannot keep up with writes, what are the options"
-status: draft
+status: stable
 last_verified: 2026-10-10
 sources:
   - https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/

@@ -7,7 +7,7 @@ use_cases:
   - "which approach or pattern should I use for this requirement"
   - "map a project requirement to the right knowledge-base files"
   - "start a system design or architecture decision and find the relevant building blocks"
-status: draft
+status: stable
 last_verified: 2026-10-11
 sources:
   - https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/
