@@ -1,6 +1,6 @@
 ---
 title: <Topic name, e.g. "Consistent hashing">
-category: <folder: fundamentals | design | architecture | system-design | distributed-systems | data | apis | reliability | security | testing | practices | case-studies | scenarios>
+category: <folder: fundamentals | design | architecture | system-design | distributed-systems | data | apis | reliability | security | testing | frontend | practices | case-studies | scenarios>
 tags: [keyword, keyword, technology-name]
 use_cases:
   - <phrased like a project request, e.g. "spread cache keys over nodes so adding a node moves few keys">

@@ -113,6 +113,7 @@ Error budget policy sketch:
 - [[deployment-strategies]] - canaries and rollbacks protect the budget.
 - [[resilience-patterns]] - the techniques that keep a service inside its SLO when dependencies degrade.
 - [[capacity-planning-and-autoscaling]] - saturation is a common cause of budget burn.
+- [[browser-rendering-and-core-web-vitals]] - Core Web Vitals at p75 as front-end SLIs.
 
 ## References
 - Google SRE Book, ch. 4 "Service Level Objectives": https://sre.google/sre-book/service-level-objectives/

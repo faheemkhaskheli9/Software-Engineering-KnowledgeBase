@@ -123,6 +123,7 @@ Worked layering for a product page:
 - [[consistency-models]] - what staleness guarantees callers get.
 - [[scaling-from-zero-to-millions]] - when each cache layer enters a growing system.
 - [[scenario-chooser]] - other problem-to-topic mappings.
+- [[web-performance]] - HTTP caching headers and content-hashed assets for the browser layer.
 
 ## References
 - RFC 9111, HTTP Caching.

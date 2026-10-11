@@ -111,6 +111,7 @@ Choosing a mechanism:
 - [[unique-id-generation]] - time-based IDs and their clock assumptions
 - [[observability-logs-metrics-traces]] - trace IDs and span ordering across services
 - [[failure-modes-and-fallacies]] - why you cannot distinguish a slow node from a dead one
+- [[internationalization-and-localization]] - storing UTC plus IANA zones and DST-correct display
 
 ## References
 - Lamport, Time, Clocks, and the Ordering of Events (CACM 1978).

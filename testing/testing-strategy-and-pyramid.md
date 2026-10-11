@@ -143,6 +143,7 @@ Test design rules of thumb:
 - [[mutation-testing]] - measuring whether tests catch injected bugs, beyond coverage.
 - [[test-data-management]] - builders, factories and isolation for test state.
 - [[snapshot-and-golden-testing]] - output-level regression tests and their review discipline.
+- [[accessibility-basics]] - automated plus manual accessibility checks in the test mix.
 - See also (AI KB): [LLM evaluation](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/llm-evaluation.md) - testing non-deterministic LLM output with eval sets instead of exact asserts.
 
 ## References

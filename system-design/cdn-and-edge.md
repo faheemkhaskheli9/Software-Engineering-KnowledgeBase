@@ -122,6 +122,7 @@ edge KV with eventual consistency.
 - [[networking-fundamentals]] - DNS, anycast, TCP and TLS handshake costs the CDN removes.
 - [[design-video-streaming]] - CDN-centric design.
 - [[rate-limiting]] - edge-level limiting and bot protection.
+- [[web-performance]] - browser-side caching, cache busting, images and resource hints.
 
 ## References
 - MDN HTTP caching: https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching

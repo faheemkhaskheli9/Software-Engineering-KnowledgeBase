@@ -15,7 +15,7 @@ can look things up before they build.
 
 One topic per file, grouped by category (`fundamentals/`, `design/`,
 `architecture/`, `system-design/`, `distributed-systems/`, `data/`, `apis/`,
-`reliability/`, `security/`, `testing/`, `practices/`, `case-studies/`,
+`reliability/`, `security/`, `testing/`, `frontend/`, `practices/`, `case-studies/`,
 `scenarios/`). Each file opens with YAML frontmatter (`tags`, `use_cases`,
 `status`, `last_verified`, `sources`) followed by the same sections: Summary,
 Key concepts, When to use, How it works, Trade-offs, Gotchas, Related, References.

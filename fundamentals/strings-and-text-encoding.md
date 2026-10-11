@@ -118,6 +118,7 @@ assert len(truncate_utf8("😀😀", 5).encode()) <= 5
 - [[rest-api-design]] - declaring `charset=utf-8` in content types
 - [[data-modeling-and-schema-design]] - column charsets, collations and normalized lookup keys
 - [[owasp-top-10]] - injection and spoofing via encoding tricks
+- [[internationalization-and-localization]] - locale formatting, plurals, time zones and RTL on top of Unicode
 
 ## References
 - The Unicode Standard; UAX #15 (normalization); UAX #29 (grapheme clusters)
