@@ -202,6 +202,7 @@ how to verify citations) are covered in the AI KB files linked under Related.
 - [[resilience-patterns]] - timeouts, retries and fallbacks around the LLM provider
 - [[message-queues-and-streams]] - the ingestion queue
 - [[owasp-top-10]] - injection and access-control failures applied to LLM apps
+- [[vector-databases-for-engineers]] - index choice, filtered ANN, deletes and sync for the vector store
 - [[system-design-interview-framework]] - the procedure this case follows
 
 Model side, in the AI Knowledge Base:

@@ -123,6 +123,9 @@ Polyglot done safely: one writer for each fact. Write to the system of record, d
 - [[scaling-from-zero-to-millions]] - when each store enters the picture.
 - [[scenario-chooser]] - other problem-to-topic mappings.
 - [[design-key-value-store]] - how scale-out KV stores work inside.
+- [[time-series-databases]] - when metrics or IoT data justify a TSDB over partitioned Postgres.
+- [[graph-databases]] - when multi-hop traversals justify a graph store over recursive CTEs.
+- [[vector-databases-for-engineers]] - pgvector vs a dedicated vector store, filtering and sync.
 
 ## References
 - Martin Kleppmann, *Designing Data-Intensive Applications* (1st ed., 2017), ch. 2 "Data Models and Query Languages", ch. 3 "Storage and Retrieval", ch. 5-7 (replication, partitioning, transactions).

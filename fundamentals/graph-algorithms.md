@@ -181,6 +181,7 @@ Dijkstra with a heap is in [[algorithm-patterns]]; Kahn's algorithm by hand is i
 - [[design-web-crawler]] - BFS over the web graph at scale
 - [[design-ride-sharing]] - shortest paths and routing on road graphs
 - [[state-machines]] - a state machine is a directed graph of states and transitions
+- [[graph-databases]] - running traversals inside a database (Cypher, Gremlin, recursive CTE)
 
 ## References
 - Cormen, Leiserson, Rivest, Stein, "Introduction to Algorithms", Part VI
