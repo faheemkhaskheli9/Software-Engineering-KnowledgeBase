@@ -8,7 +8,8 @@ section, a thin section (under MIN_WORDS words, or a ## Related with no
 [[links]]), a broken [[link]] (topics and glossary.md), or a relative
 Markdown link in any .md file whose target file or #anchor does not exist;
 warns on orphan topics and on topics whose last_verified is older than STALE_DAYS;
-prints an info line for topics only one other topic links to.
+prints info lines for topics only one other topic links to and for the
+number of topics no glossary.md term links to.
 """
 import re
 from collections import Counter
@@ -194,9 +195,9 @@ def build(today=None):
 
     broken = [f"{rel} -> [[{l}]]" for rel, ls in out_links.values() for l in ls if l not in out_links]
     gloss = ROOT / GLOSSARY
-    if gloss.exists():
-        broken += [f"{GLOSSARY} -> [[{l}]]" for l in links(gloss.read_text(encoding="utf-8"))
-                   if l not in out_links]
+    glossed = set(links(gloss.read_text(encoding="utf-8"))) if gloss.exists() else set()
+    broken += [f"{GLOSSARY} -> [[{l}]]" for l in sorted(glossed) if l not in out_links]
+    unglossed = sum(stem not in glossed for stem in out_links)
     for path in sorted(ROOT.rglob("*.md")):  # every Markdown file, generated INDEX.md included
         rel = path.relative_to(ROOT).as_posix()
         if not rel.startswith("."):
@@ -204,12 +205,13 @@ def build(today=None):
     inbound = Counter(l for stem, (_, ls) in out_links.items() for l in set(ls) if l != stem)
     orphans = sorted(rel for stem, (rel, _) in out_links.items() if not inbound[stem])
     weak = sorted(rel for stem, (rel, _) in out_links.items() if inbound[stem] == 1)
-    return total, bad, broken, orphans, stale, weak
+    return total, bad, broken, orphans, stale, weak, unglossed
 
 
 if __name__ == "__main__":
-    total, bad, broken, orphans, stale, weak = build()
+    total, bad, broken, orphans, stale, weak, unglossed = build()
     print(f"indexed {total} topics")
+    print(f"info: {unglossed} topic(s) have no {GLOSSARY} term linking to them")
     if orphans:
         print(f"warning: {len(orphans)} topic(s) no other topic links to: {orphans}")
     if weak:
