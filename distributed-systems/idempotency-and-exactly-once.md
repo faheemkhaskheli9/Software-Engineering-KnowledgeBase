@@ -120,6 +120,7 @@ Rules of thumb:
 - [[design-payment-system]] - the canonical case for idempotency keys
 - [[design-job-scheduler]] - at-least-once job runs made safe by idempotent jobs
 - [[design-ticket-booking]] - idempotent holds and checkout under retries
+- [[distributed-locks-and-leader-election]] - when to lock instead, and fencing tokens for the stale-holder case
 
 ## References
 - Stripe API documentation on idempotent requests; IETF HTTPAPI Idempotency-Key draft.

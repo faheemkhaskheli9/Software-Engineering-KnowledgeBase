@@ -109,6 +109,7 @@ multi-hop relationships?                    -> graph
 - [[database-indexing]] - what makes relational queries fast at scale
 - [[cap-and-pacelc]] - consistency trade-offs behind distributed NoSQL
 - [[partitioning-and-sharding]] - how both families scale beyond one node
+- [[storage-engines-btree-lsm]] - why many NoSQL stores are LSM-based and what that costs on reads
 
 ## References
 - Kleppmann, Designing Data-Intensive Applications, chapters 2 (data models) and 3 (storage).

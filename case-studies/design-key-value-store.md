@@ -190,6 +190,7 @@ read path:   get -> memtable -> [bloom filter -> index -> SSTable block] per lev
 - [[consensus-raft-paxos]] - the CP alternative for strongly consistent KV stores
 - [[time-clocks-and-ordering]] - vector clocks and why wall clocks mislead
 - [[database-indexing]] - LSM trees compared with B-trees
+- [[storage-engines-btree-lsm]] - the per-node LSM engine in depth: compaction strategies, amplification, Bloom filters
 
 ## References
 - DeCandia et al., "Dynamo: Amazon's Highly Available Key-value Store" (SOSP 2007): https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf

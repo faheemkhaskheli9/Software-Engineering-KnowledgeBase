@@ -102,6 +102,7 @@ Reading a plan: look for Seq Scan on big tables, big gaps between estimated and 
 - [[transactions-and-isolation-levels]] - indexes interact with locking and gap locks
 - [[partitioning-and-sharding]] - when one index on one node is no longer enough
 - [[unique-id-generation]] - key choice affects index locality
+- [[storage-engines-btree-lsm]] - the B-tree and LSM engines underneath indexes, with WAL and compaction
 
 ## References
 - Markus Winand, Use The Index, Luke: https://use-the-index-luke.com/

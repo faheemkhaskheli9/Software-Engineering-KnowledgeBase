@@ -115,6 +115,7 @@ Using it in practice:
 - [[time-clocks-and-ordering]] - why leases and fencing, not clocks, protect leaders
 - [[design-key-value-store]] - worked design using Raft for metadata and per-shard logs
 - [[message-queues-and-streams]] - Kafka's controller (KRaft) and ZooKeeper era examples
+- [[distributed-locks-and-leader-election]] - ZooKeeper/etcd lock and election recipes built on consensus
 
 ## References
 - Ongaro and Ousterhout, Raft (USENIX ATC 2014); Lamport, Paxos Made Simple (2001).
