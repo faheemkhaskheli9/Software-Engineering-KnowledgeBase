@@ -150,6 +150,7 @@ AI-specific angle: long-running LLM work (bulk summarisation, embedding backfill
 - [[distributed-transactions-and-sagas]] - multi-step workflows.
 - [[choosing-communication-style]] - when async beats a synchronous call.
 - [[design-notification-system]] - queue-driven fan-out case study.
+- [[design-job-scheduler]] - delayed and cron jobs at scale, case study.
 - [[scenario-chooser]] - other problem-to-topic mappings.
 
 ## References

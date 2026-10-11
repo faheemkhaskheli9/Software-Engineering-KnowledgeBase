@@ -118,6 +118,8 @@ Rules of thumb:
 - [[resilience-patterns]] - retries, backoff and jitter that create the duplicates
 - [[rest-api-design]] - Idempotency-Key header and safe/idempotent HTTP methods
 - [[design-payment-system]] - the canonical case for idempotency keys
+- [[design-job-scheduler]] - at-least-once job runs made safe by idempotent jobs
+- [[design-ticket-booking]] - idempotent holds and checkout under retries
 
 ## References
 - Stripe API documentation on idempotent requests; IETF HTTPAPI Idempotency-Key draft.

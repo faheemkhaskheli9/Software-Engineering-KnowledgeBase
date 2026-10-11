@@ -116,6 +116,7 @@ Rule of thumb for failures: classify them. Connection refused (nothing listening
 - [[cdn-and-edge]] - cutting RTT by terminating near the user
 - [[rest-api-design]] - HTTP semantics at the API level
 - [[failure-modes-and-fallacies]] - the fallacies of distributed computing start here
+- [[strings-and-text-encoding]] - bytes vs text on the wire, charsets and UTF-8
 
 ## References
 - Grigorik, "High Performance Browser Networking": https://hpbn.co/

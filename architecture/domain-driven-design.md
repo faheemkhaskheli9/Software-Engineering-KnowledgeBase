@@ -131,6 +131,7 @@ Aggregate design rules of thumb: keep aggregates small; reference other aggregat
 - [[cqrs-and-event-sourcing]] - frequently paired with aggregates.
 - [[data-modeling-and-schema-design]] - persisting aggregates in relational or document stores.
 - [[coupling-cohesion-and-design-principles]] - boundaries as cohesion and coupling choices.
+- [[migrating-monolith-to-services]] - extracting bounded contexts from an existing monolith.
 
 ## References
 - Eric Evans, *Domain-Driven Design: Tackling Complexity in the Heart of Software*, 2003.

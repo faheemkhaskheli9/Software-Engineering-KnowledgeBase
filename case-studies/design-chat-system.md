@@ -188,6 +188,7 @@ gradually (send "reconnect later" with jitter) to avoid a reconnect stampede.
 - [[design-notification-system]] - push delivery to offline users
 - [[partitioning-and-sharding]] - sharding message history by conversation
 - [[blob-object-storage]] - attachments
+- [[choosing-realtime-updates]] - why WebSockets here rather than polling or SSE
 
 ## References
 - Alex Xu, *System Design Interview Vol. 1*, ch. 12

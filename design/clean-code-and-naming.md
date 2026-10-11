@@ -134,6 +134,7 @@ Function-size heuristic: if you need a comment to label a block, extract it; if 
 - [[coupling-cohesion-and-design-principles]] - structural side of readability
 - [[code-review]] - where readability is enforced by humans
 - [[documentation-practices]] - docstrings, READMEs and where explanation belongs
+- [[library-api-design]] - naming and signatures when other people's code calls yours
 
 ## References
 - Martin, "Clean Code"

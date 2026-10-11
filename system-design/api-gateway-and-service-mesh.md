@@ -130,6 +130,7 @@ if __name__ == "__main__":
 - [[resilience-patterns]] - retries, timeouts, circuit breakers that meshes can enforce.
 - [[kubernetes-basics]] - ingress, Gateway API and sidecar deployment context.
 - [[oauth2-and-oidc]] - token validation at the gateway.
+- [[design-rate-limiter]] - case study: the quota service a gateway calls per request.
 - See also (AI KB): [LLM gateways and routing](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/llm-gateways-and-routing.md) - a gateway in front of LLM providers: routing, fallback, keys and spend limits.
 
 ## References

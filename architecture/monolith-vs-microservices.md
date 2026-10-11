@@ -115,6 +115,7 @@ Decision pushers: team count and release friction push toward services; domain u
 - [[api-gateway-and-service-mesh]] - edge and cross-cutting concerns for many services.
 - [[choosing-communication-style]] - sync vs async between services.
 - [[deployment-strategies]] - release mechanics that make independent deploys safe.
+- [[migrating-monolith-to-services]] - strangler-fig steps once the decision to split is made.
 
 ## References
 - Martin Fowler, "MonolithFirst" and "Microservices" (martinfowler.com).

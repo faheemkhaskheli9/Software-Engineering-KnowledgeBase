@@ -103,6 +103,7 @@ Retirement process: announce, add Deprecation/Sunset headers, log which clients 
 - [[graphql]] - additive schema with `@deprecated` instead of versions
 - [[schema-migrations]] - the same expand/contract pattern for databases
 - [[integration-and-contract-testing]] - automated detection of broken consumers
+- [[library-api-design]] - semantic versioning and deprecation for in-process library APIs
 
 ## References
 - RFC 8594 The Sunset HTTP Header Field: https://www.rfc-editor.org/rfc/rfc8594

@@ -146,6 +146,7 @@ Trie sketch: each node is a `dict[char, node]` plus an `end` flag; insert and pr
 - [[consistent-hashing]] - hash ring as a distributed data structure
 - [[graph-algorithms]] - what to run on a graph once you have built one
 - [[strings-and-text-encoding]] - strings as bytes, code points and graphemes
+- [[design-search-autocomplete]] - case study: tries and top-k heaps in a typeahead service
 
 ## References
 - CLRS, "Introduction to Algorithms", 4th ed.

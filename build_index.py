@@ -5,9 +5,11 @@ Stdlib only; parses the simple frontmatter shape used in _template.md.
 Fails on invalid frontmatter (missing keys, category not the folder, unknown
 status, undated last_verified, empty sources/use_cases), a missing template
 section, or a broken [[link]] (topics and glossary.md);
-warns on orphan topics and on topics whose last_verified is older than STALE_DAYS.
+warns on orphan topics and on topics whose last_verified is older than STALE_DAYS;
+prints an info line for topics only one other topic links to.
 """
 import re
+from collections import Counter
 from datetime import date
 from pathlib import Path
 
@@ -154,16 +156,19 @@ def build(today=None):
     if gloss.exists():
         broken += [f"{GLOSSARY} -> [[{l}]]" for l in links(gloss.read_text(encoding="utf-8"))
                    if l not in out_links]
-    linked = {l for stem, (_, ls) in out_links.items() for l in ls if l != stem}
-    orphans = sorted(rel for stem, (rel, _) in out_links.items() if stem not in linked)
-    return total, bad, broken, orphans, stale
+    inbound = Counter(l for stem, (_, ls) in out_links.items() for l in set(ls) if l != stem)
+    orphans = sorted(rel for stem, (rel, _) in out_links.items() if not inbound[stem])
+    weak = sorted(rel for stem, (rel, _) in out_links.items() if inbound[stem] == 1)
+    return total, bad, broken, orphans, stale, weak
 
 
 if __name__ == "__main__":
-    total, bad, broken, orphans, stale = build()
+    total, bad, broken, orphans, stale, weak = build()
     print(f"indexed {total} topics")
     if orphans:
         print(f"warning: {len(orphans)} topic(s) no other topic links to: {orphans}")
+    if weak:
+        print(f"info: {len(weak)} topic(s) only one other topic links to: {weak}")
     if stale:
         print(f"warning: {len(stale)} topic(s) due for re-verification:")
         print("\n".join(f"  {s}" for s in stale))

@@ -193,6 +193,7 @@ write hot spots on platform accounts appear (batch posting for high-volume accou
 - [[consistency-models]] - why the ledger demands strong consistency
 - [[cryptography-and-tls]] - protecting card and token data
 - [[design-ride-sharing]] - a payment consumer with pre-authorisation and payouts
+- [[design-ticket-booking]] - a payment consumer where a seat hold must outlive checkout
 
 ## References
 - Alex Xu and Sahn Lam, *System Design Interview Vol. 2* (payment system chapter)

@@ -137,6 +137,8 @@ socket is a delivery optimisation, the database is the truth.
 - [[networking-fundamentals]] - TCP, HTTP upgrade and keep-alive behaviour.
 - [[choosing-communication-style]] - when realtime push beats request/response.
 - [[design-collaborative-editor]] - case study: OT/CRDT operations and presence over WebSockets.
+- [[choosing-realtime-updates]] - decision guide: polling vs SSE vs WebSockets vs push.
+- [[design-rag-chat]] - case study: streaming LLM tokens to the browser over SSE.
 
 ## References
 - RFC 6455 The WebSocket Protocol: https://www.rfc-editor.org/rfc/rfc6455

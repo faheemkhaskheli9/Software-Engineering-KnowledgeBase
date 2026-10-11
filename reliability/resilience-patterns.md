@@ -146,6 +146,8 @@ In production prefer a maintained library (tenacity, resilience4j, Polly, Envoy/
 - [[observability-logs-metrics-traces]] - emit breaker state, retry counts and timeouts as metrics.
 - [[deployment-strategies]] - safe rollouts reduce the failures you must absorb at runtime.
 - [[error-handling-strategies]] - code-level error design that these patterns plug into.
+- [[design-rag-chat]] - case study: timeouts, retries and fallbacks around an LLM provider.
+- [[design-rate-limiter]] - case study: fail-open vs fail-closed when the counter store is down.
 
 ## References
 - Google SRE Book, ch. 21 "Handling Overload" and ch. 22 "Addressing Cascading Failures": https://sre.google/sre-book/handling-overload/ and https://sre.google/sre-book/addressing-cascading-failures/
