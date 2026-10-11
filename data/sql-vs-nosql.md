@@ -110,6 +110,9 @@ multi-hop relationships?                    -> graph
 - [[cap-and-pacelc]] - consistency trade-offs behind distributed NoSQL
 - [[partitioning-and-sharding]] - how both families scale beyond one node
 - [[storage-engines-btree-lsm]] - why many NoSQL stores are LSM-based and what that costs on reads
+- [[time-series-databases]] - specialised store for append-mostly time-stamped data
+- [[graph-databases]] - the graph family in depth, and when Postgres recursive CTEs suffice
+- [[vector-databases-for-engineers]] - similarity search as a Postgres extension or a dedicated store
 
 ## References
 - Kleppmann, Designing Data-Intensive Applications, chapters 2 (data models) and 3 (storage).

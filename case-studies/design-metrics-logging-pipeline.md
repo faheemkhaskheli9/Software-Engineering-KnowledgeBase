@@ -189,6 +189,7 @@ merges; percentiles cannot be merged from averages, so ship histograms
 - [[message-queues-and-streams]] - Kafka as the ingest buffer
 - [[batch-and-stream-processing]] - rollups and derived metrics
 - [[blob-object-storage]] - long-term block and chunk storage
+- [[time-series-databases]] - TSDB internals: chunks, Gorilla compression, retention
 - [[system-design-interview-framework]] - the procedure this case follows
 
 ## References
