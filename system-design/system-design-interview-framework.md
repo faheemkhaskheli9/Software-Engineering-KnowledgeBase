@@ -10,8 +10,8 @@ use_cases:
 status: draft
 last_verified: 2026-10-10
 sources:
-  - "Alex Xu, System Design Interview - An Insider's Guide (Vol 1 and 2), ch. 3 four-step framework"
-  - "Martin Kleppmann, Designing Data-Intensive Applications, O'Reilly 2017"
+  - "Alex Xu, System Design Interview - An Insider's Guide, vol. 1, ch. 3 'A Framework for System Design Interviews' (four-step process); vol. 1 and 2 case-study chapters"
+  - "Martin Kleppmann, Designing Data-Intensive Applications (1st ed.), O'Reilly 2017, ch. 1 'Reliable, Scalable, and Maintainable Applications'"
   - https://github.com/donnemartin/system-design-primer
 ---
 
@@ -61,7 +61,7 @@ The five steps and rough time split for a 45-minute session:
 Write the agreed scope on the board. Everything later is checked against it.
 
 ### Step 2 - estimate
-Compute QPS, peak QPS (commonly 2-10x average, state your assumption), storage
+Compute QPS, peak QPS (a multiple of average; Xu's worked estimates assume 2x, so state your assumption), storage
 per day/year and bandwidth. Round aggressively; the order of magnitude is the
 point. If the numbers say one database handles it, do not design sharding.
 
@@ -144,6 +144,6 @@ Each case study applies these steps to one prompt. Read the closest one before a
 - [[scenario-chooser]] - map a problem to the right topic files.
 
 ## References
-- Alex Xu, *System Design Interview* vol 1 and 2 (ByteByteGo).
-- Kleppmann, *Designing Data-Intensive Applications* (2017).
+- Alex Xu, *System Design Interview* vol. 1, ch. 3 "A Framework for System Design Interviews"; vol. 1 and 2 case-study chapters (ByteByteGo).
+- Kleppmann, *Designing Data-Intensive Applications* (1st ed., 2017), ch. 1 (load parameters, describing performance).
 - System Design Primer: https://github.com/donnemartin/system-design-primer

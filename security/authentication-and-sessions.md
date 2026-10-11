@@ -14,7 +14,7 @@ sources:
   - https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
   - https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
   - https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
-  - https://pages.nist.gov/800-63-3/sp800-63b.html
+  - https://pages.nist.gov/800-63-4/sp800-63b.html
   - https://www.rfc-editor.org/rfc/rfc6238
 ---
 
@@ -37,9 +37,12 @@ provider (see OIDC) over building this yourself when you can.
 - **Stateless token (JWT):** signed claims the client presents. Scales without
   a lookup but cannot be revoked before expiry without extra state.
 - **MFA:** something you know plus have/are. TOTP (RFC 6238), WebAuthn/passkeys
-  (phishing-resistant), SMS is the weakest acceptable factor.
-- **NIST SP 800-63B guidance:** favour length over composition rules, check
-  against breached-password lists, do not force periodic rotation, allow paste.
+  (phishing-resistant). SMS/voice OTP is a "restricted" authenticator in NIST
+  SP 800-63B-4: allowed only with a stronger alternative offered.
+- **NIST SP 800-63B-4 (2025) guidance:** at least 15 characters for a
+  password used alone, no composition rules, check against a blocklist of
+  breached and common passwords, no forced periodic rotation (only on evidence
+  of compromise), support password managers and paste.
 
 ## When to use / scenarios
 - Server-rendered or first-party web app: server-side sessions in an
@@ -95,11 +98,14 @@ import hmac, hashlib, struct, time, base64
 
 def totp(secret_b32: str, t=None, step=30, digits=6) -> str:
     key = base64.b32decode(secret_b32, casefold=True)
-    counter = int((t or time.time()) // step)
+    counter = int((time.time() if t is None else t) // step)
     mac = hmac.new(key, struct.pack(">Q", counter), hashlib.sha1).digest()
     off = mac[-1] & 0x0F
     code = (struct.unpack(">I", mac[off:off+4])[0] & 0x7FFFFFFF) % 10**digits
     return str(code).zfill(digits)
+
+# RFC 6238 Appendix B test vector (SHA-1, T=59s, 8 digits):
+assert totp(base64.b32encode(b"12345678901234567890").decode(), t=59, digits=8) == "94287082"
 
 # Verify with hmac.compare_digest, accept +/-1 step for clock skew,
 # and store the last used step to block replay.
@@ -142,11 +148,12 @@ log the event.
 - [[authorization-models]] - what an authenticated user may do.
 - [[cryptography-and-tls]] - hashing vs encryption, TLS for cookie `Secure`.
 - [[rate-limiting]] - throttling login and reset endpoints.
-- [[owasp-top-10]] - A07 Identification and Authentication Failures.
+- [[owasp-top-10]] - A07:2025 Authentication Failures.
 - [[secrets-management]] - protecting signing keys and pepper values.
 
 ## References
 - OWASP Authentication, Password Storage and Session Management cheat sheets.
-- NIST SP 800-63B Digital Identity Guidelines.
+- NIST SP 800-63B-4 Digital Identity Guidelines: Authentication and
+  Authenticator Management (August 2025).
 - RFC 6238 (TOTP); RFC 9106 (Argon2).
-- W3C WebAuthn, https://www.w3.org/TR/webauthn-2/
+- W3C WebAuthn (latest level), https://www.w3.org/TR/webauthn/

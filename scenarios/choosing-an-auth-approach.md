@@ -9,15 +9,15 @@ use_cases:
   - "authenticate service-to-service calls and third-party API clients"
   - "decide where authorization checks live once users are logged in"
 status: draft
-last_verified: 2026-10-10
+last_verified: 2026-10-11
 sources:
   - https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
   - https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
-  - https://pages.nist.gov/800-63-3/sp800-63b.html
+  - https://pages.nist.gov/800-63-4/sp800-63b.html
   - https://www.rfc-editor.org/rfc/rfc9700
   - https://openid.net/specs/openid-connect-core-1_0.html
   - https://oauth.net/2/browser-based-apps/
-  - https://www.w3.org/TR/webauthn-2/
+  - https://www.w3.org/TR/webauthn-3/
 ---
 
 # Choosing an auth approach
@@ -118,8 +118,8 @@ Checklist for whichever row you pick:
 
 ## References
 - OWASP Authentication and Session Management cheat sheets.
-- NIST SP 800-63B Digital Identity Guidelines.
+- NIST SP 800-63B-4 Digital Identity Guidelines: Authentication and Authenticator Management (final, August 2025; supersedes 800-63B rev. 3).
 - RFC 9700, OAuth 2.0 Security Best Current Practice.
 - OpenID Connect Core 1.0.
 - OAuth 2.0 for Browser-Based Apps (BFF pattern), https://oauth.net/2/browser-based-apps/
-- W3C Web Authentication (WebAuthn) Level 2.
+- W3C Web Authentication (WebAuthn) Level 3, W3C Recommendation (August 2026; successor to Level 2).

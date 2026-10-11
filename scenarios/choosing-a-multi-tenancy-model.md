@@ -97,10 +97,11 @@ ALTER TABLE invoices ENABLE ROW LEVEL SECURITY;
 ALTER TABLE invoices FORCE ROW LEVEL SECURITY;          -- applies to the table owner too
 CREATE POLICY tenant_isolation ON invoices
   USING (tenant_id = current_setting('app.tenant_id')::bigint);
--- per request/transaction: SET LOCAL app.tenant_id = '<tenant from the session>';
+-- per transaction, with a bound parameter (SET LOCAL cannot take one):
+-- SELECT set_config('app.tenant_id', $1, true);   -- true = local to this transaction
 ```
 
-Use a database role for the app that does not bypass RLS, and set the setting per transaction so pooled connections do not leak a previous request's tenant.
+Use a database role for the app that is not a superuser and lacks `BYPASSRLS` (both skip every policy, even with `FORCE`), and set the setting per transaction so pooled connections do not leak a previous request's tenant. Never build the `SET` statement by string formatting: the tenant value would be an SQL-injection point. If the setting was never set, `current_setting` raises an error, and on a pooled connection where an earlier transaction set it, it reads back as an empty string that fails the `::bigint` cast, so a query without tenant context errors instead of returning rows.
 
 Layer-by-layer view of a bridge model:
 

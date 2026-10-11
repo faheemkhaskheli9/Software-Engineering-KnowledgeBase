@@ -128,5 +128,5 @@ Data cutover for one table, while both sides run:
 ## References
 - Martin Fowler, "StranglerFigApplication" and "BranchByAbstraction" (martinfowler.com/bliki).
 - Zhamak Dehghani, "How to break a Monolith into Microservices", martinfowler.com.
-- Sam Newman, *Monolith to Microservices*, O'Reilly.
+- Sam Newman, *Monolith to Microservices*, O'Reilly, ch. 3 "Splitting the Monolith" (strangler fig, branch by abstraction, parallel run, CDC) and ch. 4 "Decomposing the Database".
 - Chris Richardson, "Transactional outbox" pattern, microservices.io.

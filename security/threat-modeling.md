@@ -25,7 +25,7 @@ Threat modeling is structured thinking about what can go wrong in a system
 before (and while) it is built, so security work targets real risks and is
 cheap to act on. Shostack frames it as four questions: what are we working on,
 what can go wrong, what are we going to do about it, did we do a good job.
-It is the main practice behind OWASP Top 10 A04 (Insecure Design).
+It is the main practice behind OWASP Top 10:2025 A06 (Insecure Design).
 
 ## Key concepts
 - **Assets:** what an attacker wants (data, money, availability, reputation).
@@ -126,7 +126,7 @@ password-reset link" becomes an acceptance test.
 - Not revisiting after a design change or an incident.
 
 ## Related
-- [[owasp-top-10]] - A04 Insecure Design is what threat modeling addresses.
+- [[owasp-top-10]] - A06:2025 Insecure Design is what threat modeling addresses.
 - [[authorization-models]] - elevation-of-privilege threats map to authZ design.
 - [[architecture-decision-records]] - record the security trade-offs chosen.
 - [[system-design-interview-framework]] - add a security pass to any design.
@@ -135,7 +135,10 @@ password-reset link" becomes an acceptance test.
 - See also (AI KB): [AI security, privacy and compliance](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/ai-security-privacy-compliance.md) - threats specific to LLM features (prompt injection, data leakage, model supply chain).
 
 ## References
-- Adam Shostack, Threat Modeling: Designing for Security (Wiley, 2014).
+- Adam Shostack, Threat Modeling: Designing for Security (Wiley, 2014):
+  ch. 1 "Dive In and Threat Model!" (the four questions), ch. 2 "Strategies
+  for Threat Modeling" (asset-, attacker-, software-centric), ch. 3 "STRIDE",
+  ch. 4 "Attack Trees".
 - Threat Modeling Manifesto, https://www.threatmodelingmanifesto.org/
 - OWASP Threat Modeling Cheat Sheet.
 - MITRE ATT&CK, https://attack.mitre.org/

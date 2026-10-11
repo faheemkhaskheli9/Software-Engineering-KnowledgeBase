@@ -14,7 +14,7 @@ sources:
   - https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
   - https://redis.io/docs/latest/develop/use/patterns/
   - "Nishtala et al., Scaling Memcache at Facebook, NSDI 2013"
-  - "Martin Kleppmann, Designing Data-Intensive Applications"
+  - "Martin Kleppmann, Designing Data-Intensive Applications (1st ed.), ch. 11-12 (derived data)"
 ---
 
 # Choosing a caching strategy
@@ -129,4 +129,4 @@ Worked layering for a product page:
 - MDN, HTTP caching guide.
 - Redis patterns documentation.
 - Nishtala et al., "Scaling Memcache at Facebook", NSDI 2013.
-- Kleppmann, *Designing Data-Intensive Applications* (derived data, ch. 11-12).
+- Kleppmann, *Designing Data-Intensive Applications* (1st ed.), ch. 11 "Stream Processing" and ch. 12 "The Future of Data Systems" (caches and indexes as derived data).

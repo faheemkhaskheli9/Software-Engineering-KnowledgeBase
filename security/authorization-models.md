@@ -24,7 +24,7 @@ sources:
 Authorization decides whether an authenticated principal may perform an action
 on a resource. The model you pick (roles, attributes, relationships, or plain
 ACLs) determines how rules are expressed and audited. Broken access control is
-the number one OWASP Top 10 (2021) risk, mostly because checks are missing or
+the number one OWASP Top 10 risk (2021 and 2025), mostly because checks are missing or
 inconsistent rather than because the model is wrong.
 
 ## Key concepts
@@ -123,7 +123,8 @@ resource, same/other tenant) with expected allow/deny.
 
 ## Gotchas
 - Checking authorization only in the UI or only at the route level, not on the
-  object. This is IDOR/BOLA, the most common API vulnerability.
+  object. This is IDOR/BOLA, ranked API1 in the OWASP API Security Top 10
+  (2023).
 - Mass assignment: binding request bodies directly to models lets users set
   `role` or `owner_id`. Use explicit allow-listed fields.
 - Authorize every method, including export, bulk, GraphQL nested fields,
@@ -147,5 +148,8 @@ resource, same/other tenant) with expected allow/deny.
 
 ## References
 - OWASP Authorization Cheat Sheet.
-- NIST SP 800-162 (ABAC), NIST RBAC model (Sandhu et al.).
-- Zanzibar paper (USENIX ATC 2019), OpenFGA https://openfga.dev/, OPA docs.
+- NIST SP 800-162 (ABAC); Sandhu, Ferraiolo and Kuhn, "The NIST Model for
+  Role-Based Access Control: Towards a Unified Standard" (ACM RBAC Workshop
+  2000), basis of ANSI INCITS 359.
+- Pang et al., "Zanzibar: Google's Consistent, Global Authorization System"
+  (USENIX ATC 2019), OpenFGA https://openfga.dev/, OPA docs.

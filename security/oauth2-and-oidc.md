@@ -40,8 +40,9 @@ ID token and a standard way to learn who logged in. Use OAuth for
     mobile and native apps.
   - Client Credentials: machine-to-machine, no user.
   - Device Authorization: TVs and CLIs.
-  - Implicit and Resource Owner Password flows: deprecated; do not use
-    (see the OAuth 2.0 Security Best Current Practice, RFC 9700).
+  - Implicit and Resource Owner Password flows: do not use. RFC 9700 (OAuth
+    2.0 Security Best Current Practice) says clients SHOULD NOT use implicit
+    and the password grant MUST NOT be used.
 - **Discovery:** OIDC providers publish `/.well-known/openid-configuration`
   with endpoints and the JWKS URL for signing keys.
 
@@ -106,7 +107,8 @@ jwks = jwt.PyJWKClient("https://idp.example/.well-known/jwks.json")
 def verify(token: str) -> dict:
     key = jwks.get_signing_key_from_jwt(token).key
     return jwt.decode(token, key, algorithms=["RS256"],   # pin the algorithm
-                      audience="https://api.example", issuer="https://idp.example")
+                      audience="https://api.example", issuer="https://idp.example",
+                      options={"require": ["exp", "iss", "aud"]})  # reject tokens missing them
 ```
 
 Then check `scope`/roles claims for the specific operation (authorization).
@@ -114,7 +116,8 @@ Then check `scope`/roles claims for the specific operation (authorization).
 ## Trade-offs
 - **JWT vs opaque access tokens:** JWTs validate offline and fast but cannot
   be revoked early; opaque tokens need introspection (RFC 7662) but revoke
-  instantly. Short JWT lifetimes (5-15 min) are the usual compromise.
+  instantly. Short JWT lifetimes (minutes, not hours) are the usual
+  compromise.
 - **Hosted IdP vs self-hosted (Keycloak):** hosted reduces operational and
   security burden; self-hosted gives control and avoids per-user pricing.
 - **Backend-for-frontend vs tokens in the browser:** a BFF keeps tokens off
@@ -124,16 +127,19 @@ Then check `scope`/roles claims for the specific operation (authorization).
   belong in your authorization layer, not in the token.
 
 ## Gotchas
-- Missing or unchecked `state` enables login CSRF; missing PKCE enables code
-  interception, even for confidential clients under current BCP.
+- Missing or unchecked `state` enables login CSRF. Public clients MUST use
+  PKCE, and RFC 9700 recommends it for confidential clients too, since it
+  stops authorization code injection.
 - Exact-match redirect URIs only. Wildcards and open redirects leak codes.
 - Validate `iss`, `aud`, `exp`, signature and pin allowed algorithms. Accept
   ID tokens only for the client that requested them, check `nonce`.
-- OAuth alone is not authentication. Using an access token to infer identity
-  is the classic confused-deputy bug; use OIDC's ID token.
+- OAuth alone is not authentication. Logging a user in because a valid access
+  token reached you lets a token issued to some other client be substituted;
+  use OIDC's ID token, checked for your `aud`.
 - Do not put sensitive data in JWT payloads; they are only signed, not
   encrypted.
-- Refresh token rotation with reuse detection limits the damage of a leak.
+- Refresh token rotation with reuse detection limits the damage of a leak;
+  for public clients RFC 9700 requires rotation or sender-constrained tokens.
 - Do not store tokens in `localStorage` if XSS is a realistic risk.
 - Clock skew breaks `exp`/`nbf` checks; allow small leeway.
 
@@ -148,4 +154,5 @@ Then check `scope`/roles claims for the specific operation (authorization).
 - RFC 6749 (OAuth 2.0), RFC 7636 (PKCE), RFC 9700 (OAuth 2.0 Security BCP).
 - OpenID Connect Core 1.0, https://openid.net/specs/openid-connect-core-1_0.html
 - RFC 7519 (JWT), RFC 7662 (Token Introspection).
-- OAuth 2.1 draft, https://oauth.net/2.1/
+- OAuth 2.1, still an IETF Internet-Draft (draft-ietf-oauth-v2-1-16,
+  September 2026), https://oauth.net/2.1/

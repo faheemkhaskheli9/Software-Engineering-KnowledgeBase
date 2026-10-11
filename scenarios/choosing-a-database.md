@@ -86,7 +86,7 @@ def recommend(w: Workload) -> list[str]:
         picks.append("Search index (derived from the system of record)")
     if w.analytics_scans:
         picks.append("Warehouse/columnar store fed by batch or CDC")
-    if w.writes_per_sec > 10_000 or w.data_tb > 10:   # ponytail: placeholder thresholds, replace with measured single-node limits
+    if w.writes_per_sec > 10_000 or w.data_tb > 10:   # placeholder thresholds: replace with measured single-node limits
         picks.append("Review: replicas, partitioning or a scale-out store")
     return picks
 
@@ -125,6 +125,7 @@ Polyglot done safely: one writer for each fact. Write to the system of record, d
 - [[design-key-value-store]] - how scale-out KV stores work inside.
 
 ## References
-- Martin Kleppmann, *Designing Data-Intensive Applications*, ch. 2-3, 5-7.
+- Martin Kleppmann, *Designing Data-Intensive Applications* (1st ed., 2017), ch. 2 "Data Models and Query Languages", ch. 3 "Storage and Retrieval", ch. 5-7 (replication, partitioning, transactions).
 - PostgreSQL documentation (postgresql.org/docs).
-- AWS Decision Guides, "Choosing an AWS database service", and Martin Fowler, "Introduction to NoSQL".
+- AWS Decision Guides, "Choosing an AWS database service".
+- Martin Fowler and Pramod Sadalage, "Introductory Infodeck to NoSQL Databases" (martinfowler.com, 2012).

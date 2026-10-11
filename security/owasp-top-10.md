@@ -9,7 +9,7 @@ use_cases:
   - "decide which security controls to prioritise with limited time"
   - "make our webhook fetcher safe against SSRF"
 status: draft
-last_verified: 2026-10-10
+last_verified: 2026-10-11
 sources:
   - https://top10.owasp.org/2025/en/
   - https://top10.owasp.org/2025/A01_2025-Broken_Access_Control/
@@ -31,7 +31,7 @@ sources:
 ## Summary
 The OWASP Top 10 is a consensus awareness list of the most critical web
 application security risks. This file describes the **2025 edition**
-(https://top10.owasp.org/2025/en/, verified 2026-10-10). Use it as a minimum
+(https://top10.owasp.org/2025/en/, verified 2026-10-11). Use it as a minimum
 checklist and shared vocabulary, not a complete standard; for depth use the
 ASVS. Categories are groups of CWEs, not individual bugs.
 
@@ -109,7 +109,7 @@ def assert_public_url(url: str) -> None:
         raise ValueError("scheme/host not allowed")
     for info in socket.getaddrinfo(p.hostname, p.port or 443):
         ip = ipaddress.ip_address(info[4][0])
-        if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved:
+        if not ip.is_global or ip.is_multicast:   # private, loopback, link-local, CGNAT, reserved...
             raise ValueError("internal address blocked")
     # Resolve once and connect to the checked IP, or DNS rebinding bypasses this.
 ```

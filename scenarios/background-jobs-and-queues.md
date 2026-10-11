@@ -15,8 +15,8 @@ sources:
   - https://docs.celeryq.dev/en/stable/
   - https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/
   - https://microservices.io/patterns/data/transactional-outbox.html
-  - "Gregor Hohpe, Bobby Woolf, Enterprise Integration Patterns, 2003"
-  - "Martin Kleppmann, Designing Data-Intensive Applications, ch. 11"
+  - "Gregor Hohpe, Bobby Woolf, Enterprise Integration Patterns, 2003, ch. 4 'Messaging Channels' (Guaranteed Delivery, Dead Letter Channel) and ch. 10 'Messaging Endpoints' (Competing Consumers)"
+  - "Martin Kleppmann, Designing Data-Intensive Applications (1st ed.), ch. 11 'Stream Processing'"
 ---
 
 # Background jobs and queues - choosing an approach
@@ -82,7 +82,7 @@ def enqueue(kind, payload, dedupe_key=None):
                (kind, payload, dedupe_key))
 
 def claim(now):
-    # Postgres: ... WHERE id = (SELECT id ... FOR UPDATE SKIP LOCKED LIMIT 1)
+    # Postgres: ... WHERE id = (SELECT id ... ORDER BY id LIMIT 1 FOR UPDATE SKIP LOCKED)
     return db.execute("""UPDATE jobs SET status='running', attempts=attempts+1, run_after=?
         WHERE id = (SELECT id FROM jobs WHERE status IN ('queued','running')
                     AND run_after <= ? AND attempts < ? ORDER BY id LIMIT 1)
@@ -158,5 +158,5 @@ AI-specific angle: long-running LLM work (bulk summarisation, embedding backfill
 - Celery documentation, https://docs.celeryq.dev/en/stable/
 - Amazon SQS Developer Guide (visibility timeout, dead-letter queues).
 - Chris Richardson, "Transactional outbox" pattern, microservices.io.
-- Hohpe and Woolf, *Enterprise Integration Patterns*.
-- Kleppmann, *Designing Data-Intensive Applications*, ch. 11.
+- Hohpe and Woolf, *Enterprise Integration Patterns*, ch. 4 "Messaging Channels" and ch. 10 "Messaging Endpoints".
+- Kleppmann, *Designing Data-Intensive Applications* (1st ed.), ch. 11 "Stream Processing".

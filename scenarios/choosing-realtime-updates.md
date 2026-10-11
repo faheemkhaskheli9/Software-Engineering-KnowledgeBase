@@ -59,7 +59,7 @@ Browser:
 Many servers? -> broker fan-out + per-channel sequence numbers + resume on reconnect
 ```
 
-When NOT to use WebSockets: one-way feeds (SSE is simpler, works with ordinary HTTP auth and proxies), or data that changes rarely (polling costs less to operate). When NOT to poll: many clients needing low latency, where polling load scales with clients times frequency even when nothing changes.
+When NOT to use WebSockets: one-way feeds (SSE is simpler, works with cookie auth and ordinary HTTP proxies), or data that changes rarely (polling costs less to operate). When NOT to poll: many clients needing low latency, where polling load scales with clients times frequency even when nothing changes.
 
 ## How it works / example
 Long polling is the bridge between polling and push: the server parks the request until the version moves past what the client has, or a timeout fires. Runnable stdlib sketch of the server-side wait:
@@ -113,7 +113,7 @@ AI-specific angle: streaming LLM output over SSE from a Python API is covered in
 | Latency | Up to the interval | Low | Low | Lowest |
 | Infra | Plain HTTP, cacheable | Plain HTTP, held requests | Plain HTTP, long response | Upgrade, own framing |
 | Reconnect / resume | Implicit | Implicit (send version) | Built in (`Last-Event-ID`) | Build it yourself |
-| Auth | Normal | Normal | Normal (cookies/headers) | Handshake limits; cookie, ticket or first message |
+| Auth | Normal | Normal | Cookies (browser `EventSource` cannot set headers; fetch-based clients can) | Handshake limits; cookie, ticket or first message |
 | Server cost | Requests even when idle | Parked requests | Open connections | Open connections + per-socket state |
 
 - **Build vs buy:** running a connection fleet (heartbeats, drains on deploy, reconnect storms, FD limits) is real operations work; managed services trade it for per-connection or per-message pricing.

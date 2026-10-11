@@ -93,7 +93,7 @@ def verify(secret: bytes, body: bytes, ts: str, sig_hex: str, tolerance=300) -> 
 
 Python client with certificate verification on (the default; never disable):
 
-```python
+```python fragment
 import ssl, urllib.request
 ctx = ssl.create_default_context()
 ctx.minimum_version = ssl.TLSVersion.TLSv1_2
@@ -117,7 +117,8 @@ test the configuration (for example with SSL Labs or testssl.sh).
   solid renewal monitoring.
 
 ## Gotchas
-- Nonce reuse in AES-GCM is catastrophic (key and plaintext leakage). Random
+- Nonce reuse in AES-GCM is catastrophic: it reveals the XOR of the two
+  plaintexts and the authentication subkey, so tags can be forged. Random
   96-bit nonces are fine for a bounded number of messages per key; rotate keys
   or use an AES-GCM-SIV/XChaCha construction for huge volumes.
 - `verify=False` or custom `ssl._create_unverified_context` "to fix a cert
@@ -135,11 +136,12 @@ test the configuration (for example with SSL Labs or testssl.sh).
 - [[secrets-management]] - where keys live, KMS, rotation and audit.
 - [[networking-fundamentals]] - TCP/TLS handshake and HTTPS context.
 - [[webhooks]] - HMAC signatures and replay protection for callbacks.
-- [[owasp-top-10]] - A02 Cryptographic Failures.
+- [[owasp-top-10]] - A04:2025 Cryptographic Failures.
 - [[load-balancing]] - TLS termination and certificate placement.
-
 ## References
 - RFC 8446 (TLS 1.3); OWASP Cryptographic Storage and TLS cheat sheets.
 - NIST cryptographic standards and guidelines (SP 800-57 key management).
 - Python `cryptography` documentation, https://cryptography.io/
-- Mozilla server-side TLS guidance, https://wiki.mozilla.org/Security/Server_Side_TLS
+- Server-side TLS guidelines (moved from Mozilla's wiki to the community
+  TLSRef project), https://docs.tlsref.org/
+- RFC 8996 (deprecating TLS 1.0 and 1.1); NIST SP 800-38D (GCM).

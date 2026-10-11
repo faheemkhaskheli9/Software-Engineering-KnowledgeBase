@@ -8,12 +8,12 @@ use_cases:
   - "map a project requirement to the right knowledge-base files"
   - "start a system design or architecture decision and find the relevant building blocks"
 status: draft
-last_verified: 2026-10-10
+last_verified: 2026-10-11
 sources:
   - https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/
   - https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/
   - https://sre.google/sre-book/table-of-contents/
-  - https://www.oreilly.com/library/view/system-design-interview/9781736049112/
+  - https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews
 ---
 
 # Scenario chooser - what approach for X
@@ -47,6 +47,10 @@ Read the tables by category. Each row: situation, then topics to read.
 | Split an existing monolith into services incrementally | [[migrating-monolith-to-services]], [[monolith-vs-microservices]], [[distributed-transactions-and-sagas]] |
 | Slow work (emails, reports, media) should leave the request path | [[background-jobs-and-queues]], [[message-queues-and-streams]], [[idempotency-and-exactly-once]] |
 | Many customers share one SaaS, data must stay isolated | [[choosing-a-multi-tenancy-model]], [[authorization-models]], [[partitioning-and-sharding]] |
+| Order, payment or ticket lifecycle; tangle of status booleans | [[state-machines]], [[domain-driven-design]] |
+| Business rules hard to test without mocks, DB or network | [[functional-core-imperative-shell]], [[dependency-injection]], [[unit-testing-and-test-doubles]] |
+| Swap algorithms, wrap a third-party SDK, add retries or caching around calls | [[design-patterns-gof]], [[dependency-injection]] |
+| Shared internal package: change signatures without breaking callers | [[library-api-design]], [[api-versioning-and-evolution]] |
 
 ### Data
 | Situation | Read |
@@ -57,7 +61,8 @@ Read the tables by category. Each row: situation, then topics to read.
 | Change a schema with zero downtime | [[schema-migrations]], [[deployment-strategies]] |
 | Analytics and reporting on large data | [[data-warehousing-and-olap]], [[batch-and-stream-processing]] |
 | Process events or logs continuously | [[batch-and-stream-processing]], [[message-queues-and-streams]] |
-| Full-text or relevance search | [[search-systems]], [[sql-vs-nosql]] |
+| Full-text or relevance search | [[search-systems]], [[choosing-a-database]] |
+| Garbled characters (mojibake), emoji cut in half, lookalike strings | [[strings-and-text-encoding]] |
 | Store images, videos, backups | [[blob-object-storage]], [[cdn-and-edge]] |
 | User uploads: validate, process, serve public or private files | [[choosing-file-and-media-storage]], [[blob-object-storage]], [[cdn-and-edge]] |
 
@@ -87,6 +92,8 @@ Read the tables by category. Each row: situation, then topics to read.
 | Need ids that are unique across machines | [[unique-id-generation]] |
 | Estimate size, QPS, storage | [[back-of-envelope-estimation]] |
 | Code is slow or memory-hungry | [[big-o-complexity]], [[memory-and-performance]], [[concurrency-and-parallelism]] |
+| Pick a data structure or algorithm for an in-memory problem | [[core-data-structures]], [[algorithm-patterns]], [[graph-algorithms]] |
+| Server falls over with many idle connections; threads vs event loop | [[processes-threads-and-io-models]], [[concurrency-and-parallelism]] |
 
 ### Distributed systems and reliability
 | Situation | Read |
@@ -96,6 +103,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Multi-service business transaction | [[distributed-transactions-and-sagas]], [[idempotency-and-exactly-once]] |
 | Leader election, locks, agreement | [[consensus-raft-paxos]], [[time-clocks-and-ordering]] |
 | Dependency is slow or down, cascading failure | [[resilience-patterns]], [[failure-modes-and-fallacies]] |
+| Intermittent timeouts or connection resets between services | [[networking-fundamentals]], [[resilience-patterns]] |
 | Retries produce duplicates | [[idempotency-and-exactly-once]], [[resilience-patterns]] |
 | Know when the system is unhealthy | [[observability-logs-metrics-traces]], [[slis-slos-error-budgets]] |
 | Ship safely and roll back | [[deployment-strategies]], [[ci-cd-pipelines]] |
@@ -120,6 +128,10 @@ Read the tables by category. Each row: situation, then topics to read.
 | What tests should we write | [[testing-strategy-and-pyramid]], [[unit-testing-and-test-doubles]] |
 | Services break each other | [[integration-and-contract-testing]] |
 | Hard-to-specify logic, parsers, invariants | [[property-based-and-fuzz-testing]] |
+| A test fails sometimes and passes on rerun | [[flaky-tests]] |
+| High coverage, but do the tests catch bugs | [[mutation-testing]] |
+| Lock down legacy output before refactoring | [[snapshot-and-golden-testing]], [[refactoring-and-code-smells]] |
+| Fixtures break on every model change; safe production-like test data | [[test-data-management]] |
 | Will it handle launch day | [[performance-and-load-testing]], [[capacity-planning-and-autoscaling]] |
 | Requirements unclear, want executable specs | [[tdd-and-bdd]] |
 | Messy code, hard to change | [[refactoring-and-code-smells]], [[clean-code-and-naming]], [[technical-debt-management]] |
@@ -173,7 +185,7 @@ Read the tables by category. Each row: situation, then topics to read.
 - See also (AI KB): [AI scenario chooser](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/scenarios/scenario-chooser.md) - the same router for LLM and ML features (RAG, agents, model choice, serving, evals).
 
 ## References
-- Martin Kleppmann, *Designing Data-Intensive Applications*.
-- Mark Richards and Neal Ford, *Fundamentals of Software Architecture*.
-- Betsy Beyer et al., *Site Reliability Engineering* (sre.google).
-- Alex Xu, *System Design Interview*.
+- Martin Kleppmann, *Designing Data-Intensive Applications* (1st ed., 2017), Part II "Distributed Data" (ch. 5-9) and Part III "Derived Data" (ch. 10-12).
+- Mark Richards and Neal Ford, *Fundamentals of Software Architecture* (1st ed., 2020), Part II "Architecture Styles", ch. 18 "Choosing the Appropriate Architecture Style".
+- Betsy Beyer et al., *Site Reliability Engineering* (sre.google), Part III "Practices".
+- Alex Xu, *System Design Interview - An Insider's Guide*, vol. 1, ch. 3 "A Framework for System Design Interviews".

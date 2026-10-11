@@ -8,9 +8,9 @@ use_cases:
   - "decide when to add a cache, read replicas, a queue, a CDN, or sharding"
   - "explain the step-by-step scaling story in a system design interview"
 status: draft
-last_verified: 2026-10-10
+last_verified: 2026-10-11
 sources:
-  - https://www.oreilly.com/library/view/system-design-interview/9781736049112/
+  - https://bytebytego.com/courses/system-design-interview/scale-from-zero-to-millions-of-users
   - https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/
   - https://sre.google/sre-book/table-of-contents/
   - https://aws.amazon.com/architecture/well-architected/
@@ -103,7 +103,7 @@ Checklist before each step: what metric proves the need, what is the rollback, w
 - [[partitioning-and-sharding]] - the late, costly step.
 
 ## References
-- Alex Xu, *System Design Interview*, ch. 1 "Scale from zero to millions of users".
-- Martin Kleppmann, *Designing Data-Intensive Applications*, part II.
-- Google SRE book, chapters on load balancing and handling overload.
+- Alex Xu, *System Design Interview - An Insider's Guide* (Volume 1), ch. 1 "Scale From Zero To Millions Of Users".
+- Martin Kleppmann, *Designing Data-Intensive Applications*, 1st ed., Part II "Distributed Data" (ch. 5-9).
+- Google SRE book, ch. 19 "Load Balancing at the Frontend", ch. 20 "Load Balancing in the Datacenter", ch. 21 "Handling Overload", ch. 22 "Addressing Cascading Failures".
 - AWS Well-Architected Framework, performance efficiency pillar.

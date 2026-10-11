@@ -26,7 +26,7 @@ Decide along two axes: does the caller need the answer now (synchronous request/
 - **Temporal coupling.** Sync calls need both sides up at the same time; async via a broker removes that.
 - **Request/response vs publish/subscribe.** Command to one handler vs fact broadcast to many ([[event-driven-architecture]]).
 - **Contract style.** Resource-oriented HTTP+JSON, schema-first binary RPC (Protobuf), client-shaped queries, or message schemas.
-- **Availability math.** A request chain with n synchronous dependencies multiplies failure probabilities; async cuts the chain.
+- **Availability math.** A request chain with n synchronous dependencies multiplies their availabilities (n services at 99.9% each give about 0.999^n), so the chain is less available than any single hop; async cuts the chain.
 - **Delivery semantics.** Sync: retry may duplicate. Async: usually at-least-once, so consumers must be idempotent ([[idempotency-and-exactly-once]]).
 - **Direction.** Client pull (polling), server push (SSE, WebSocket, webhook).
 
@@ -143,7 +143,7 @@ For sync calls add timeouts, retries with jitter and circuit breakers ([[resilie
 - [[scenario-chooser]] - broader problem router.
 
 ## References
-- Gregor Hohpe and Bobby Woolf, *Enterprise Integration Patterns*.
+- Gregor Hohpe and Bobby Woolf, *Enterprise Integration Patterns*, ch. 2 "Integration Styles", ch. 4 "Messaging Channels" (point-to-point vs publish-subscribe) and ch. 5 "Message Construction" (command vs event messages).
 - gRPC documentation (grpc.io); GraphQL documentation (graphql.org).
-- Sam Newman, *Building Microservices*, 2nd ed., chapter on communication styles.
+- Sam Newman, *Building Microservices*, 2nd ed., ch. 4 "Microservice Communication Styles".
 - Martin Fowler, "Microservices" article on smart endpoints and dumb pipes.

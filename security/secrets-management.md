@@ -28,8 +28,10 @@ privilege, rotating them, and being able to revoke and audit. The strongest
 move is to need fewer long-lived secrets at all.
 
 ## Key concepts
-- **Separate config from code:** non-secret config can live in env/config
-  files; secrets come from a dedicated store (twelve-factor "config" rule).
+- **Separate config from code:** twelve-factor's config rule keeps all
+  config, credentials included, out of the code and in the environment. Have
+  the platform fill those variables (or mounted files) from a dedicated secret
+  store rather than from checked-in files.
 - **Secret stores:** cloud managers (AWS Secrets Manager, GCP Secret Manager,
   Azure Key Vault), HashiCorp Vault / OpenBao, Kubernetes Secrets (base64, not
   encryption, unless encryption at rest or an external store is configured),
@@ -89,7 +91,7 @@ Prevent leaks before they land: run a scanner in a pre-commit hook and in CI
 # .pre-commit-config.yaml
 repos:
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.4          # pin a current tag
+    rev: v8.18.4          # example tag: pin the latest gitleaks release
     hooks: [{id: gitleaks}]
 ```
 
@@ -114,7 +116,7 @@ Leak response runbook (in order):
 
 ## Gotchas
 - A deleted commit is still in clones, forks and CI caches. Rotate, always.
-- `.env` committed once "just for testing" is the leading source of incidents;
+- A `.env` committed once "just for testing" is a common way secrets leak;
   add it to `.gitignore` before creating it.
 - Kubernetes Secrets are only base64; enable encryption at rest and restrict
   RBAC on `get secrets`.
