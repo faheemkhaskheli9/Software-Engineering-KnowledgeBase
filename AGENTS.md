@@ -53,7 +53,8 @@ Open improvement tasks for this base are GitHub issues labelled `kb-improvement`
    regenerates `INDEX.md` and `llms.txt`, fails on invalid frontmatter
    (`category` must match the folder, `status` must be a value listed below,
    `last_verified` a YYYY-MM-DD date, `sources` and `use_cases` non-empty), a
-   missing `_template.md` section, or a broken `[[link]]` (in topics and
+   missing or thin `_template.md` section (under 15 words, or a `## Related`
+   with no `[[links]]`), or a broken `[[link]]` (in topics and
    `glossary.md`), and warns on orphan topics
    and on stale topics: `last_verified` older than 180 days, or 90 days for
    `reliability/` and `security/`. Re-check a stale topic's sources, then bump

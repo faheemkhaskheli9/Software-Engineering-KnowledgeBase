@@ -4,7 +4,8 @@ Run after adding or editing a topic:  python build_index.py
 Stdlib only; parses the simple frontmatter shape used in _template.md.
 Fails on invalid frontmatter (missing keys, category not the folder, unknown
 status, undated last_verified, empty sources/use_cases), a missing template
-section, or a broken [[link]] (topics and glossary.md);
+section, a thin section (under MIN_WORDS words, or a ## Related with no
+[[links]]), or a broken [[link]] (topics and glossary.md);
 warns on orphan topics and on topics whose last_verified is older than STALE_DAYS;
 prints an info line for topics only one other topic links to.
 """
@@ -21,6 +22,7 @@ DEFAULT_STALE_DAYS = 180
 STATUSES = ("draft", "stable", "needs-review")
 SECTIONS = ("Summary", "Key concepts", "When to use / scenarios", "How it works / example",
             "Trade-offs", "Gotchas", "Related", "References")  # as in _template.md
+MIN_WORDS = 15  # per section; words, not lines, since a Summary is often one long line
 
 
 def links(text):
@@ -75,6 +77,14 @@ def problems(rel, text):
     prose = re.sub(r"```.*?```", "", text.replace("\r\n", "\n"), flags=re.S)
     errs += [f"missing section ## {s}" for s in SECTIONS
              if not re.search(rf"^## {re.escape(s)}[ \t]*$", prose, re.M)]
+    # Section bodies, code kept as content but with its '#' lines unable to start a heading.
+    body = re.sub(r"```.*?```", lambda m: m.group().replace("\n#", "\n "), text.replace("\r\n", "\n"), flags=re.S)
+    parts = re.split(r"^## (.+?)[ \t]*$", body, flags=re.M)
+    sections = dict(zip(parts[1::2], parts[2::2]))
+    errs += [f"thin section ## {s} (under {MIN_WORDS} words)" for s in SECTIONS
+             if s in sections and len(sections[s].split()) < MIN_WORDS]
+    if "Related" in sections and not links(sections["Related"]):
+        errs.append("## Related has no [[links]]")
     return errs
 
 

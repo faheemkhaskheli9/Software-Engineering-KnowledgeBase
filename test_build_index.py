@@ -4,6 +4,7 @@ Run:  python test_build_index.py   (stdlib only, also in CI)
 """
 from build_index import SECTIONS, problems
 
+FILLER = "One sentence of filler text that is long enough to pass the minimum word count check."
 GOOD = """---
 title: Example
 category: design
@@ -17,7 +18,7 @@ sources:
 ---
 
 # Example
-""" + "".join(f"\n## {s}\ntext\n" for s in SECTIONS)
+""" + "".join(f"\n## {s}\n{FILLER} [[example]]\n" for s in SECTIONS)
 
 
 def bad(old, new):
@@ -34,6 +35,8 @@ CASES = {
     "sources is empty": bad("sources:\n  - https://example.com\n", "sources:\n"),
     "use_cases is empty": bad("use_cases:\n  - do a thing\n", "use_cases: []\n"),
     "missing section ## Gotchas": bad("\n## Gotchas\n", "\n## Pitfalls\n"),
+    "thin section ## Trade-offs": bad(f"## Trade-offs\n{FILLER}", "## Trade-offs\nToo short."),
+    "## Related has no [[links]]": bad(f"## Related\n{FILLER} [[example]]", f"## Related\n{FILLER}"),
 }
 
 if __name__ == "__main__":
