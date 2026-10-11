@@ -113,6 +113,7 @@ CI check idea: run all migrations on an empty database, then run the app's test 
 - [[ci-cd-pipelines]] - run and test migrations automatically before release
 - [[api-versioning-and-evolution]] - the same expand/contract thinking applied to APIs
 - [[database-indexing]] - concurrent index builds and their cost
+- [[backup-and-disaster-recovery]] - take and verify a restorable backup before a risky migration
 
 ## References
 - Alembic documentation: https://alembic.sqlalchemy.org/en/latest/

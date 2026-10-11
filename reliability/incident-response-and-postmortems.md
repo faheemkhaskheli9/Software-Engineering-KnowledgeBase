@@ -116,6 +116,8 @@ On-call health basics:
 - [[resilience-patterns]] - preventing localized failures from cascading.
 - [[failure-modes-and-fallacies]] - taxonomy of how distributed systems fail.
 - [[documentation-practices]] - runbooks and postmortem archives.
+- [[feature-flags]] - kill switches as a first mitigation that needs no deploy.
+- [[backup-and-disaster-recovery]] - restore and regional failover runbooks when mitigation means recovery.
 
 ## References
 - Google SRE Book, ch. 14 "Managing Incidents", ch. 15 "Postmortem Culture", ch. 11 "Being On-Call": https://sre.google/sre-book/managing-incidents/ and https://sre.google/sre-book/postmortem-culture/ and https://sre.google/sre-book/being-on-call/

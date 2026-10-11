@@ -138,6 +138,7 @@ test the configuration (for example with SSL Labs or testssl.sh).
 - [[webhooks]] - HMAC signatures and replay protection for callbacks.
 - [[owasp-top-10]] - A04:2025 Cryptographic Failures.
 - [[load-balancing]] - TLS termination and certificate placement.
+- [[privacy-and-pii-handling]] - field encryption and crypto-shredding for personal data.
 ## References
 - RFC 8446 (TLS 1.3); OWASP Cryptographic Storage and TLS cheat sheets.
 - NIST cryptographic standards and guidelines (SP 800-57 key management).

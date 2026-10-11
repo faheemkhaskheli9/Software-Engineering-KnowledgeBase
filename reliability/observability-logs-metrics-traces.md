@@ -135,6 +135,7 @@ Prometheus-style alert on a symptom, not a cause:
 - [[performance-and-load-testing]] - load tests are only useful when you can see saturation and latency.
 - [[capacity-planning-and-autoscaling]] - utilization and saturation metrics drive scaling decisions.
 - [[design-metrics-logging-pipeline]] - case study: the backend that ingests, stores and alerts on this telemetry.
+- [[privacy-and-pii-handling]] - which data must stay out of logs and how to redact it.
 - See also (AI KB): [LLM observability](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/llm-observability.md) - tracing prompts, tokens, cost and quality of LLM calls.
 
 ## References
