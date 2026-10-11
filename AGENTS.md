@@ -111,6 +111,7 @@ link does not.
 | `reliability/` | Observability, SLOs, resilience patterns, deployment, CI/CD, containers, k8s, IaC, incidents |
 | `security/` | OWASP, authN/sessions, OAuth2/OIDC, authZ, secrets, threat modeling, crypto/TLS |
 | `testing/` | Strategy, unit/doubles, integration/contract, TDD, property-based, load testing |
+| `frontend/` | Client-side engineering: browser rendering and Core Web Vitals, web performance, accessibility, i18n/l10n |
 | `practices/` | Git workflows, code review, ADRs, tech debt, estimation, docs, SDLC |
 | `case-studies/` | Worked designs: URL shortener, chat, feed, payments, ... |
 | `scenarios/` | Problem -> recommended approach, linking the files above |

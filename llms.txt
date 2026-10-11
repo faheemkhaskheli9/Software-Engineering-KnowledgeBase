@@ -48,10 +48,14 @@
 - [Data modeling and schema design](data/data-modeling-and-schema-design.md): Schema design decides what your data can express and what bad states the database refuses to store.
 - [Data warehousing and OLAP](data/data-warehousing-and-olap.md): OLTP databases serve many small transactional reads and writes; OLAP systems serve fewer, heavy analytical queries that scan and aggregate large volumes.
 - [Database indexing](data/database-indexing.md): An index is a separate, ordered (or hashed) structure that lets the database find rows without scanning the whole table.
+- [Graph databases](data/graph-databases.md): A graph database stores entities as nodes and relationships as first-class edges, and answers queries by walking edges (traversal) instead of joining tables.
 - [ORMs and the N+1 query problem](data/orm-and-n-plus-one.md): An ORM maps rows to objects so code manipulates models instead of SQL strings.
 - [Schema migrations](data/schema-migrations.md): A migration is a versioned, repeatable change to the database schema (and sometimes data), stored in source control and applied by tooling in order.
 - [SQL vs NoSQL](data/sql-vs-nosql.md): "SQL" databases are relational systems with a fixed schema, joins, and ACID transactions.
+- [Storage engines (B-tree and LSM-tree)](data/storage-engines-btree-lsm.md): A storage engine is the part of a database that lays bytes out on disk and finds them again.
+- [Time-series databases](data/time-series-databases.md): A time-series database (TSDB) stores sequences of `(timestamp, value)` samples keyed by a series identity, and is built for one workload: a steady stream of appends of recent data, queries over time ranges, aggregation into buckets, and deletion of whole old ranges.
 - [Transactions and isolation levels](data/transactions-and-isolation-levels.md): A transaction groups several operations so they succeed or fail together (atomicity) and, while running, appear isolated from concurrent work.
+- [Vector databases for engineers](data/vector-databases-for-engineers.md): A vector database stores fixed-length float vectors (embeddings) with an id and metadata, and answers "the k nearest vectors to this query vector", usually with a metadata filter.
 
 ## design
 
@@ -72,12 +76,20 @@
 - [Consensus (Raft and Paxos)](distributed-systems/consensus-raft-paxos.md): Consensus lets a group of nodes agree on a value (or an ordered log of values) even when some nodes crash and messages are delayed or lost, as long as a majority is alive and connected.
 - [Consistency models](distributed-systems/consistency-models.md): A consistency model is a contract about which values a read may return given the history of writes across replicas and clients.
 - [Consistent hashing](distributed-systems/consistent-hashing.md): Consistent hashing maps keys and nodes into the same hash space so that when a node is added or removed only about `1/N` of the keys move, instead of nearly all of them as with `hash(key) % N`.
+- [Distributed locks and leader election](distributed-systems/distributed-locks-and-leader-election.md): A distributed lock gives one process at a time the right to act on a shared resource; leader election is the same thing held for a long time by one replica of a service.
 - [Distributed transactions and sagas](distributed-systems/distributed-transactions-and-sagas.md): When one business operation spans several databases or services, you cannot rely on a single ACID transaction.
 - [Failure modes and the fallacies of distributed computing](distributed-systems/failure-modes-and-fallacies.md): A distributed system is one where a computer you did not know existed can make your own work fail.
 - [Idempotency and exactly-once processing](distributed-systems/idempotency-and-exactly-once.md): Networks lose requests and responses, so clients and brokers retry, and the same operation arrives more than once.
 - [Partitioning and sharding](distributed-systems/partitioning-and-sharding.md): Partitioning splits a dataset into disjoint pieces (partitions/shards), each stored on different nodes, so that storage, writes and queries scale beyond one machine.
 - [Replication](distributed-systems/replication.md): Replication keeps copies of the same data on several nodes to survive failures, serve reads closer to users and add read throughput.
 - [Time, clocks and ordering](distributed-systems/time-clocks-and-ordering.md): In a distributed system there is no shared clock, and wall clocks on different machines disagree and can jump.
+
+## frontend
+
+- [Accessibility basics](frontend/accessibility-basics.md): Accessibility (a11y) means people with visual, motor, hearing or cognitive disabilities can perceive, operate and understand your interface, often through assistive technology such as screen readers, switch devices or magnification.
+- [Browser rendering and Core Web Vitals](frontend/browser-rendering-and-core-web-vitals.md): A browser turns HTML, CSS and JavaScript into pixels through the critical rendering path: parse HTML into the DOM, parse CSS into the CSSOM, combine them into a render tree, compute layout, paint and composite.
+- [Internationalization and localization](frontend/internationalization-and-localization.md): Internationalization (i18n) is designing and building software so it can be adapted to different languages, regions and cultures without code changes; localization (l10n) is the adaptation itself for one target locale: translated text, local formats, and cultural fit.
+- [Web performance](frontend/web-performance.md): Front-end performance work is mostly about sending fewer bytes, sending them once, and asking for the important ones first.
 
 ## fundamentals
 
@@ -104,10 +116,12 @@
 
 ## reliability
 
+- [Backup and disaster recovery](reliability/backup-and-disaster-recovery.md): Backups protect against losing data (deletion, corruption, ransomware, a bad migration); disaster recovery (DR) is the plan and standby infrastructure that brings the whole service back after losing a site or region.
 - [Capacity planning and autoscaling](reliability/capacity-planning-and-autoscaling.md): Capacity planning is predicting how much compute, memory, storage and network a system needs to meet its SLOs at forecast demand plus headroom; autoscaling adjusts that capacity automatically as load changes.
 - [CI/CD pipelines](reliability/ci-cd-pipelines.md): Continuous integration merges and verifies small changes frequently with automated build and test; continuous delivery keeps every green main-branch commit deployable, and continuous deployment ships it to production automatically.
 - [Containers and Docker](reliability/containers-and-docker.md): A container is a regular Linux process isolated with namespaces and limited with cgroups, started from an immutable layered image that bundles the app and its userspace dependencies.
 - [Deployment strategies - rolling, blue-green, canary, feature flags](reliability/deployment-strategies.md): A deployment strategy defines how a new version replaces the old one and how you limit the damage if it is bad.
+- [Feature flags](reliability/feature-flags.md): A feature flag (feature toggle) is a runtime decision point that switches code paths without redeploying, which separates deploying code from releasing behavior.
 - [Incident response and postmortems](reliability/incident-response-and-postmortems.md): Incident response is a rehearsed process for detecting, coordinating, mitigating and communicating during a production problem; the postmortem is the blameless written review afterwards that turns the failure into lasting fixes.
 - [Infrastructure as code](reliability/infrastructure-as-code.md): Infrastructure as code (IaC) defines servers, networks, databases, permissions and clusters in versioned text files that tools apply automatically and repeatably.
 - [Kubernetes basics](reliability/kubernetes-basics.md): Kubernetes is a declarative container orchestrator: you describe desired state (N replicas of this image, exposed on this port) and controllers continuously reconcile reality toward it, scheduling, restarting, scaling and rolling out workloads across a cluster of nodes.
@@ -136,7 +150,9 @@
 - [Cryptography and TLS](security/cryptography-and-tls.md): Applied cryptography for engineers is mostly about choosing the right primitive, using a vetted library with safe defaults, and managing keys.
 - [OAuth 2.0 and OpenID Connect](security/oauth2-and-oidc.md): OAuth 2.0 is a delegation framework: a user (resource owner) lets a client application obtain a limited access token for an API without sharing their password.
 - [OWASP Top 10 (2025 edition)](security/owasp-top-10.md): The OWASP Top 10 is a consensus awareness list of the most critical web application security risks.
+- [Privacy and PII handling](security/privacy-and-pii-handling.md): Personal data is any information about an identifiable person, and handling it well is mostly an engineering problem: collect less, know where it lives, restrict and encrypt it, keep it out of logs, delete it on schedule and on request.
 - [Secrets management](security/secrets-management.md): Secrets are credentials that grant access: API keys, DB passwords, signing keys, tokens, certificates.
+- [Software supply chain security](security/software-supply-chain-security.md): Your software is mostly other people's code, built by tools and pipelines you also did not write.
 - [Threat modeling](security/threat-modeling.md): Threat modeling is structured thinking about what can go wrong in a system before (and while) it is built, so security work targets real risks and is cheap to act on.
 
 ## system-design

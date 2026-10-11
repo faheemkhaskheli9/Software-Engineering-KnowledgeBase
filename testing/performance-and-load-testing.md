@@ -157,6 +157,7 @@ Keep every run's config, commit hash and results so comparisons are valid.
 - [[capacity-planning-and-autoscaling]] - turns results into provisioning decisions.
 - [[rate-limiting]] - verify limits protect the system under overload.
 - [[back-of-envelope-estimation]] - sanity-check expected load before testing.
+- [[browser-rendering-and-core-web-vitals]] - user-side page metrics (LCP, INP, CLS) at p75, field vs lab.
 
 ## References
 - Locust and Grafana k6 documentation.
