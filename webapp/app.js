@@ -268,7 +268,7 @@ function recent() {
   catch (e) { return []; }
 }
 function conflict(on) { $("conflict").hidden = !on; }
-async function open(path, line, anchor) {
+async function openFile(path, line, anchor) {
   if (cur && path === cur.path && (dirty || (anchor && !$("view").hidden))) {
     // Same file: keep unsaved edits and just move to the line or heading.
     if (anchor) showAnchor(anchor); else if (line && !$("view").hidden) showLine(line);
@@ -371,7 +371,7 @@ function route() {
     if (!confirm("Discard unsaved changes?")) { history.replaceState(null, "", fileHash(cur.path)); return; }
     dirty = false;
   }
-  if (p) return open(p, m[2] === "line" ? +m[3] : 0, m[2] === "h" ? safeDecode(m[3]) : "");
+  if (p) return openFile(p, m[2] === "line" ? +m[3] : 0, m[2] === "h" ? safeDecode(m[3]) : "");
   let r;
   if ((r = h.match(/^#search=(.*)$/))) return doSearch(safeDecode(r[1]));
   if (h === "#changes") return showChanges();
@@ -406,7 +406,7 @@ async function newFile() {
   }
   try {
     await api("/api/new", {method: "POST", body: {path: p, content}});
-    await reloadTree(); await open(p); history.pushState(null, "", fileHash(p)); setMode(true);
+    await reloadTree(); await openFile(p); history.pushState(null, "", fileHash(p)); setMode(true);
   } catch (e) { alert(e.message); }
 }
 function output(title, text) {
@@ -427,7 +427,7 @@ async function init() {
         const r = await api("/api/action", {method: "POST", body: {name: a}});
         output(a + " (exit " + r.code + ")", r.output || "(no output)");
         await reloadTree();
-        if (cur && !dirty) { const p = cur.path; cur = null; open(p); }
+        if (cur && !dirty) { const p = cur.path; cur = null; openFile(p); }
       } catch (e) { output(a, e.message); } finally { b.disabled = false; }
     };
     $("actions").appendChild(b);
@@ -446,7 +446,7 @@ $("toggle").onclick = () => setMode($("editor").hidden);
 $("preview").onclick = () => { split = !split; setMode(true); };
 $("save").onclick = () => save(false);
 $("overwrite").onclick = () => { if (confirm("Replace the newer file on disk with your text?")) save(true); };
-$("takedisk").onclick = () => { if (!confirm("Discard your edits and load the file from disk?")) return; const p = cur.path; dirty = false; cur = null; open(p); };
+$("takedisk").onclick = () => { if (!confirm("Discard your edits and load the file from disk?")) return; const p = cur.path; dirty = false; cur = null; openFile(p); };
 $("del").onclick = del;
 $("changes").onclick = () => go("#changes");
 $("new").onclick = newFile;
