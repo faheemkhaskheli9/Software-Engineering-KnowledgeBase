@@ -139,6 +139,7 @@ socket is a delivery optimisation, the database is the truth.
 - [[design-collaborative-editor]] - case study: OT/CRDT operations and presence over WebSockets.
 - [[choosing-realtime-updates]] - decision guide: polling vs SSE vs WebSockets vs push.
 - [[design-rag-chat]] - case study: streaming LLM tokens to the browser over SSE.
+- See also (AI KB): [Streaming and async LLM apps](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/streaming-and-async-llm-apps.md) - producing the token stream on the server side.
 
 ## References
 - RFC 6455 The WebSocket Protocol: https://www.rfc-editor.org/rfc/rfc6455

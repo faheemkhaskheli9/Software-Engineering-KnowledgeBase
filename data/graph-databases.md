@@ -147,6 +147,7 @@ Postgres's `CYCLE` clause) is mandatory.
 - [[choosing-a-database]] - when traversals justify a separate store
 - [[time-series-databases]] - another specialised store to justify against plain Postgres
 - [[vector-databases-for-engineers]] - similarity search, a different "related items" mechanism
+- See also (AI KB): [GraphRAG and knowledge graphs](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/graphrag-and-knowledge-graphs.md) - LLM-built knowledge graphs used for retrieval.
 
 ## References
 - Ian Robinson, Jim Webber, Emil Eifrem, *Graph Databases*, 2nd ed., O'Reilly, 2015, ch. 6 "Graph Database Internals" (native storage, index-free adjacency).

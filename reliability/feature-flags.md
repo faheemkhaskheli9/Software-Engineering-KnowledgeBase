@@ -185,6 +185,7 @@ then delete it from the flag service.
 - [[schema-migrations]] - expand/contract with a flag for the read switch.
 - [[authorization-models]] - where long-lived entitlements belong.
 - [[technical-debt-management]] - stale flags are debt with a known removal path.
+- See also (AI KB): [Statistics for ML and A/B testing](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/ml/statistics-and-ab-testing.md) - sample size and significance for experiment toggles.
 
 ## References
 - Pete Hodgson, "Feature Toggles (aka Feature Flags)", martinfowler.com: https://martinfowler.com/articles/feature-toggles.html

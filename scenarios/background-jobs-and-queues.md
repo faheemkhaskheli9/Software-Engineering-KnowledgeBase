@@ -152,6 +152,7 @@ AI-specific angle: long-running LLM work (bulk summarisation, embedding backfill
 - [[design-notification-system]] - queue-driven fan-out case study.
 - [[design-job-scheduler]] - delayed and cron jobs at scale, case study.
 - [[scenario-chooser]] - other problem-to-topic mappings.
+- See also (AI KB): [Batch inference and provider batch APIs](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/batch-inference-and-batch-apis.md) - when the background job is a large batch of LLM or ML requests.
 
 ## References
 - PostgreSQL documentation, `SELECT ... FOR UPDATE SKIP LOCKED` (The Locking Clause).
