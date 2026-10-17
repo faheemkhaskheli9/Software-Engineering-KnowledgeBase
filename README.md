@@ -10,6 +10,7 @@ can look things up before they build.
 - **By problem:** [scenarios/](scenarios/) maps a requirement to the recommended approach.
 - **Design practice:** [case-studies/](case-studies/) holds worked system designs.
 - **For agents:** [AGENTS.md](AGENTS.md) explains how to consult and extend the base.
+- **Browse and edit locally:** `python3 webapp/server.py --open` ([guide](webapp/README.md)).
 
 ## Layout
 
@@ -26,6 +27,20 @@ Copy [_template.md](_template.md) to start a topic, then run
 `python build_index.py` to regenerate `INDEX.md` and `llms.txt` and check
 `[[links]]`, and `python check_code.py` to compile and run the Python
 examples. CI runs both on every push.
+
+## Web app (view and edit)
+
+A local web app to browse, search and edit the base, with a live Markdown preview, an outline, backlinks
+and a review page for uncommitted changes:
+
+```bash
+python3 webapp/server.py --open     # http://localhost:8775 , stdlib only, no install
+```
+
+It listens on 127.0.0.1 only and writes straight to your working copy; commit with git as usual.
+The [web app guide](webapp/README.md) shows every feature with a screenshot.
+
+![The web app showing the caching strategies topic](webapp/screenshots/file.png)
 
 ## Related knowledge base
 
