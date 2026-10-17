@@ -45,6 +45,7 @@
 ## data
 
 - [Batch and stream processing](data/batch-and-stream-processing.md): Batch processing runs a computation over a bounded, complete dataset on a schedule (nightly report, model training, backfill).
+- [Change data capture (CDC)](data/change-data-capture.md): Change data capture turns every committed insert, update and delete in a database into an ordered stream of change events that other systems consume.
 - [Data modeling and schema design](data/data-modeling-and-schema-design.md): Schema design decides what your data can express and what bad states the database refuses to store.
 - [Data warehousing and OLAP](data/data-warehousing-and-olap.md): OLTP databases serve many small transactional reads and writes; OLAP systems serve fewer, heavy analytical queries that scan and aggregate large volumes.
 - [Database indexing](data/database-indexing.md): An index is a separate, ordered (or hashed) structure that lets the database find rows without scanning the whole table.
@@ -118,6 +119,7 @@
 
 - [Backup and disaster recovery](reliability/backup-and-disaster-recovery.md): Backups protect against losing data (deletion, corruption, ransomware, a bad migration); disaster recovery (DR) is the plan and standby infrastructure that brings the whole service back after losing a site or region.
 - [Capacity planning and autoscaling](reliability/capacity-planning-and-autoscaling.md): Capacity planning is predicting how much compute, memory, storage and network a system needs to meet its SLOs at forecast demand plus headroom; autoscaling adjusts that capacity automatically as load changes.
+- [Chaos engineering and fault injection](reliability/chaos-engineering.md): Chaos engineering is running controlled experiments that inject real-world failures (killed instances, added latency, dropped packets, a failing dependency, a lost zone) into a system to check that it keeps its steady-state behaviour.
 - [CI/CD pipelines](reliability/ci-cd-pipelines.md): Continuous integration merges and verifies small changes frequently with automated build and test; continuous delivery keeps every green main-branch commit deployable, and continuous deployment ships it to production automatically.
 - [Containers and Docker](reliability/containers-and-docker.md): A container is a regular Linux process isolated with namespaces and limited with cgroups, started from an immutable layered image that bundles the app and its userspace dependencies.
 - [Deployment strategies - rolling, blue-green, canary, feature flags](reliability/deployment-strategies.md): A deployment strategy defines how a new version replaces the old one and how you limit the damage if it is bad.

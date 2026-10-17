@@ -131,6 +131,7 @@ Precompute top-K completions per prefix from query logs (offline job), store in 
 - Ignoring relevance evaluation; build a judged query set and measure (nDCG/precision) before and after tuning.
 
 ## Related
+- [[change-data-capture]] - snapshot plus change stream to keep the index in sync with the database.
 - [[database-indexing]] - B-tree vs inverted/GIN indexes and when each applies.
 - [[message-queues-and-streams]] - transporting changes to the indexer.
 - [[partitioning-and-sharding]] - how search shards distribute data and queries.

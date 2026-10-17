@@ -132,6 +132,7 @@ Release checklist: automated tests and image scan pass (see [[ci-cd-pipelines]])
 - [[api-versioning-and-evolution]] - keeping old clients working during and after rollout.
 - [[incident-response-and-postmortems]] - rollback is usually the first mitigation in an incident.
 - [[feature-flags]] - flag types, deterministic rollout, kill switches and flag debt in depth.
+- See also (AI KB): [A/B testing, shadow traffic and canary rollouts for models and prompts](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/ab-testing-and-canary-for-models.md) - the same rollout machinery when the change is a model or prompt.
 
 ## References
 - Kubernetes Deployments (rolling update, rollback): https://kubernetes.io/docs/concepts/workloads/controllers/deployment/

@@ -117,6 +117,7 @@ Data cutover for one table, while both sides run:
 - Network calls replacing in-process calls inside loops (N+1 over HTTP); batch the API.
 
 ## Related
+- [[change-data-capture]] - streaming the monolith's row changes to the new service's store.
 - [[monolith-vs-microservices]] - whether to split, modular monolith, boundary tests.
 - [[domain-driven-design]] - bounded contexts as extraction boundaries.
 - [[distributed-transactions-and-sagas]] - consistency once data is split.

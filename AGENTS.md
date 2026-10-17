@@ -23,6 +23,10 @@ worked system-design case studies.
 
 Quick search without reading the index: `grep -ril "<keyword>" --include=*.md .`
 
+A person browsing or editing by hand uses the local web app: `python3 webapp/server.py --open`
+(guide: `webapp/README.md`). Its shared files are kept identical across the sibling bases; change them
+with the `update-knowledge-bases` skill (`.claude/skills/update-knowledge-bases/SKILL.md`).
+
 ## Which knowledge base answers what
 
 | Question | Go to |

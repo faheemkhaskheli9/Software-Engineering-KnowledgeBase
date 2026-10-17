@@ -107,6 +107,8 @@ Enrichment join: stream-table join (events joined against a compacted topic or C
 - [[idempotency-and-exactly-once]] - making reprocessing and retries safe
 - [[event-driven-architecture]] - streams as the backbone of event-driven systems
 - [[time-clocks-and-ordering]] - why event time and ordering are hard
+- [[change-data-capture]] - turning database writes into a stream without dual writes
+- See also (AI KB): [Streaming ML pipelines](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/streaming-ml-pipelines.md) and [Feature stores](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/feature-stores.md) - windowed features and real-time scoring on top of these pipelines.
 
 ## References
 - Kleppmann, Designing Data-Intensive Applications, chapters 10 and 11.

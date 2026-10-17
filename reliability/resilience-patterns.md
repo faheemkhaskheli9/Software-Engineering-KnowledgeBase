@@ -140,6 +140,7 @@ In production prefer a maintained library (tenacity, resilience4j, Polly, Envoy/
 - Cache stampede after recovery: stagger TTLs and coalesce identical in-flight requests (see [[caching-strategies]]).
 
 ## Related
+- [[chaos-engineering]] - experiments that prove these patterns fire when a dependency fails.
 - [[failure-modes-and-fallacies]] - the failure types these patterns defend against.
 - [[idempotency-and-exactly-once]] - prerequisite for safe retries of writes.
 - [[rate-limiting]] - server-side admission control that complements client-side patterns.

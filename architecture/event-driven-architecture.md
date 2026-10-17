@@ -115,6 +115,7 @@ Choreography vs orchestration quick guide: two or three steps with simple compen
 - Treating the broker as a database: retention, compaction and replay limits differ from a store of record.
 
 ## Related
+- [[change-data-capture]] - publishing the outbox (or row changes) from the database log.
 - [[message-queues-and-streams]] - the broker technologies underneath.
 - [[cqrs-and-event-sourcing]] - events as state and read-model projection.
 - [[distributed-transactions-and-sagas]] - coordinating multi-service workflows.

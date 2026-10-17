@@ -61,6 +61,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Change a schema with zero downtime | [[schema-migrations]], [[deployment-strategies]] |
 | Analytics and reporting on large data | [[data-warehousing-and-olap]], [[batch-and-stream-processing]] |
 | Process events or logs continuously | [[batch-and-stream-processing]], [[message-queues-and-streams]] |
+| Keep a search index, cache or warehouse in sync with the main database without dual writes | [[change-data-capture]], [[event-driven-architecture]], [[idempotency-and-exactly-once]] |
 | Full-text or relevance search | [[search-systems]], [[choosing-a-database]] |
 | Garbled characters (mojibake), emoji cut in half, lookalike strings | [[strings-and-text-encoding]] |
 | Store images, videos, backups | [[blob-object-storage]], [[cdn-and-edge]] |
@@ -103,6 +104,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Multi-service business transaction | [[distributed-transactions-and-sagas]], [[idempotency-and-exactly-once]] |
 | Leader election, locks, agreement | [[consensus-raft-paxos]], [[time-clocks-and-ordering]] |
 | Dependency is slow or down, cascading failure | [[resilience-patterns]], [[failure-modes-and-fallacies]] |
+| Prove timeouts, fallbacks and failover work before a real outage | [[chaos-engineering]], [[resilience-patterns]], [[slis-slos-error-budgets]] |
 | Intermittent timeouts or connection resets between services | [[networking-fundamentals]], [[resilience-patterns]] |
 | Retries produce duplicates | [[idempotency-and-exactly-once]], [[resilience-patterns]] |
 | Know when the system is unhealthy | [[observability-logs-metrics-traces]], [[slis-slos-error-budgets]] |
