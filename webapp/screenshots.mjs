@@ -111,7 +111,6 @@ try {
   await shot("new-file");
   await page.evaluate(() => { const e = document.getElementById("editor"); e.setSelectionRange(e.value.length, e.value.length); });
   await page.keyboard.type("\nA scratch note to show saving.\n");
-  await shot("edit-unsaved");
   await page.keyboard.press("Control+s");
   await shot("edit-saved");
   await page.keyboard.type("Another line.\n");
