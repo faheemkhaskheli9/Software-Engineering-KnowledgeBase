@@ -38,24 +38,38 @@ def status(url):
     return code
 
 
+def source_urls(sources):
+    """URLs in `sources` entries, minus trailing punctuation from the surrounding prose.
+
+    A trailing ')' is dropped only when unbalanced, so a URL such as
+    https://en.wikipedia.org/wiki/Fallacies_(computing) keeps its own parenthesis.
+    """
+    out = []
+    for entry in sources:
+        for url in re.findall(r"https?://\S+", entry):
+            while url and (url[-1] in ".,;\"'" or (url[-1] == ")" and url.count(")") > url.count("("))):
+                url = url[:-1]
+            out.append(url)
+    return out
+
+
 if __name__ == "__main__":
     by_file = {}
     for path in topics(sys.argv[1:]):
         meta = frontmatter(path.read_text(encoding="utf-8")) or {}
-        urls = [u.rstrip(".,;)\"'") for s in meta.get("sources", []) for u in re.findall(r"https?://\S+", s)]
-        by_file[path.relative_to(ROOT).as_posix()] = urls
+        by_file[path.relative_to(ROOT).as_posix()] = source_urls(meta.get("sources", []))
     unique = sorted({u for urls in by_file.values() for u in urls})
     with ThreadPoolExecutor(16) as pool:
         result = dict(zip(unique, pool.map(status, unique)))
-    errors = warnings = 0
     for rel, urls in by_file.items():
         bad = [(u, result[u]) for u in urls if not (isinstance(result[u], int) and result[u] < 300)]
         if bad:
             print(rel)
         for url, code in bad:
-            warn = code in WARN
-            warnings += warn
-            errors += not warn
-            print(f"  {'WARN' if warn else 'FAIL'} {code} {url}")
+            print(f"  {'WARN' if code in WARN else 'FAIL'} {code} {url}")
+    # Counted per unique URL, like the total: a URL cited by five topics is one failure, not five.
+    failed = [u for u in unique if not (isinstance(result[u], int) and result[u] < 300)]
+    warnings = sum(result[u] in WARN for u in failed)
+    errors = len(failed) - warnings
     print(f"{len(unique)} unique URLs: {errors} failed, {warnings} warnings")
     sys.exit(1 if errors else 0)

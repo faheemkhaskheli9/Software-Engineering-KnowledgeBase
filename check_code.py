@@ -18,7 +18,7 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from build_index import ROOT, SKIP
+from build_index import ROOT, SKIP, SKIP_DIRS
 
 TIMEOUT = 60
 BLOCK = re.compile(r"^```python([^\n]*)\n(.*?)^```", re.S | re.M)
@@ -51,6 +51,10 @@ def check(path):
         except SyntaxError as e:
             return "fail", f"block {i} does not compile: {e}"
     code = "\n\n".join(c for frag, c in found if not frag)
+    # Python wants `from __future__` imports first, so lift them out of later blocks.
+    future = re.findall(r"^from __future__ import .*$", code, re.M)
+    if future:
+        code = "\n".join(dict.fromkeys(future)) + "\n" + re.sub(r"^from __future__ import .*$", "", code, flags=re.M)
     if not code.strip():
         return "pass", "fragments only"
     extra = {m for m in imports(code) - set(sys.stdlib_module_names) if importlib.util.find_spec(m) is None}
@@ -73,7 +77,12 @@ def topics(args):
     if args:
         return [Path(a).resolve() for a in args]
     return [p for p in sorted(ROOT.rglob("*.md"))
-            if p.name not in SKIP and not p.relative_to(ROOT).as_posix().startswith(".")]
+            if p.name not in SKIP and not p.relative_to(ROOT).as_posix().startswith((".", *SKIP_DIRS))]
+
+
+def shown(path):
+    """Repo-relative path for messages; a file outside the repo keeps its full path."""
+    return path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else str(path)
 
 
 if __name__ == "__main__":
@@ -84,6 +93,6 @@ if __name__ == "__main__":
     for path, (status, detail) in zip(paths, results):
         counts[status] += 1
         if status != "pass" and detail != "no python code":
-            print(f"{status.upper()} {path.relative_to(ROOT).as_posix()}: {detail}")
+            print(f"{status.upper()} {shown(path)}: {detail}")
     print(f"{counts['pass']} passed, {counts['fail']} failed, {counts['skip']} skipped")
     sys.exit(1 if counts["fail"] else 0)

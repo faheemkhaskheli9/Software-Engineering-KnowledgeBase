@@ -3,7 +3,8 @@
 Run after adding or editing a topic:  python build_index.py
 Stdlib only; parses the simple frontmatter shape used in _template.md.
 Fails on invalid frontmatter (missing keys, category not the folder, unknown
-status, undated last_verified, empty sources/use_cases), a missing template
+status, undated last_verified, empty sources/use_cases), two topics with the
+same file name (a [[link]] names only the file), a missing template
 section, a thin section (under MIN_WORDS words, or a ## Related with no
 [[links]]), a broken [[link]] (topics and glossary.md), or a relative
 Markdown link in any .md file whose target file or #anchor does not exist;
@@ -19,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 GLOSSARY = "glossary.md"  # not a topic, but its [[links]] are checked
 SKIP = {"README.md", "AGENTS.md", "CLAUDE.md", "INDEX.md", "ROADMAP.md", "_template.md", GLOSSARY}
+SKIP_DIRS = ("webapp/", "docs/")  # tooling and its docs, not topics (their relative links are still checked)
 STALE_DAYS = {"reliability": 90, "security": 90}  # cite versions and limits that move fast
 DEFAULT_STALE_DAYS = 180
 STATUSES = ("draft", "stable", "needs-review")
@@ -39,7 +41,10 @@ def links(text):
 def anchors(text):
     """GitHub-style heading anchors: lowercase, punctuation dropped, spaces to '-', -1 on repeats."""
     seen, out = Counter(), set()
-    for h in re.findall(r"^#{1,6}[ \t]+(.+?)[ \t#]*$", strip_code(text.replace("\r\n", "\n")), re.M):
+    # Drop fenced code (its '# comment' lines are not headings) but keep inline code:
+    # GitHub slugs "## Use `foo()`" as "use-foo", so the code text is part of the anchor.
+    prose = re.sub(r"```.*?```", "", text.replace("\r\n", "\n"), flags=re.S)
+    for h in re.findall(r"^#{1,6}[ \t]+(.+?)[ \t#]*$", prose, re.M):
         slug = re.sub(r"[^\w\- ]", "", h.lower()).replace(" ", "-")
         out.add(f"{slug}-{seen[slug]}" if seen[slug] else slug)
         seen[slug] += 1
@@ -73,12 +78,21 @@ def frontmatter(text):
             meta.setdefault(key, []).append(line[4:].strip().strip('"'))
         elif ":" in line and not line.startswith(" "):
             key, _, val = line.partition(":")
-            key, val = key.strip(), val.split("#")[0].strip()
+            key, val = key.strip(), val.strip()
+            if val and val[0] in "\"'" and val[0] in val[1:]:  # quoted: '#' inside is text, not a comment
+                meta[key] = val[1:val.index(val[0], 1)]
+                continue
+            val = re.sub(r"(^|\s)#.*", "", val).strip()  # YAML comment: '#' after whitespace, so "C#" stays
             if val.startswith("["):
                 meta[key] = [v.strip() for v in val.strip("[]").split(",") if v.strip()]
             elif val:
-                meta[key] = val.strip('"')
+                meta[key] = val
     return meta
+
+
+def cell(text):
+    """Text safe inside a Markdown table cell: a literal '|' would start a new column."""
+    return text.replace("|", "\\|")
 
 
 def summary_line(text):
@@ -135,9 +149,12 @@ def build(today=None):
     groups, bad, stale, out_links, llms = {}, [], [], {}, {}
     for path in sorted(ROOT.rglob("*.md")):
         rel = path.relative_to(ROOT).as_posix()
-        if path.name in SKIP or rel.startswith("."):
+        if path.name in SKIP or rel.startswith((".", *SKIP_DIRS)):
             continue
         text = path.read_text(encoding="utf-8")
+        if path.stem in out_links:  # [[stem]] links resolve by file name alone
+            bad.append(f"{rel}: same file name as {out_links[path.stem][0]}, so [[{path.stem}]] is ambiguous")
+            continue
         out_links[path.stem] = (rel, links(text))
         errs = problems(rel, text)
         if errs:
@@ -148,8 +165,8 @@ def build(today=None):
         verified = meta.get("last_verified", "?")
         uses = meta.get("use_cases", [])
         groups.setdefault(cat, []).append(
-            f"| [{meta['title']}]({rel}) | {cat} "
-            f"| {', '.join(meta.get('tags', []))} | {'; '.join(uses[:3])} "
+            f"| [{cell(meta['title'])}]({rel}) | {cat} "
+            f"| {cell(', '.join(meta.get('tags', [])))} | {cell('; '.join(uses[:3]))} "
             f"| {meta.get('status', '?')} | {verified} |"
         )
         llms.setdefault(cat, []).append(f"- [{meta['title']}]({rel}): {summary_line(text)}".rstrip(": "))
