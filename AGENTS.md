@@ -82,6 +82,12 @@ Before every commit, run the same offline checks CI runs, then commit any
 python test_build_index.py && python build_index.py && python check_code.py
 ```
 
+## Bugs
+
+When you find a bug (in code, tooling, CI or a wrong fact) that you do not fix in the same change,
+open a GitHub issue for it right away, labelled `bug`. First search open issues for a duplicate. Give the
+symptom, steps to reproduce, the cause with `file:line` when known, and a suggested fix.
+
 ## Status values
 
 - `draft` - the default for a new or changed topic.
