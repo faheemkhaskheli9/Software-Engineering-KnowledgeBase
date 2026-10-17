@@ -20,6 +20,8 @@ jobs:
         run: pip install -r requirements-check.txt
       - name: Python code blocks compile and run
         run: python check_code.py
+      - name: Web app write path, backlinks and git routes
+        run: python webapp/test_server.py
       - name: Generated files are committed and current
         run: |
           git diff --exit-code -- INDEX.md llms.txt

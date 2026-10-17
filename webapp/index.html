@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Base</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header>
+  <button id="menu" title="Toggle sidebar" aria-label="Toggle sidebar">☰</button>
+  <a id="title" href="#">Knowledge Base</a>
+  <input id="search" type="search" placeholder="Search all files (Enter, or press /)…" aria-label="Search">
+  <span id="actions"></span>
+  <button id="changes" title="Files changed since the last commit" hidden>Changes</button>
+  <button id="new">+ New</button>
+  <button id="theme" title="Theme: auto (click to change)">Theme: auto</button>
+</header>
+<div id="layout">
+  <nav id="side">
+    <div class="row"><input id="filter" type="search" placeholder="Filter files…" aria-label="Filter files">
+      <button id="reload" title="Reload the file tree" aria-label="Reload the file tree">⟳</button></div>
+    <div id="tree"></div>
+  </nav>
+  <main>
+    <div id="bar" hidden>
+      <span id="crumb"></span>
+      <span id="status"></span>
+      <span id="conflict" hidden><button id="takedisk" title="Discard your edits and load the file from disk">Load disk version</button>
+        <button id="overwrite" title="Save your edits over the newer file on disk">Overwrite</button></span>
+      <button id="preview" title="Show the rendered view next to the editor" hidden>Preview</button>
+      <button id="del" title="Delete this file">Delete</button>
+      <button id="toggle">Edit</button>
+      <button id="save" hidden>Save</button>
+    </div>
+    <div id="panes">
+      <article id="view"><p class="muted">Loading…</p></article>
+      <textarea id="editor" spellcheck="false" hidden aria-label="Editor"></textarea>
+      <aside id="toc" hidden aria-label="Outline"></aside>
+    </div>
+  </main>
+</div>
+<dialog id="out"><h3 id="out-title"></h3><pre id="out-text"></pre><button id="out-close">Close</button></dialog>
+<script src="/app.js"></script>
+</body>
+</html>
