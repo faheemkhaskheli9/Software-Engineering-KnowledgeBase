@@ -110,6 +110,7 @@ On-call health basics:
 - Security incidents need extra handling (evidence preservation, legal, disclosure timelines); involve the right people early.
 
 ## Related
+- [[chaos-engineering]] - game days and experiments that rehearse incidents before they happen.
 - [[slis-slos-error-budgets]] - severity and paging should key off SLO impact.
 - [[observability-logs-metrics-traces]] - the data responders rely on to triage.
 - [[deployment-strategies]] - fast rollback and flags are the main mitigation tools.

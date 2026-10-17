@@ -121,6 +121,7 @@ Checklist of defences:
 - Shared fate: "independent" replicas on the same rack, AZ, deploy pipeline or config push fail together.
 
 ## Related
+- [[chaos-engineering]] - injecting these failures on purpose, with a hypothesis and a blast radius.
 - [[resilience-patterns]] - the concrete toolbox: timeouts, retries, breakers, bulkheads
 - [[idempotency-and-exactly-once]] - makes retries after ambiguous failures safe
 - [[cap-and-pacelc]] - what to give up when a partition occurs
