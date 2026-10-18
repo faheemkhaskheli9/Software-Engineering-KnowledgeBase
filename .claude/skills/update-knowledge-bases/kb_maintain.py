@@ -23,7 +23,7 @@ DEFAULT_ROOT = os.path.dirname(os.path.realpath(os.path.join(HERE, "..", "..", "
 REPOS = {
     "AI-Knowledge-Base": (
         [("index", ["{py}", "build_index.py", "--strict"]),
-         ("index tests", ["{py}", "-m", "unittest", "-q", "test_build_index_freshness"]),
+         ("index tests", ["{py}", "-m", "unittest", "-q", "test_build_index_freshness", "test_check_tools"]),
          ("webapp", ["{py}", "webapp/test_server.py"])],
         [("django site", ["{py}", "manage.py", "test", "webapp"]),
          ("topic code", ["{py}", "check_code.py", "--jobs", "4"])]),
@@ -34,11 +34,12 @@ REPOS = {
         [("topic code", ["{py}", "check_code.py"])]),
     "Cyber-Security-Knowledge-Base": (
         [("kb lint", ["bash", "scripts/check-kb.sh"]),
-         ("scripts parse", ["bash", "-n", "scripts/audit.sh"]),
+         ("audit parses", ["bash", "-n", "scripts/audit.sh"]),
          ("webapp", ["{py}", "webapp/test_server.py"])],
         []),
     "Brain": (
-        [("index", ["{py}", "build_index.py"]),
+        [("index tests", ["{py}", "test_build_index.py"]),
+         ("index", ["{py}", "build_index.py"]),
          ("webapp", ["{py}", "webapp/test_server.py"])],
         [("topic code", ["{py}", "run_code_blocks.py"]),
          ("game models", ["{py}", "game/test_sim.py"]),
