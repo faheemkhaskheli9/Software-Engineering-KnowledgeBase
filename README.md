@@ -11,6 +11,10 @@ can look things up before they build.
 - **Design practice:** [case-studies/](case-studies/) holds worked system designs.
 - **For agents:** [AGENTS.md](AGENTS.md) explains how to consult and extend the base.
 
+## ChatGPT knowledge-base integration
+
+Use the [shared ChatGPT KB router](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/CHATGPT-KB-ROUTER.md) to select this, the AI, cybersecurity or medical reference KB according to the task. For engineering questions, read [AGENTS.md](AGENTS.md), then [INDEX.md](INDEX.md) and matching topic files; combine with the cybersecurity KB for security-sensitive implementation and the AI KB for ML/LLM features. These links do not cause ChatGPT to load repositories automatically.
+
 ## Layout
 
 One topic per file, grouped by category (`fundamentals/`, `design/`,
