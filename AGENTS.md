@@ -23,12 +23,16 @@ worked system-design case studies.
 
 Quick search without reading the index: `grep -ril "<keyword>" --include=*.md .`
 
+For cross-domain ChatGPT tasks use the [shared KB router](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/CHATGPT-KB-ROUTER.md); retrieve current topic files rather than relying on an old session.
+
 ## Which knowledge base answers what
 
 | Question | Go to |
 |---|---|
 | Architecture, databases, APIs, scaling, caching, queues, reliability, security, testing, process | this base |
 | Which AI model, library or technique; RAG, embeddings and vector DBs, LLM serving, prompt and semantic caching, evals, agents, fine-tuning, prompt injection | [AI Knowledge Base](https://github.com/faheemkhaskheli9/AI-Knowledge-Base) (start at its `INDEX.md` or `scenarios/scenario-chooser.md`) |
+| Security reviews, security controls, incidents, secure SDLC, AI/LLM threats | [Cyber Security Knowledge Base](https://github.com/faheemkhaskheli9/Cyber-Security-Knowledge-Base) (start with `README.md` topic index) |
+| Medical and healthcare AI, medication/clinical accuracy and safety | [Medical Knowledge Base](https://github.com/faheemkhaskheli9/Medical-Knowledge-Base) (start with `AGENTS.md` and `KB-INDEX.md`; verify current clinical primary sources) |
 
 An LLM feature usually needs both: the AI KB for the model side, this base
 for the system around it. Topics that border AI work end their `## Related`
