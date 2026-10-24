@@ -112,6 +112,7 @@ Design heuristics: small, single-purpose functions; compose with managed workflo
 - [[infrastructure-as-code]] - how to deploy and version it.
 - [[capacity-planning-and-autoscaling]] - concurrency limits and cost modeling.
 - [[choosing-communication-style]] - how functions should talk to each other.
+- [[cloud-cost-optimization]] - unit economics and when pay-per-use stops being cheaper.
 
 ## References
 - Mike Roberts, "Serverless Architectures" (martinfowler.com).

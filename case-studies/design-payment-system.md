@@ -194,6 +194,7 @@ write hot spots on platform accounts appear (batch posting for high-volume accou
 - [[cryptography-and-tls]] - protecting card and token data
 - [[design-ride-sharing]] - a payment consumer with pre-authorisation and payouts
 - [[design-ticket-booking]] - a payment consumer where a seat hold must outlive checkout
+- [[floating-point-and-money]] - exact amounts, rounding modes and allocation the ledger depends on
 
 ## References
 - Alex Xu and Sahn Lam, *System Design Interview Vol. 2* (payment system chapter)
