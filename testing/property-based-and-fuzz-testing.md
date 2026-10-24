@@ -184,6 +184,7 @@ regression tests.
 - [[owasp-top-10]] - fuzzing targets input-handling weaknesses behind injection and parsing bugs.
 - [[algorithm-patterns]] - algorithms with clear invariants are ideal subjects.
 - [[error-handling-strategies]] - decide which failures are expected versus bugs.
+- [[input-validation-and-parsing]] - the boundary parsers that fuzzing should target first.
 
 ## References
 - Hypothesis documentation, https://hypothesis.readthedocs.io/

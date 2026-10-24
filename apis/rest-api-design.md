@@ -124,6 +124,7 @@ Optimistic concurrency: client sends `If-Match: "v7"`; server returns `412 Preco
 - [[long-running-operations]] - 202 Accepted and an operation resource for slow work
 - [[grpc-and-protobuf]] - alternative for internal service calls
 - [[rate-limiting]] - protecting the API under load and abuse
+- [[input-validation-and-parsing]] - parsing request bodies strictly and reporting field errors
 
 ## References
 - RFC 9110 HTTP Semantics: https://www.rfc-editor.org/rfc/rfc9110

@@ -175,6 +175,7 @@ Typical order of work, cheapest and safest first:
 - [[multi-region-architecture]] - the compute and transfer cost of redundancy.
 - [[observability-logs-metrics-traces]] - retention and cardinality as cost drivers.
 - [[back-of-envelope-estimation]] - quick sizing to estimate cost in design reviews.
+- [[data-compression]] - fewer bytes stored and sent across regions, at a CPU cost.
 
 ## References
 - FinOps Foundation, "FinOps Framework" (finops.org).
