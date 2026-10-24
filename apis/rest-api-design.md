@@ -121,6 +121,7 @@ Optimistic concurrency: client sends `If-Match: "v7"`; server returns `412 Preco
 - [[pagination-filtering-sorting]] - list endpoints conventions
 - [[idempotency-and-exactly-once]] - safe retries for unsafe methods
 - [[webhooks]] - async notifications complementing request/response
+- [[long-running-operations]] - 202 Accepted and an operation resource for slow work
 - [[grpc-and-protobuf]] - alternative for internal service calls
 - [[rate-limiting]] - protecting the API under load and abuse
 

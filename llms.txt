@@ -8,6 +8,7 @@
 - [API versioning and evolution](apis/api-versioning-and-evolution.md): Once clients you do not control depend on your API, every change is a compatibility question.
 - [GraphQL](apis/graphql.md): GraphQL is a query language and runtime for APIs where the client sends a query describing the exact shape of data it wants, against a strongly typed schema, usually through one HTTP endpoint.
 - [gRPC and Protocol Buffers](apis/grpc-and-protobuf.md): Protocol Buffers (protobuf) is a compact, schema-first binary serialisation format with generated code; gRPC is an RPC framework that uses protobuf over HTTP/2 to give typed unary and streaming calls across languages.
+- [Long-running operations and async request-reply](apis/long-running-operations.md): When work takes longer than a client, proxy or load balancer will wait, the API should accept the request, return `202 Accepted` at once with a link to an operation (job) resource, and let the client poll that resource, or receive a callback, until the work succeeds or fails.
 - [Pagination, filtering and sorting](apis/pagination-filtering-sorting.md): List endpoints must never return unbounded results.
 - [REST API design](apis/rest-api-design.md): REST-style HTTP APIs expose resources (nouns) at stable URLs and manipulate them with standard methods and status codes.
 - [Webhooks](apis/webhooks.md): A webhook is an HTTP callback: when something happens in system A, A sends an HTTP POST with an event payload to a URL registered by system B.
@@ -18,6 +19,7 @@
 - [Domain-driven design](architecture/domain-driven-design.md): DDD is an approach to software for complicated domains: build a shared language with domain experts, split the problem into bounded contexts, and model the core with entities, value objects and aggregates that enforce business invariants.
 - [Event-driven architecture](architecture/event-driven-architecture.md): In an event-driven architecture, components communicate by publishing events (facts about something that happened) to a broker, and interested components react asynchronously.
 - [Layered, hexagonal and clean architecture](architecture/layered-hexagonal-clean-architecture.md): These are three related ways to organize code inside one service.
+- [Modular monolith](architecture/modular-monolith.md): A modular monolith is one deployable application split into modules that each own one business capability, its data and a small public interface; other modules may use only that interface.
 - [Monolith vs microservices](architecture/monolith-vs-microservices.md): A monolith is one deployable unit; microservices are many independently deployable services, each owning its data and one business capability.
 - [Serverless architecture](architecture/serverless-architecture.md): Serverless means you run code and use managed services without provisioning or patching servers; the platform scales to demand, including to zero, and bills by use.
 - [The twelve-factor app](architecture/twelve-factor-app.md): Twelve-factor is a methodology (from Heroku engineers) for building services that deploy cleanly to cloud platforms, scale horizontally, and minimise divergence between dev and production.
@@ -112,6 +114,7 @@
 - [Documentation practices](practices/documentation-practices.md): Good documentation lets someone other than the author use, operate and change the system without asking.
 - [Estimation and planning](practices/estimation-and-planning.md): Estimation predicts effort or duration under uncertainty; planning turns those predictions into a sequenced, adjustable commitment.
 - [Git workflows and branching](practices/git-workflows-and-branching.md): A branching workflow is the team agreement on where work happens, how it gets to the shared mainline, and how releases are cut.
+- [Release versioning and changelogs](practices/release-versioning-and-changelogs.md): A version number is a message to users about what changed and whether upgrading is safe.
 - [Technical debt management](practices/technical-debt-management.md): Technical debt is the future cost of past design and implementation shortcuts: extra effort every time you change the affected code.
 
 ## reliability

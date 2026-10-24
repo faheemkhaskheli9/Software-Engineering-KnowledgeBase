@@ -118,6 +118,7 @@ Data cutover for one table, while both sides run:
 
 ## Related
 - [[monolith-vs-microservices]] - whether to split, modular monolith, boundary tests.
+- [[modular-monolith]] - enforcing module boundaries in-process before extracting services.
 - [[domain-driven-design]] - bounded contexts as extraction boundaries.
 - [[distributed-transactions-and-sagas]] - consistency once data is split.
 - [[deployment-strategies]] - canaries, flags and rollback for traffic shifting.
