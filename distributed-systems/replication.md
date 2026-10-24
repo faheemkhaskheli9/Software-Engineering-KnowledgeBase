@@ -110,6 +110,7 @@ Operational checklist for leader/follower:
 - [[partitioning-and-sharding]] - scale writes; usually combined with replication per shard
 - [[time-clocks-and-ordering]] - conflict resolution and version vectors
 - [[database-indexing]] - read replicas often carry heavier indexes for reporting
+- [[multi-region-architecture]] - active-passive, active-active and home-region designs built on cross-region replication
 
 ## References
 - Kleppmann, Designing Data-Intensive Applications, ch. 5.

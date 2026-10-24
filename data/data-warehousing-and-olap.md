@@ -112,6 +112,7 @@ A dbt model is just a SELECT in a file (`models/marts/fct_sales.sql`) with tests
 - [[sql-vs-nosql]] - OLTP engine choice that feeds the warehouse
 - [[blob-object-storage]] - underlying storage for lakes and Parquet files
 - [[partitioning-and-sharding]] - warehouse tables are partitioned and clustered for scan pruning
+- [[probabilistic-data-structures]] - HyperLogLog behind approximate distinct counts.
 
 ## References
 - Kimball and Ross, The Data Warehouse Toolkit, 3rd ed.

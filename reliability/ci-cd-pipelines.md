@@ -138,6 +138,7 @@ Speeding up a slow pipeline, in order of payoff:
 - [[secrets-management]] - handling credentials the pipeline needs.
 - [[infrastructure-as-code]] - infrastructure changes should flow through a pipeline as well.
 - [[software-supply-chain-security]] - pinning, hash checking, SBOMs, SLSA provenance and signing for what the pipeline builds.
+- [[static-analysis-and-type-checking]] - linters, type checkers and SAST as pipeline gates with baselines.
 
 ## References
 - Martin Fowler, Continuous Integration: https://martinfowler.com/articles/continuousIntegration.html

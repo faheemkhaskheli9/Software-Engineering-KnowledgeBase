@@ -202,6 +202,7 @@ SHOW full_page_writes;       -- on
 - [[replication]] - many databases ship their WAL to replicas
 - [[data-warehousing-and-olap]] - columnar storage, the analytical counterpart to row-oriented engines
 - [[distributed-locks-and-leader-election]] - fencing and leases for the coordination layer above storage
+- [[probabilistic-data-structures]] - how the per-SSTable Bloom filters are sized and why they never give false negatives.
 
 ## References
 - Kleppmann, *Designing Data-Intensive Applications*, ch. 3 "Storage and Retrieval" (hash indexes, SSTables, LSM-trees, B-trees).

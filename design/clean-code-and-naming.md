@@ -135,6 +135,7 @@ Function-size heuristic: if you need a comment to label a block, extract it; if 
 - [[code-review]] - where readability is enforced by humans
 - [[documentation-practices]] - docstrings, READMEs and where explanation belongs
 - [[library-api-design]] - naming and signatures when other people's code calls yours
+- [[static-analysis-and-type-checking]] - formatter, linter and type checker setup and adoption
 
 ## References
 - Martin, "Clean Code"

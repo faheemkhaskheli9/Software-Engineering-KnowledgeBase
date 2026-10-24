@@ -154,6 +154,7 @@ no PR open for more than a few days.
 - [[testing-strategy-and-pyramid]] - what tests a reviewer should expect to see
 - [[documentation-practices]] - PR descriptions and comments as lasting documentation
 - [[orm-and-n-plus-one]] - a frequent review catch in data-access code
+- [[static-analysis-and-type-checking]] - move mechanical comments into automated checks.
 
 ## References
 - Google Engineering Practices, "The Standard of Code Review": https://google.github.io/eng-practices/review/

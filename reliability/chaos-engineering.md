@@ -191,6 +191,7 @@ Tools that inject faults for real:
 - [[observability-logs-metrics-traces]] - you cannot run an experiment you cannot observe.
 - [[backup-and-disaster-recovery]] - failover and restore drills are chaos experiments for DR plans.
 - [[performance-and-load-testing]] - combine load with faults to test behavior near capacity.
+- [[multi-region-architecture]] - region evacuation drills test the failover plan.
 
 ## References
 - Principles of Chaos Engineering: https://principlesofchaos.org/
