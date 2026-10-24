@@ -139,6 +139,7 @@ UPDATE orders SET status = 'SHIPPED', version = version + 1
 - [[design-payment-system]] - payment lifecycles as the canonical example
 - [[property-based-and-fuzz-testing]] - stateful testing of a machine against a model
 - [[frontend-state-management]] - reducers and state machines for complex UI flows.
+- [[durable-execution-and-workflow-engines]] - durable, long-running state machines with timers, retries and replay.
 
 ## References
 - Harel, "Statecharts: A Visual Formalism for Complex Systems" (1987)

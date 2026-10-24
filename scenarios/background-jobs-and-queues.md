@@ -43,7 +43,7 @@ Master table:
 | Cloud-native, want no broker to run | Managed queue (SQS, Cloud Tasks, Service Bus) | [[message-queues-and-streams]], [[serverless-architecture]] |
 | Complex routing, priorities, per-message TTL | RabbitMQ | [[message-queues-and-streams]] |
 | One event, many consumers, replay, stream processing | Log (Kafka-like) | [[message-queues-and-streams]], [[batch-and-stream-processing]] |
-| Multi-step workflow with compensation, long waits | Saga orchestrator or a durable workflow engine | [[distributed-transactions-and-sagas]] |
+| Multi-step workflow with compensation, long waits | Saga orchestrator or a durable workflow engine | [[distributed-transactions-and-sagas]], [[durable-execution-and-workflow-engines]] |
 | Outgoing calls to customers' URLs | Webhook delivery queue with per-endpoint retries | [[webhooks]] |
 | Large inputs (videos, files) | Store the blob, enqueue a reference | [[blob-object-storage]], [[choosing-file-and-media-storage]] |
 | Recurring jobs on several servers | Scheduler that enqueues with a dedupe key, or leader-elected scheduler | [[consensus-raft-paxos]], [[idempotency-and-exactly-once]] |
@@ -152,6 +152,7 @@ AI-specific angle: long-running LLM work (bulk summarisation, embedding backfill
 - [[design-notification-system]] - queue-driven fan-out case study.
 - [[design-job-scheduler]] - delayed and cron jobs at scale, case study.
 - [[scenario-chooser]] - other problem-to-topic mappings.
+- [[durable-execution-and-workflow-engines]] - multi-step workflows with retries, durable timers and replay.
 
 ## References
 - PostgreSQL documentation, `SELECT ... FOR UPDATE SKIP LOCKED` (The Locking Clause).

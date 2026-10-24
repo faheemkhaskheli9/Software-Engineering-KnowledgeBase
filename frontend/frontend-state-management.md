@@ -279,6 +279,7 @@ history.pushState(null, "", `?${params}`);   // back button and shared links kee
 - [[graphql]] - normalized client caches keyed by type and id.
 - [[web-performance]] - re-render cost and bundle size of state libraries.
 - [[idempotency-and-exactly-once]] - retried mutations from optimistic UIs must be safe to repeat.
+- [[offline-first-and-service-workers]] - outbox, sync and conflict handling when edits are made offline.
 
 ## References
 - React documentation, "Managing State" and "Choosing the State Structure" (react.dev).

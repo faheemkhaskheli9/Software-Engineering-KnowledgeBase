@@ -186,6 +186,7 @@ then delete it from the flag service.
 - [[authorization-models]] - where long-lived entitlements belong.
 - [[technical-debt-management]] - stale flags are debt with a known removal path.
 - [[ab-testing-and-experimentation]] - sample size, SRM checks and analysis for experiment toggles.
+- [[configuration-management]] - validation, last-known-good and staged rollout for all runtime config, not only flags.
 
 ## References
 - Pete Hodgson, "Feature Toggles (aka Feature Flags)", martinfowler.com: https://martinfowler.com/articles/feature-toggles.html
