@@ -121,6 +121,7 @@ Choreography vs orchestration quick guide: two or three steps with simple compen
 - [[idempotency-and-exactly-once]] - making at-least-once safe.
 - [[choosing-communication-style]] - sync vs async decision guide.
 - [[webhooks]] - events pushed to external parties over HTTP.
+- [[change-data-capture]] - row-level change streams from the database, and when to prefer domain events.
 
 ## References
 - Martin Fowler, "What do you mean by Event-Driven?" (martinfowler.com).

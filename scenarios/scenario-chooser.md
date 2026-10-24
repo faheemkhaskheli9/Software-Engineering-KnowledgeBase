@@ -61,6 +61,8 @@ Read the tables by category. Each row: situation, then topics to read.
 | Change a schema with zero downtime | [[schema-migrations]], [[deployment-strategies]] |
 | Analytics and reporting on large data | [[data-warehousing-and-olap]], [[batch-and-stream-processing]] |
 | Process events or logs continuously | [[batch-and-stream-processing]], [[message-queues-and-streams]] |
+| Keep a search index, cache or warehouse in sync with the main database | [[change-data-capture]], [[batch-and-stream-processing]], [[idempotency-and-exactly-once]] |
+| Requests wait for DB connections, or "too many clients" after scaling out | [[database-connection-pooling]], [[capacity-planning-and-autoscaling]] |
 | Full-text or relevance search | [[search-systems]], [[choosing-a-database]] |
 | Garbled characters (mojibake), emoji cut in half, lookalike strings | [[strings-and-text-encoding]] |
 | Store images, videos, backups | [[blob-object-storage]], [[cdn-and-edge]] |
@@ -109,6 +111,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Ship safely and roll back | [[deployment-strategies]], [[ci-cd-pipelines]] |
 | Run containers in production | [[containers-and-docker]], [[kubernetes-basics]], [[infrastructure-as-code]] |
 | Outage happened | [[incident-response-and-postmortems]], [[observability-logs-metrics-traces]] |
+| Prove timeouts, retries and failover work before an outage does | [[chaos-engineering]], [[resilience-patterns]], [[slis-slos-error-budgets]] |
 | How many servers will we need | [[capacity-planning-and-autoscaling]], [[back-of-envelope-estimation]] |
 
 ### Security

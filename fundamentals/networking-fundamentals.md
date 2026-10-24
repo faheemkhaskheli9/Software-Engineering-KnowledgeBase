@@ -117,6 +117,7 @@ Rule of thumb for failures: classify them. Connection refused (nothing listening
 - [[rest-api-design]] - HTTP semantics at the API level
 - [[failure-modes-and-fallacies]] - the fallacies of distributed computing start here
 - [[strings-and-text-encoding]] - bytes vs text on the wire, charsets and UTF-8
+- [[database-connection-pooling]] - reusing database connections to skip handshakes and cap concurrency
 
 ## References
 - Grigorik, "High Performance Browser Networking": https://hpbn.co/

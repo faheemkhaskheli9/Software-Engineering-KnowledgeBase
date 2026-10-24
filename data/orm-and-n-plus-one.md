@@ -119,6 +119,7 @@ JOIN vs IN-batch for collections: a JOIN of authors with 20 books each returns 2
 - [[transactions-and-isolation-levels]] - session and unit-of-work lifetime
 - [[caching-strategies]] - caching as a second line of defence, not the fix
 - [[rest-api-design]] - endpoint shapes (embedding, expansion) decide what must be loaded together
+- [[database-connection-pooling]] - session lifetime decides how long each request holds a pooled connection
 
 ## References
 - SQLAlchemy relationship loading techniques: https://docs.sqlalchemy.org/en/20/orm/queryguide/relationships.html
