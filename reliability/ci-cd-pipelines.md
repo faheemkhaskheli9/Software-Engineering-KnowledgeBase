@@ -140,6 +140,7 @@ Speeding up a slow pipeline, in order of payoff:
 - [[software-supply-chain-security]] - pinning, hash checking, SBOMs, SLSA provenance and signing for what the pipeline builds.
 - [[static-analysis-and-type-checking]] - linters, type checkers and SAST as pipeline gates with baselines.
 - [[monorepo-vs-polyrepo]] - affected-only builds, remote caching and per-path ownership.
+- [[platform-engineering-and-developer-platforms]] - reusable pipelines and golden-path templates offered as a self-service platform.
 
 ## References
 - Martin Fowler, Continuous Integration: https://martinfowler.com/articles/continuousIntegration.html

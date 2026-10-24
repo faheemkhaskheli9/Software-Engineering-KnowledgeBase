@@ -140,6 +140,7 @@ Workflow rules worth enforcing:
 - [[secrets-management]] - keeping credentials out of code and state.
 - [[twelve-factor-app]] - config separation that makes environments differ only by variables.
 - [[incident-response-and-postmortems]] - drift and risky manual changes are frequent incident causes.
+- [[platform-engineering-and-developer-platforms]] - self-service provisioning with guardrails built on IaC modules.
 
 ## References
 - Terraform documentation and state: https://developer.hashicorp.com/terraform/docs and https://developer.hashicorp.com/terraform/language/state

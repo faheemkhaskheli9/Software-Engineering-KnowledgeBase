@@ -215,6 +215,7 @@ first, then streams from the slot or binlog position and records offsets.
 - [[migrating-monolith-to-services]] - CDC to move data while both sides run.
 - [[schema-evolution-and-serialization]] - database schema changes become event schema changes downstream.
 - [[audit-logs-and-temporal-data]] - CDC as one way to capture every change for an audit trail.
+- [[data-quality-and-data-contracts]] - producer-owned contracts for the tables and events CDC exposes.
 
 ## References
 - Martin Kleppmann, *Designing Data-Intensive Applications* (1st ed., 2017), ch. 11 "Stream Processing", section "Databases and Streams" (change data capture, log compaction).

@@ -246,6 +246,7 @@ correctly said 10; both questions stay answerable.
 - [[database-indexing]] - partial unique indexes and indexes for as-of queries.
 - [[time-clocks-and-ordering]] - choosing a single, trustworthy time source for versions.
 - [[design-payment-system]] - append-only ledgers as the strictest form of history.
+- [[merkle-trees-and-anti-entropy]] - Merkle-tree logs with inclusion and consistency proofs.
 
 ## References
 - Martin Fowler, "Audit Log" (martinfowler.com/eaaDev) and "Bitemporal History" (2021).

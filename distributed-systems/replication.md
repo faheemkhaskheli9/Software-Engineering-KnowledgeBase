@@ -111,6 +111,7 @@ Operational checklist for leader/follower:
 - [[time-clocks-and-ordering]] - conflict resolution and version vectors
 - [[database-indexing]] - read replicas often carry heavier indexes for reporting
 - [[multi-region-architecture]] - active-passive, active-active and home-region designs built on cross-region replication
+- [[merkle-trees-and-anti-entropy]] - background repair that finds and fixes divergent replicas by comparing hash trees
 
 ## References
 - Kleppmann, Designing Data-Intensive Applications, ch. 5.

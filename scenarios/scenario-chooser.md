@@ -65,6 +65,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Keep a search index, cache or warehouse in sync with the main database | [[change-data-capture]], [[batch-and-stream-processing]], [[idempotency-and-exactly-once]] |
 | Add or change fields in events or stored files without breaking other teams' consumers | [[schema-evolution-and-serialization]], [[api-versioning-and-evolution]], [[message-queues-and-streams]] |
 | Requests wait for DB connections, or "too many clients" after scaling out | [[database-connection-pooling]], [[capacity-planning-and-autoscaling]] |
+| Dashboards show wrong numbers after an upstream change; bad, duplicate or stale batches reach reports or ML training | [[data-quality-and-data-contracts]], [[schema-evolution-and-serialization]], [[batch-and-stream-processing]] |
 | Full-text or relevance search | [[search-systems]], [[choosing-a-database]] |
 | Garbled characters (mojibake), emoji cut in half, lookalike strings | [[strings-and-text-encoding]] |
 | Totals off by a cent, money stored as floats, splits that do not add up | [[floating-point-and-money]], [[data-modeling-and-schema-design]], [[design-payment-system]] |
@@ -113,6 +114,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Replicas disagree, stale reads | [[replication]], [[consistency-models]], [[time-clocks-and-ordering]] |
 | Multi-service business transaction | [[distributed-transactions-and-sagas]], [[idempotency-and-exactly-once]] |
 | Multi-step process with long waits (approvals, reminders) must survive crashes and deploys; retry cron jobs everywhere | [[durable-execution-and-workflow-engines]], [[distributed-transactions-and-sagas]], [[idempotency-and-exactly-once]] |
+| Replicas silently drift apart; verify a copy or migration matches; prove a record is in an append-only log | [[merkle-trees-and-anti-entropy]], [[replication]], [[design-key-value-store]] |
 | Leader election, locks, agreement | [[consensus-raft-paxos]], [[time-clocks-and-ordering]] |
 | Cluster membership and failure detection without a coordinator | [[gossip-and-failure-detection]], [[failure-modes-and-fallacies]], [[consistent-hashing]] |
 | Dependency is slow or down, cascading failure | [[resilience-patterns]], [[failure-modes-and-fallacies]] |
@@ -160,7 +162,9 @@ Read the tables by category. Each row: situation, then topics to read.
 | Messy code, hard to change | [[refactoring-and-code-smells]], [[clean-code-and-naming]], [[technical-debt-management]] |
 | Team branching and release flow | [[git-workflows-and-branching]], [[ci-cd-pipelines]] |
 | One repository or many; monorepo CI runs everything on every change | [[monorepo-vs-polyrepo]], [[ci-cd-pipelines]], [[git-workflows-and-branching]] |
+| Every team builds its own CI, deploy and monitoring; new services take weeks; nobody knows who owns a service | [[platform-engineering-and-developer-platforms]], [[ci-cd-pipelines]], [[infrastructure-as-code]] |
 | Improve review quality | [[code-review]] |
+| Use Claude, ChatGPT, Copilot or coding agents to speed up development safely | [[ai-assisted-software-development]], [[code-review]], [[tdd-and-bdd]] |
 | Record why we chose X | [[architecture-decision-records]], [[documentation-practices]] |
 | Planning and estimating work | [[estimation-and-planning]], [[agile-scrum-kanban]] |
 | Choose error handling approach | [[error-handling-strategies]] |
