@@ -162,6 +162,7 @@ note real translations of short strings can grow far more.
 - [[rest-api-design]] - `Accept-Language`, ISO 8601 timestamps with offsets in API payloads.
 - [[accessibility-basics]] - `lang` and `dir` attributes are accessibility requirements too.
 - [[web-performance]] - per-locale bundles and web fonts for many scripts.
+- [[floating-point-and-money]] - keep amounts exact with minor units per currency; format them only at the edge.
 
 ## References
 - W3C Internationalization, Localization vs. Internationalization: https://www.w3.org/International/questions/qa-i18n

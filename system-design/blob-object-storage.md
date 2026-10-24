@@ -127,6 +127,7 @@ keys so the CDN can cache them. Video: transcode into HLS/DASH segments
 - [[sql-vs-nosql]] - why metadata goes in a database and bytes in object storage.
 - [[data-warehousing-and-olap]] - object storage as the data-lake substrate.
 - [[design-file-sync]] - case study: content-addressed blocks plus a metadata journal.
+- [[cloud-cost-optimization]] - storage tiering, lifecycle expiry and egress as cost drivers.
 
 ## References
 - Amazon S3 user guide: https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html

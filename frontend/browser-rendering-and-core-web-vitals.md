@@ -158,6 +158,7 @@ async function processAll(items) {
 - [[slis-slos-error-budgets]] - turning p75 LCP/INP/CLS into SLOs.
 - [[cdn-and-edge]] - lower TTFB and faster asset delivery feed LCP.
 - [[processes-threads-and-io-models]] - event loops and why one busy thread blocks input.
+- [[rendering-strategies-csr-ssr-ssg]] - choosing CSR, SSR, SSG, ISR or islands per route, and the hydration cost of each.
 
 ## References
 - MDN, Critical rendering path: https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Critical_rendering_path

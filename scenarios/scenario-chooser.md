@@ -66,6 +66,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Requests wait for DB connections, or "too many clients" after scaling out | [[database-connection-pooling]], [[capacity-planning-and-autoscaling]] |
 | Full-text or relevance search | [[search-systems]], [[choosing-a-database]] |
 | Garbled characters (mojibake), emoji cut in half, lookalike strings | [[strings-and-text-encoding]] |
+| Totals off by a cent, money stored as floats, splits that do not add up | [[floating-point-and-money]], [[data-modeling-and-schema-design]], [[design-payment-system]] |
 | Store images, videos, backups | [[blob-object-storage]], [[cdn-and-edge]] |
 | User uploads: validate, process, serve public or private files | [[choosing-file-and-media-storage]], [[blob-object-storage]], [[cdn-and-edge]] |
 
@@ -97,6 +98,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Find things near a location (drivers, stores) or group events by map area | [[geospatial-indexing]], [[database-indexing]], [[design-ride-sharing]] |
 | Estimate size, QPS, storage | [[back-of-envelope-estimation]] |
 | Code is slow or memory-hungry | [[big-o-complexity]], [[memory-and-performance]], [[concurrency-and-parallelism]] |
+| SPA vs server rendering vs static site; slow first paint or empty pages for crawlers | [[rendering-strategies-csr-ssr-ssg]], [[browser-rendering-and-core-web-vitals]], [[cdn-and-edge]] |
 | Pick a data structure or algorithm for an in-memory problem | [[core-data-structures]], [[algorithm-patterns]], [[graph-algorithms]] |
 | Server falls over with many idle connections; threads vs event loop | [[processes-threads-and-io-models]], [[concurrency-and-parallelism]] |
 
@@ -120,6 +122,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Prove timeouts, retries and failover work before an outage does | [[chaos-engineering]], [[resilience-patterns]], [[slis-slos-error-budgets]] |
 | Survive a region outage, serve users on several continents, keep data in-country | [[multi-region-architecture]], [[replication]], [[backup-and-disaster-recovery]] |
 | How many servers will we need | [[capacity-planning-and-autoscaling]], [[back-of-envelope-estimation]] |
+| Cloud bill grows faster than traffic; commit, use spot or rightsize | [[cloud-cost-optimization]], [[capacity-planning-and-autoscaling]], [[serverless-architecture]] |
 
 ### Security
 | Situation | Read |
