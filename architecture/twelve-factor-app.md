@@ -125,6 +125,7 @@ Test of "stateless": start two instances behind a load balancer ([[load-balancin
 - [[ci-cd-pipelines]] - build, release, run separation in practice.
 - [[secrets-management]] - safer homes for the sensitive part of config.
 - [[observability-logs-metrics-traces]] - what to do with the log streams.
+- [[configuration-management]] - typed, validated, layered config and safe dynamic reloads.
 
 ## References
 - Adam Wiggins, "The Twelve-Factor App", 12factor.net.

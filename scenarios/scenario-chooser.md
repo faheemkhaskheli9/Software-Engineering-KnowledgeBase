@@ -102,6 +102,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Code is slow or memory-hungry | [[big-o-complexity]], [[memory-and-performance]], [[concurrency-and-parallelism]] |
 | SPA vs server rendering vs static site; slow first paint or empty pages for crawlers | [[rendering-strategies-csr-ssr-ssg]], [[browser-rendering-and-core-web-vitals]], [[cdn-and-edge]] |
 | Same API data shows different values on one screen; global store copies the backend; filters lost on reload | [[frontend-state-management]], [[caching-strategies]], [[rendering-strategies-csr-ssr-ssg]] |
+| Web app must work offline or on flaky networks; queue edits and sync; users stuck on an old service worker | [[offline-first-and-service-workers]], [[frontend-state-management]], [[idempotency-and-exactly-once]] |
 | Pick a data structure or algorithm for an in-memory problem | [[core-data-structures]], [[algorithm-patterns]], [[graph-algorithms]] |
 | Server falls over with many idle connections; threads vs event loop | [[processes-threads-and-io-models]], [[concurrency-and-parallelism]] |
 
@@ -111,6 +112,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Choose consistency vs availability | [[cap-and-pacelc]], [[consistency-models]] |
 | Replicas disagree, stale reads | [[replication]], [[consistency-models]], [[time-clocks-and-ordering]] |
 | Multi-service business transaction | [[distributed-transactions-and-sagas]], [[idempotency-and-exactly-once]] |
+| Multi-step process with long waits (approvals, reminders) must survive crashes and deploys; retry cron jobs everywhere | [[durable-execution-and-workflow-engines]], [[distributed-transactions-and-sagas]], [[idempotency-and-exactly-once]] |
 | Leader election, locks, agreement | [[consensus-raft-paxos]], [[time-clocks-and-ordering]] |
 | Cluster membership and failure detection without a coordinator | [[gossip-and-failure-detection]], [[failure-modes-and-fallacies]], [[consistent-hashing]] |
 | Dependency is slow or down, cascading failure | [[resilience-patterns]], [[failure-modes-and-fallacies]] |
@@ -119,6 +121,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Retries produce duplicates | [[idempotency-and-exactly-once]], [[resilience-patterns]] |
 | Know when the system is unhealthy | [[observability-logs-metrics-traces]], [[slis-slos-error-budgets]] |
 | Ship safely and roll back | [[deployment-strategies]], [[ci-cd-pipelines]] |
+| A config push broke every instance; change limits or timeouts at runtime safely; ConfigMap change not picked up | [[configuration-management]], [[feature-flags]], [[deployment-strategies]] |
 | Errors spike during deploys or scale-in; health checks restart the whole fleet | [[health-checks-and-graceful-shutdown]], [[kubernetes-basics]], [[load-balancing]] |
 | Run containers in production | [[containers-and-docker]], [[kubernetes-basics]], [[infrastructure-as-code]] |
 | Outage happened | [[incident-response-and-postmortems]], [[observability-logs-metrics-traces]] |

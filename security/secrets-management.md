@@ -136,6 +136,7 @@ Leak response runbook (in order):
 - [[kubernetes-basics]] - Secret objects, RBAC, external secret operators.
 - [[cryptography-and-tls]] - KMS, key hierarchies, certificate handling.
 - [[incident-response-and-postmortems]] - the leaked-credential runbook.
+- [[configuration-management]] - the non-secret rest of config: layering, validation and rollout.
 
 ## References
 - OWASP Secrets Management Cheat Sheet.

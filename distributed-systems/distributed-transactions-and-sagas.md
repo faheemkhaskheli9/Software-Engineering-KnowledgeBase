@@ -122,6 +122,7 @@ Design checklist:
 - [[design-payment-system]] - worked example needing sagas, idempotency and reconciliation
 - [[consensus-raft-paxos]] - how distributed SQL databases make cross-shard commit fault tolerant
 - [[change-data-capture]] - publishing outbox rows from the database log
+- [[durable-execution-and-workflow-engines]] - engines (Temporal, Step Functions) that run saga orchestrators durably with replay and timers
 
 ## References
 - Garcia-Molina and Salem, Sagas (SIGMOD 1987).

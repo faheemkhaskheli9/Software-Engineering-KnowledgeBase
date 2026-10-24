@@ -187,6 +187,7 @@ instead of N.
 - [[design-chat-system]] - similar session, fan-out and resync mechanics
 - [[design-file-sync]] - whole-file sync with conflicted copies, the coarse-grained alternative
 - [[system-design-interview-framework]] - the procedure this case follows
+- [[offline-first-and-service-workers]] - service workers, local storage and outbox sync for offline web clients
 
 ## References
 - Ellis and Gibbs, "Concurrency Control in Groupware Systems", SIGMOD 1989 (original OT)

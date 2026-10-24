@@ -188,6 +188,7 @@ assert complete(1, c[1], "ok")
 - [[time-clocks-and-ordering]] - clocks, timezones and fencing
 - [[system-design-interview-framework]] - the procedure this case follows
 - [[distributed-locks-and-leader-election]] - leases, fencing tokens and leader election for the trigger loop
+- [[durable-execution-and-workflow-engines]] - when a job becomes a multi-step workflow with long waits
 
 ## References
 - Google SRE book, "Distributed Periodic Scheduling with Cron": https://sre.google/sre-book/distributed-periodic-scheduling/

@@ -170,6 +170,7 @@ per route and fail CI when the total exceeds the agreed limit.
 - [[rendering-strategies-csr-ssr-ssg]] - where HTML is produced decides how much JavaScript must ship and hydrate.
 - [[frontend-state-management]] - selective subscriptions and colocated state keep re-renders cheap.
 - [[data-compression]] - how gzip, Brotli and Zstandard work, levels, dictionaries and BREACH.
+- [[offline-first-and-service-workers]] - service-worker caching of the app shell for instant repeat loads and offline use.
 
 ## References
 - MDN, HTTP caching: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching
