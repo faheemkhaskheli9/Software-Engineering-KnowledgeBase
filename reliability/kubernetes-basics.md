@@ -137,6 +137,7 @@ Other essentials: keep manifests in Git and apply via a pipeline or GitOps contr
 - [[api-gateway-and-service-mesh]] - ingress, gateways and meshes layered on Kubernetes.
 - [[twelve-factor-app]] - app conventions that fit the platform.
 - [[health-checks-and-graceful-shutdown]] - designing liveness, readiness and startup probes and draining on SIGTERM.
+- [[platform-engineering-and-developer-platforms]] - hiding cluster complexity from application teams behind golden paths.
 
 ## References
 - Kubernetes concepts: https://kubernetes.io/docs/concepts/overview/

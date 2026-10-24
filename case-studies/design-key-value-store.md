@@ -192,6 +192,7 @@ read path:   get -> memtable -> [bloom filter -> index -> SSTable block] per lev
 - [[database-indexing]] - LSM trees compared with B-trees
 - [[storage-engines-btree-lsm]] - the per-node LSM engine in depth: compaction strategies, amplification, Bloom filters
 - [[gossip-and-failure-detection]] - the membership and failure-detection protocols this design relies on.
+- [[merkle-trees-and-anti-entropy]] - how per-range Merkle trees find divergent keys cheaply during repair.
 
 ## References
 - DeCandia et al., "Dynamo: Amazon's Highly Available Key-value Store" (SOSP 2007): https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf

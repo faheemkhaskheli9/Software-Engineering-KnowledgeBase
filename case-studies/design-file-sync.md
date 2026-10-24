@@ -190,6 +190,7 @@ Making commit idempotent (same block list and base for the same client request i
 - [[realtime-websockets-sse]] - change notification to devices
 - [[design-collaborative-editor]] - content-level co-editing instead of whole-file versions
 - [[system-design-interview-framework]] - the procedure this case follows
+- [[merkle-trees-and-anti-entropy]] - hash trees and content addressing to skip unchanged directories and blocks
 
 ## References
 - Alex Xu, *System Design Interview Vol. 1*, ch. 15

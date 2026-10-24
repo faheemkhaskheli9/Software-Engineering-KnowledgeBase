@@ -202,6 +202,7 @@ Ownership per path with GitHub `CODEOWNERS` (last matching rule wins):
 - [[software-supply-chain-security]] - lockfiles, pinned dependencies and update bots.
 - [[code-review]] - required reviewers and ownership per path.
 - [[graph-algorithms]] - topological sort and reachability behind affected builds.
+- [[platform-engineering-and-developer-platforms]] - shared tooling, templates and a service catalog across many repositories.
 
 ## References
 - Rachel Potvin and Josh Levenberg, "Why Google Stores Billions of Lines of Code in a Single Repository", *Communications of the ACM* 59(7), 2016.

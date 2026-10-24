@@ -176,6 +176,7 @@ tests keep spec and behaviour aligned (see [[integration-and-contract-testing]])
 - [[observability-logs-metrics-traces]] - runbooks link alerts to dashboards
 - [[incident-response-and-postmortems]] - postmortems and runbooks feed each other
 - [[git-workflows-and-branching]] - commit messages and PR descriptions are documentation too
+- [[platform-engineering-and-developer-platforms]] - developer portals that surface docs, runbooks and ownership per service
 
 ## References
 - Diataxis documentation framework: https://diataxis.fr/

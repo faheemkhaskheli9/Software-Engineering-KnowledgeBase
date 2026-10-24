@@ -145,6 +145,7 @@ can-i-deploy gate in both pipelines.
 - [[grpc-and-protobuf]] - schema evolution rules and breaking-change tooling.
 - [[schema-migrations]] - run real migrations inside integration tests.
 - [[containers-and-docker]] - the runtime that makes ephemeral dependencies cheap.
+- [[data-quality-and-data-contracts]] - the data-pipeline analogue: contracts and checks for tables and streams.
 
 ## References
 - Martin Fowler, "IntegrationTest" and "Consumer-Driven Contracts".

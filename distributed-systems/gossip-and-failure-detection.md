@@ -195,6 +195,7 @@ assert phis[0.5] < phis[1.3] < phis[2.0]          # monotonic in silence
 - [[distributed-locks-and-leader-election]] - fencing tokens before acting on a suspicion.
 - [[replication]] - read repair and Merkle-tree anti-entropy, the data-level cousins of gossip.
 - [[health-checks-and-graceful-shutdown]] - platform-level health checking for services behind a load balancer.
+- [[merkle-trees-and-anti-entropy]] - anti-entropy repair of the data itself, using Merkle trees per key range.
 
 ## References
 - A. Demers et al., "Epidemic Algorithms for Replicated Database Maintenance", PODC 1987 (anti-entropy and rumor mongering).

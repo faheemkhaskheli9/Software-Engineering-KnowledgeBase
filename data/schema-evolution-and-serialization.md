@@ -232,6 +232,7 @@ message Order {
 - [[change-data-capture]] - database changes published as events inherit these compatibility rules.
 - [[integration-and-contract-testing]] - consumer-driven contracts that catch breaking changes before deploy.
 - [[data-modeling-and-schema-design]] - designing the record shape in the first place.
+- [[data-quality-and-data-contracts]] - contracts that add meaning, quality rules and freshness on top of schemas.
 
 ## References
 - Martin Kleppmann, *Designing Data-Intensive Applications* (1st ed., 2017), ch. 4 "Encoding and Evolution": https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/
