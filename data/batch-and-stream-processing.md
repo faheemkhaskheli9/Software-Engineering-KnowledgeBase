@@ -107,6 +107,7 @@ Enrichment join: stream-table join (events joined against a compacted topic or C
 - [[idempotency-and-exactly-once]] - making reprocessing and retries safe
 - [[event-driven-architecture]] - streams as the backbone of event-driven systems
 - [[time-clocks-and-ordering]] - why event time and ordering are hard
+- [[change-data-capture]] - turning database commits into a stream these pipelines consume
 
 ## References
 - Kleppmann, Designing Data-Intensive Applications, chapters 10 and 11.

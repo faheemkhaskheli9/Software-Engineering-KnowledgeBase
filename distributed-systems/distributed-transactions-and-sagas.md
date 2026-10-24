@@ -121,6 +121,7 @@ Design checklist:
 - [[transactions-and-isolation-levels]] - what ACID inside one service gives you
 - [[design-payment-system]] - worked example needing sagas, idempotency and reconciliation
 - [[consensus-raft-paxos]] - how distributed SQL databases make cross-shard commit fault tolerant
+- [[change-data-capture]] - publishing outbox rows from the database log
 
 ## References
 - Garcia-Molina and Salem, Sagas (SIGMOD 1987).
