@@ -213,6 +213,7 @@ first, then streams from the slot or binlog position and records offsets.
 - [[idempotency-and-exactly-once]] - consumers must tolerate replayed changes.
 - [[data-warehousing-and-olap]] - continuous loading of analytical stores.
 - [[migrating-monolith-to-services]] - CDC to move data while both sides run.
+- [[schema-evolution-and-serialization]] - database schema changes become event schema changes downstream.
 
 ## References
 - Martin Kleppmann, *Designing Data-Intensive Applications* (1st ed., 2017), ch. 11 "Stream Processing", section "Databases and Streams" (change data capture, log compaction).

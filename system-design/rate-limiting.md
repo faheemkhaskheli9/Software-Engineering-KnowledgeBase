@@ -128,6 +128,7 @@ Content-Type: application/json
 - [[authentication-and-sessions]] - throttling credential-stuffing and brute force.
 - [[load-balancing]] - overload handling at the traffic layer.
 - [[design-rate-limiter]] - case study: running a distributed limiter service at fleet scale.
+- [[backpressure-and-load-shedding]] - server-side overload protection that complements per-client quotas.
 - See also (AI KB): [LLM gateways and routing](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/llm-gateways-and-routing.md) - handling provider rate limits (429s) and per-user token budgets for LLM APIs.
 
 ## References

@@ -122,6 +122,7 @@ Choreography vs orchestration quick guide: two or three steps with simple compen
 - [[choosing-communication-style]] - sync vs async decision guide.
 - [[webhooks]] - events pushed to external parties over HTTP.
 - [[change-data-capture]] - row-level change streams from the database, and when to prefer domain events.
+- [[schema-evolution-and-serialization]] - evolving event schemas without breaking consumers.
 
 ## References
 - Martin Fowler, "What do you mean by Event-Driven?" (martinfowler.com).

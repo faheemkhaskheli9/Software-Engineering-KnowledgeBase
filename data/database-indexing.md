@@ -103,6 +103,7 @@ Reading a plan: look for Seq Scan on big tables, big gaps between estimated and 
 - [[partitioning-and-sharding]] - when one index on one node is no longer enough
 - [[unique-id-generation]] - key choice affects index locality
 - [[storage-engines-btree-lsm]] - the B-tree and LSM engines underneath indexes, with WAL and compaction
+- [[geospatial-indexing]] - 2D indexes (GiST/R-tree, geohash) for location queries
 
 ## References
 - Markus Winand, Use The Index, Luke: https://use-the-index-luke.com/

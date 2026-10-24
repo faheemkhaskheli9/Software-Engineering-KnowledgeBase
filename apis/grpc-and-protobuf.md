@@ -122,6 +122,7 @@ Schema evolution rules (wire compatible):
 - [[api-versioning-and-evolution]] - schema evolution principles apply to protobuf
 - [[api-gateway-and-service-mesh]] - routing, mTLS and load balancing for gRPC traffic
 - [[resilience-patterns]] - deadlines, retries and circuit breakers on RPC calls
+- [[schema-evolution-and-serialization]] - backward/forward compatibility rules and how Protobuf compares with Avro and JSON
 
 ## References
 - gRPC documentation: https://grpc.io/docs/

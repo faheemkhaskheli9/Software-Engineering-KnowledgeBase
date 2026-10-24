@@ -104,6 +104,7 @@ Retirement process: announce, add Deprecation/Sunset headers, log which clients 
 - [[schema-migrations]] - the same expand/contract pattern for databases
 - [[integration-and-contract-testing]] - automated detection of broken consumers
 - [[library-api-design]] - semantic versioning and deprecation for in-process library APIs
+- [[schema-evolution-and-serialization]] - compatibility rules for event and file schemas, with schema registries
 
 ## References
 - RFC 8594 The Sunset HTTP Header Field: https://www.rfc-editor.org/rfc/rfc8594
