@@ -214,6 +214,7 @@ first, then streams from the slot or binlog position and records offsets.
 - [[data-warehousing-and-olap]] - continuous loading of analytical stores.
 - [[migrating-monolith-to-services]] - CDC to move data while both sides run.
 - [[schema-evolution-and-serialization]] - database schema changes become event schema changes downstream.
+- [[audit-logs-and-temporal-data]] - CDC as one way to capture every change for an audit trail.
 
 ## References
 - Martin Kleppmann, *Designing Data-Intensive Applications* (1st ed., 2017), ch. 11 "Stream Processing", section "Databases and Streams" (change data capture, log compaction).

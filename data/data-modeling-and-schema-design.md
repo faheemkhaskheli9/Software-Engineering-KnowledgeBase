@@ -116,6 +116,7 @@ CREATE POLICY tenant_isolation ON invoices
 - [[domain-driven-design]] - aggregates and bounded contexts guide table boundaries
 - [[data-warehousing-and-olap]] - star schemas are a different modelling approach for analytics
 - [[strings-and-text-encoding]] - column charsets, collations and Unicode normalization of keys
+- [[audit-logs-and-temporal-data]] - history tables, as-of queries, soft deletes and tamper-evident audit trails.
 
 ## References
 - Kleppmann, Designing Data-Intensive Applications, chapter 2.

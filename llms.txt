@@ -46,6 +46,7 @@
 
 ## data
 
+- [Audit logs, history tables and temporal data](data/audit-logs-and-temporal-data.md): Most tables store only the current value, so "what was it last month and who changed it?" has no answer.
 - [Batch and stream processing](data/batch-and-stream-processing.md): Batch processing runs a computation over a bounded, complete dataset on a schedule (nightly report, model training, backfill).
 - [Change data capture (CDC)](data/change-data-capture.md): Change data capture turns the committed changes of a database (inserts, updates, deletes) into an ordered stream that other systems consume: search indexes, caches, warehouses, other services.
 - [Data modeling and schema design](data/data-modeling-and-schema-design.md): Schema design decides what your data can express and what bad states the database refuses to store.
@@ -94,6 +95,7 @@
 
 - [Accessibility basics](frontend/accessibility-basics.md): Accessibility (a11y) means people with visual, motor, hearing or cognitive disabilities can perceive, operate and understand your interface, often through assistive technology such as screen readers, switch devices or magnification.
 - [Browser rendering and Core Web Vitals](frontend/browser-rendering-and-core-web-vitals.md): A browser turns HTML, CSS and JavaScript into pixels through the critical rendering path: parse HTML into the DOM, parse CSS into the CSSOM, combine them into a render tree, compute layout, paint and composite.
+- [Frontend state management (server state, client state, URL state)](frontend/frontend-state-management.md): UI state is not one thing.
 - [Internationalization and localization](frontend/internationalization-and-localization.md): Internationalization (i18n) is designing and building software so it can be adapted to different languages, regions and cultures without code changes; localization (l10n) is the adaptation itself for one target locale: translated text, local formats, and cultural fit.
 - [Rendering strategies (CSR, SSR, SSG, ISR, streaming, islands)](frontend/rendering-strategies-csr-ssr-ssg.md): A rendering strategy decides where and when a page's HTML is produced: in the browser after JavaScript runs (client-side rendering, CSR), on a server per request (server-side rendering, SSR), once at build time (static site generation, SSG), or at build time with periodic or on-demand regeneration (incremental static regeneration, ISR).
 - [Web performance](frontend/web-performance.md): Front-end performance work is mostly about sending fewer bytes, sending them once, and asking for the important ones first.
@@ -120,6 +122,7 @@
 - [Documentation practices](practices/documentation-practices.md): Good documentation lets someone other than the author use, operate and change the system without asking.
 - [Estimation and planning](practices/estimation-and-planning.md): Estimation predicts effort or duration under uncertainty; planning turns those predictions into a sequenced, adjustable commitment.
 - [Git workflows and branching](practices/git-workflows-and-branching.md): A branching workflow is the team agreement on where work happens, how it gets to the shared mainline, and how releases are cut.
+- [Monorepo vs polyrepo](practices/monorepo-vs-polyrepo.md): A monorepo keeps many projects (services, libraries, apps) in one version control repository with one history; a polyrepo gives each project its own repository and shares code through versioned packages.
 - [Release versioning and changelogs](practices/release-versioning-and-changelogs.md): A version number is a message to users about what changed and whether upgrading is safe.
 - [Technical debt management](practices/technical-debt-management.md): Technical debt is the future cost of past design and implementation shortcuts: extra effort every time you change the affected code.
 

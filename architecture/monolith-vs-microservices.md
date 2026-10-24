@@ -117,6 +117,7 @@ Decision pushers: team count and release friction push toward services; domain u
 - [[deployment-strategies]] - release mechanics that make independent deploys safe.
 - [[migrating-monolith-to-services]] - strangler-fig steps once the decision to split is made.
 - [[modular-monolith]] - module boundaries, data ownership and CI checks inside one deployable.
+- [[monorepo-vs-polyrepo]] - repository layout is a separate decision from deployment architecture.
 
 ## References
 - Martin Fowler, "MonolithFirst" and "Microservices" (martinfowler.com).

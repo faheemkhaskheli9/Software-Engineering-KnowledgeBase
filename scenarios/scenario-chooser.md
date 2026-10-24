@@ -41,6 +41,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Business logic tangled with framework and DB, tests are slow | [[layered-hexagonal-clean-architecture]], [[unit-testing-and-test-doubles]], [[solid-principles]] |
 | One action must trigger many independent side effects | [[event-driven-architecture]], [[message-queues-and-streams]], [[idempotency-and-exactly-once]] |
 | Need full audit trail or separate read/write shapes | [[cqrs-and-event-sourcing]], [[event-driven-architecture]] |
+| Who changed this record and what was it on a past date; soft delete and restore | [[audit-logs-and-temporal-data]], [[data-modeling-and-schema-design]], [[privacy-and-pii-handling]] |
 | Spiky or low traffic, tiny ops team | [[serverless-architecture]], [[twelve-factor-app]] |
 | Make a service portable and cloud-ready | [[twelve-factor-app]], [[containers-and-docker]], [[kubernetes-basics]] |
 | Choose how services talk | [[choosing-communication-style]], [[rest-api-design]], [[grpc-and-protobuf]] |
@@ -99,6 +100,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Estimate size, QPS, storage | [[back-of-envelope-estimation]] |
 | Code is slow or memory-hungry | [[big-o-complexity]], [[memory-and-performance]], [[concurrency-and-parallelism]] |
 | SPA vs server rendering vs static site; slow first paint or empty pages for crawlers | [[rendering-strategies-csr-ssr-ssg]], [[browser-rendering-and-core-web-vitals]], [[cdn-and-edge]] |
+| Same API data shows different values on one screen; global store copies the backend; filters lost on reload | [[frontend-state-management]], [[caching-strategies]], [[rendering-strategies-csr-ssr-ssg]] |
 | Pick a data structure or algorithm for an in-memory problem | [[core-data-structures]], [[algorithm-patterns]], [[graph-algorithms]] |
 | Server falls over with many idle connections; threads vs event loop | [[processes-threads-and-io-models]], [[concurrency-and-parallelism]] |
 
@@ -151,6 +153,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Requirements unclear, want executable specs | [[tdd-and-bdd]] |
 | Messy code, hard to change | [[refactoring-and-code-smells]], [[clean-code-and-naming]], [[technical-debt-management]] |
 | Team branching and release flow | [[git-workflows-and-branching]], [[ci-cd-pipelines]] |
+| One repository or many; monorepo CI runs everything on every change | [[monorepo-vs-polyrepo]], [[ci-cd-pipelines]], [[git-workflows-and-branching]] |
 | Improve review quality | [[code-review]] |
 | Record why we chose X | [[architecture-decision-records]], [[documentation-practices]] |
 | Planning and estimating work | [[estimation-and-planning]], [[agile-scrum-kanban]] |
