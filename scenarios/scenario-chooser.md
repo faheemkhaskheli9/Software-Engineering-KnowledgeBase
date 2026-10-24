@@ -92,6 +92,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Live updates, chat, presence | [[realtime-websockets-sse]], [[design-chat-system]] |
 | Polling vs SSE vs WebSockets for live updates | [[choosing-realtime-updates]], [[realtime-websockets-sse]] |
 | Need ids that are unique across machines | [[unique-id-generation]] |
+| Count uniques, dedup or find top items in huge streams with fixed memory | [[probabilistic-data-structures]], [[batch-and-stream-processing]] |
 | Estimate size, QPS, storage | [[back-of-envelope-estimation]] |
 | Code is slow or memory-hungry | [[big-o-complexity]], [[memory-and-performance]], [[concurrency-and-parallelism]] |
 | Pick a data structure or algorithm for an in-memory problem | [[core-data-structures]], [[algorithm-patterns]], [[graph-algorithms]] |
@@ -112,6 +113,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Run containers in production | [[containers-and-docker]], [[kubernetes-basics]], [[infrastructure-as-code]] |
 | Outage happened | [[incident-response-and-postmortems]], [[observability-logs-metrics-traces]] |
 | Prove timeouts, retries and failover work before an outage does | [[chaos-engineering]], [[resilience-patterns]], [[slis-slos-error-budgets]] |
+| Survive a region outage, serve users on several continents, keep data in-country | [[multi-region-architecture]], [[replication]], [[backup-and-disaster-recovery]] |
 | How many servers will we need | [[capacity-planning-and-autoscaling]], [[back-of-envelope-estimation]] |
 
 ### Security
@@ -133,6 +135,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Hard-to-specify logic, parsers, invariants | [[property-based-and-fuzz-testing]] |
 | A test fails sometimes and passes on rerun | [[flaky-tests]] |
 | High coverage, but do the tests catch bugs | [[mutation-testing]] |
+| Catch type errors and bug patterns before tests; add a linter or type checker to legacy code | [[static-analysis-and-type-checking]], [[ci-cd-pipelines]] |
 | Lock down legacy output before refactoring | [[snapshot-and-golden-testing]], [[refactoring-and-code-smells]] |
 | Fixtures break on every model change; safe production-like test data | [[test-data-management]] |
 | Will it handle launch day | [[performance-and-load-testing]], [[capacity-planning-and-autoscaling]] |

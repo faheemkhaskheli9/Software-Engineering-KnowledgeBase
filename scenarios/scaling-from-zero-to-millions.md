@@ -47,7 +47,7 @@ Stage-by-stage, with trigger, action, and topics:
 | 7. Autoscale | Daily peaks, cost | Scale on metrics, define capacity targets | [[capacity-planning-and-autoscaling]] |
 | 8. Shard writes | Single primary write/storage limit | Partition by key; avoid cross-shard transactions | [[partitioning-and-sharding]], [[consistent-hashing]], [[unique-id-generation]] |
 | 9. Specialised stores | Search, analytics, feeds | Add search index, warehouse, stream pipeline | [[search-systems]], [[data-warehousing-and-olap]], [[batch-and-stream-processing]] |
-| 10. Multi-region | Latency to far users, DR | Regional deployments, replication, failover | [[cap-and-pacelc]], [[failure-modes-and-fallacies]] |
+| 10. Multi-region | Latency to far users, DR | Regional deployments, replication, failover | [[multi-region-architecture]], [[cap-and-pacelc]], [[failure-modes-and-fallacies]] |
 
 Target shape around stages 3-7:
 
@@ -101,6 +101,7 @@ Checklist before each step: what metric proves the need, what is the rollback, w
 - [[back-of-envelope-estimation]] - decide which stage numbers justify.
 - [[caching-strategies]] - the highest-leverage early step.
 - [[partitioning-and-sharding]] - the late, costly step.
+- [[multi-region-architecture]] - the final stage: regions, cells, home-region data and failover.
 
 ## References
 - Alex Xu, *System Design Interview - An Insider's Guide* (Volume 1), ch. 1 "Scale From Zero To Millions Of Users".

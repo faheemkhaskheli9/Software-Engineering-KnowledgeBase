@@ -92,6 +92,7 @@ Practical pattern for mixed needs: keep the money path on a CP/strongly-consiste
 - [[sql-vs-nosql]] - datastore choice often reduces to these trade-offs
 - [[choosing-a-database]] - applies CAP/PACELC thinking to a concrete selection
 - [[failure-modes-and-fallacies]] - why partitions and "slow" failures are the norm
+- [[multi-region-architecture]] - where the latency vs consistency trade-off is paid on every cross-region write.
 
 ## References
 - Brewer, PODC 2000 keynote (conjecture); Gilbert and Lynch 2002 (proof).

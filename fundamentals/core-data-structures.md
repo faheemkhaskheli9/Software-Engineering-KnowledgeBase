@@ -147,6 +147,7 @@ Trie sketch: each node is a `dict[char, node]` plus an `end` flag; insert and pr
 - [[graph-algorithms]] - what to run on a graph once you have built one
 - [[strings-and-text-encoding]] - strings as bytes, code points and graphemes
 - [[design-search-autocomplete]] - case study: tries and top-k heaps in a typeahead service
+- [[probabilistic-data-structures]] - Bloom, cuckoo, Count-Min and HyperLogLog sized and merged in depth
 
 ## References
 - CLRS, "Introduction to Algorithms", 4th ed.

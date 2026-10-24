@@ -129,6 +129,7 @@ if __name__ == "__main__":
 - [[consistency-models]] - what staleness guarantees callers actually get.
 - [[memory-and-performance]] - CPU/memory hierarchy that motivates caching.
 - [[design-search-autocomplete]] - case study: caching precomputed prefix responses.
+- [[probabilistic-data-structures]] - Bloom filter in front of the cache to reject keys that never existed.
 - See also (AI KB): [Prompt caching and cost](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/prompt-caching-and-cost.md) and [Cost and latency](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/cost-and-latency.md) - provider prompt caching and semantic caching of LLM responses.
 
 ## References

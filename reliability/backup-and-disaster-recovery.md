@@ -204,6 +204,7 @@ long it took (the measured RTO), and alerts when any step fails.
 - [[schema-migrations]] - take and verify a backup before risky migrations.
 - [[privacy-and-pii-handling]] - retention limits and erasure inside backups.
 - [[software-supply-chain-security]] - golden images and artifacts you restore from must be trustworthy.
+- [[multi-region-architecture]] - running the warm standby and active/active tiers day to day: routing, data ownership, failover.
 
 ## References
 - AWS, "Disaster Recovery of Workloads on AWS: Recovery in the Cloud", Disaster recovery options in the cloud: https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html

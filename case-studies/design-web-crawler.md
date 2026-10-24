@@ -189,6 +189,7 @@ for frequent revisits, long-tail pages monthly. Re-crawl scheduling is another p
 - [[blob-object-storage]] - stores raw page bodies
 - [[caching-strategies]] - DNS and robots.txt caches
 - [[back-of-envelope-estimation]] - sizing bandwidth and storage
+- [[probabilistic-data-structures]] - Bloom filter for seen-URL dedup in fixed memory
 
 ## References
 - Alex Xu, *System Design Interview Vol. 1*, ch. 9
