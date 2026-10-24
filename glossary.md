@@ -12,6 +12,7 @@ Not a topic file: `build_index.py` skips it for INDEX.md but checks its `[[links
 - **ADR (architecture decision record)** - a short, dated document recording one significant decision, its context and its consequences. [[architecture-decision-records]]
 - **Affected build** - building and testing only the projects a change touches plus everything that depends on them, found from the build graph. [[monorepo-vs-polyrepo]]
 - **Aggregate** - a cluster of domain objects changed together through one root that enforces its invariants; the unit of a transaction in DDD. [[domain-driven-design]]
+- **AI-assisted development** - using LLM chat, code completion or coding agents to draft, test and review code, with human-owned verification and review. [[ai-assisted-software-development]]
 - **Amortized cost** - the average cost per operation over a worst-case sequence, e.g. appends to a dynamic array that occasionally resizes. [[big-o-complexity]]
 - **Approximate nearest neighbour (ANN)** - a vector index (HNSW, IVF) that finds most of the k closest vectors much faster than exact search, trading recall for latency. [[vector-databases-for-engineers]]
 - **Async request-reply** - an API returns 202 Accepted with a status resource the client polls (or is called back about) until slow work finishes. [[long-running-operations]]

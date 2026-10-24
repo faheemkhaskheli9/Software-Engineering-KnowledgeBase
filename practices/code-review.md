@@ -155,6 +155,7 @@ no PR open for more than a few days.
 - [[documentation-practices]] - PR descriptions and comments as lasting documentation
 - [[orm-and-n-plus-one]] - a frequent review catch in data-access code
 - [[static-analysis-and-type-checking]] - move mechanical comments into automated checks.
+- [[ai-assisted-software-development]] - reviewing AI-written diffs and using models as a first-pass reviewer.
 
 ## References
 - Google Engineering Practices, "The Standard of Code Review": https://google.github.io/eng-practices/review/

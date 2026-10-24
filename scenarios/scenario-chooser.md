@@ -161,6 +161,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Team branching and release flow | [[git-workflows-and-branching]], [[ci-cd-pipelines]] |
 | One repository or many; monorepo CI runs everything on every change | [[monorepo-vs-polyrepo]], [[ci-cd-pipelines]], [[git-workflows-and-branching]] |
 | Improve review quality | [[code-review]] |
+| Use Claude, ChatGPT, Copilot or coding agents to speed up development safely | [[ai-assisted-software-development]], [[code-review]], [[tdd-and-bdd]] |
 | Record why we chose X | [[architecture-decision-records]], [[documentation-practices]] |
 | Planning and estimating work | [[estimation-and-planning]], [[agile-scrum-kanban]] |
 | Choose error handling approach | [[error-handling-strategies]] |

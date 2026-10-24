@@ -122,6 +122,7 @@
 
 - [A/B testing and online experimentation](practices/ab-testing-and-experimentation.md): An online controlled experiment (A/B test) randomly splits users between the current experience (control) and a change (treatment), then compares pre-declared metrics to estimate the change's causal effect.
 - [Agile, Scrum and Kanban](practices/agile-scrum-kanban.md): Agile is a set of values for delivering software in small increments with fast feedback; Scrum and Kanban are two concrete frameworks for it.
+- [AI-assisted software development (Claude, ChatGPT, Copilot, coding agents)](practices/ai-assisted-software-development.md): Large language models (Anthropic Claude, OpenAI ChatGPT/Codex, Google Gemini, GitHub Copilot, Cursor and others) can draft code, tests, docs, reviews and migrations, and coding agents can edit a repository and run its commands on their own.
 - [Architecture decision records (ADRs)](practices/architecture-decision-records.md): An ADR is a short, immutable document capturing one significant architectural decision: the context, the options considered, the choice made, and its consequences.
 - [Code review](practices/code-review.md): Code review is a second engineer examining a change before it lands, to catch defects, keep the design coherent, spread knowledge and maintain shared standards.
 - [Documentation practices](practices/documentation-practices.md): Good documentation lets someone other than the author use, operate and change the system without asking.
