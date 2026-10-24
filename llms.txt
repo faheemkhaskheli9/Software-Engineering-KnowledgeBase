@@ -54,6 +54,7 @@
 - [Database indexing](data/database-indexing.md): An index is a separate, ordered (or hashed) structure that lets the database find rows without scanning the whole table.
 - [Graph databases](data/graph-databases.md): A graph database stores entities as nodes and relationships as first-class edges, and answers queries by walking edges (traversal) instead of joining tables.
 - [ORMs and the N+1 query problem](data/orm-and-n-plus-one.md): An ORM maps rows to objects so code manipulates models instead of SQL strings.
+- [Schema evolution and serialization formats](data/schema-evolution-and-serialization.md): Data outlives the code that wrote it: messages sit in a topic, rows sit in files and object storage, and producers and consumers deploy at different times.
 - [Schema migrations](data/schema-migrations.md): A migration is a versioned, repeatable change to the database schema (and sometimes data), stored in source control and applied by tooling in order.
 - [SQL vs NoSQL](data/sql-vs-nosql.md): "SQL" databases are relational systems with a fixed schema, joins, and ACID transactions.
 - [Storage engines (B-tree and LSM-tree)](data/storage-engines-btree-lsm.md): A storage engine is the part of a database that lays bytes out on disk and finds them again.
@@ -122,6 +123,7 @@
 
 ## reliability
 
+- [Backpressure and load shedding](reliability/backpressure-and-load-shedding.md): Every system has a maximum rate at which it can do useful work.
 - [Backup and disaster recovery](reliability/backup-and-disaster-recovery.md): Backups protect against losing data (deletion, corruption, ransomware, a bad migration); disaster recovery (DR) is the plan and standby infrastructure that brings the whole service back after losing a site or region.
 - [Capacity planning and autoscaling](reliability/capacity-planning-and-autoscaling.md): Capacity planning is predicting how much compute, memory, storage and network a system needs to meet its SLOs at forecast demand plus headroom; autoscaling adjusts that capacity automatically as load changes.
 - [Chaos engineering and fault injection](reliability/chaos-engineering.md): Chaos engineering is running controlled experiments that inject real-world faults (killed instances, added latency, failing dependencies, lost zones) into a system to check a hypothesis that its steady-state behavior will hold.
@@ -172,6 +174,7 @@
 - [Blob and object storage](system-design/blob-object-storage.md): Object storage (Amazon S3, Google Cloud Storage, Azure Blob, MinIO, Ceph) stores immutable-ish blobs addressed by key in flat buckets, accessed over HTTP.
 - [Caching strategies](system-design/caching-strategies.md): A cache stores the result of expensive work (DB query, computation, remote call) in faster memory to cut latency and backend load.
 - [CDN and edge](system-design/cdn-and-edge.md): A content delivery network is a globally distributed set of cache servers (points of presence, PoPs) that serve content from a location near the user and shield the origin.
+- [Geospatial indexing (geohash, quadtree, S2, H3, R-tree)](system-design/geospatial-indexing.md): A B-tree on latitude and a B-tree on longitude cannot answer "what is within 2 km of me" efficiently: each index alone returns a whole stripe of the planet.
 - [Load balancing](system-design/load-balancing.md): A load balancer (LB) distributes incoming requests across a pool of backends, removes failed backends via health checks, and gives clients a single stable address.
 - [Message queues and streams](system-design/message-queues-and-streams.md): Messaging systems move data asynchronously between producers and consumers.
 - [Probabilistic data structures (Bloom filter, Count-Min Sketch, HyperLogLog)](system-design/probabilistic-data-structures.md): Probabilistic data structures (sketches) answer membership, frequency and distinct-count questions over huge sets or streams in a small, fixed amount of memory, in exchange for a bounded, tunable error.

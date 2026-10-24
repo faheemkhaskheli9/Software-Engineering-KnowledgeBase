@@ -114,6 +114,7 @@ CI check idea: run all migrations on an empty database, then run the app's test 
 - [[api-versioning-and-evolution]] - the same expand/contract thinking applied to APIs
 - [[database-indexing]] - concurrent index builds and their cost
 - [[backup-and-disaster-recovery]] - take and verify a restorable backup before a risky migration
+- [[schema-evolution-and-serialization]] - the same compatibility thinking for serialized events and files
 
 ## References
 - Alembic documentation: https://alembic.sqlalchemy.org/en/latest/

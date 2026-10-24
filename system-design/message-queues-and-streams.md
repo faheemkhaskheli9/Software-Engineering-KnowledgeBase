@@ -133,6 +133,8 @@ retry topics, then DLQ. Do not retry forever in place; it blocks a partition.
 - [[webhooks]] - outbound async delivery with retries.
 - [[design-job-scheduler]] - case study: delayed and recurring jobs with leases and retries.
 - [[design-metrics-logging-pipeline]] - case study: Kafka as the buffer for telemetry ingest.
+- [[backpressure-and-load-shedding]] - bounded buffers and pull-based consumption when consumers fall behind.
+- [[schema-evolution-and-serialization]] - Avro/Protobuf schemas, registry compatibility modes and deploy order.
 - See also (AI KB): [Cost and latency](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/cost-and-latency.md) - batching and async processing for LLM workloads behind a queue.
 
 ## References

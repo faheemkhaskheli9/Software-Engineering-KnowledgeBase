@@ -62,6 +62,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Analytics and reporting on large data | [[data-warehousing-and-olap]], [[batch-and-stream-processing]] |
 | Process events or logs continuously | [[batch-and-stream-processing]], [[message-queues-and-streams]] |
 | Keep a search index, cache or warehouse in sync with the main database | [[change-data-capture]], [[batch-and-stream-processing]], [[idempotency-and-exactly-once]] |
+| Add or change fields in events or stored files without breaking other teams' consumers | [[schema-evolution-and-serialization]], [[api-versioning-and-evolution]], [[message-queues-and-streams]] |
 | Requests wait for DB connections, or "too many clients" after scaling out | [[database-connection-pooling]], [[capacity-planning-and-autoscaling]] |
 | Full-text or relevance search | [[search-systems]], [[choosing-a-database]] |
 | Garbled characters (mojibake), emoji cut in half, lookalike strings | [[strings-and-text-encoding]] |
@@ -93,6 +94,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Polling vs SSE vs WebSockets for live updates | [[choosing-realtime-updates]], [[realtime-websockets-sse]] |
 | Need ids that are unique across machines | [[unique-id-generation]] |
 | Count uniques, dedup or find top items in huge streams with fixed memory | [[probabilistic-data-structures]], [[batch-and-stream-processing]] |
+| Find things near a location (drivers, stores) or group events by map area | [[geospatial-indexing]], [[database-indexing]], [[design-ride-sharing]] |
 | Estimate size, QPS, storage | [[back-of-envelope-estimation]] |
 | Code is slow or memory-hungry | [[big-o-complexity]], [[memory-and-performance]], [[concurrency-and-parallelism]] |
 | Pick a data structure or algorithm for an in-memory problem | [[core-data-structures]], [[algorithm-patterns]], [[graph-algorithms]] |
@@ -107,6 +109,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Leader election, locks, agreement | [[consensus-raft-paxos]], [[time-clocks-and-ordering]] |
 | Cluster membership and failure detection without a coordinator | [[gossip-and-failure-detection]], [[failure-modes-and-fallacies]], [[consistent-hashing]] |
 | Dependency is slow or down, cascading failure | [[resilience-patterns]], [[failure-modes-and-fallacies]] |
+| Traffic spike makes every request time out; queues grow without bound | [[backpressure-and-load-shedding]], [[resilience-patterns]], [[rate-limiting]] |
 | Intermittent timeouts or connection resets between services | [[networking-fundamentals]], [[resilience-patterns]] |
 | Retries produce duplicates | [[idempotency-and-exactly-once]], [[resilience-patterns]] |
 | Know when the system is unhealthy | [[observability-logs-metrics-traces]], [[slis-slos-error-budgets]] |

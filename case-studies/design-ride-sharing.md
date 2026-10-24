@@ -195,6 +195,7 @@ notifications ([[distributed-transactions-and-sagas]]).
 - [[design-payment-system]] - fare charging after the trip
 - [[transactions-and-isolation-levels]] - correctness of driver reservation
 - [[unique-id-generation]] - trip and offer IDs
+- [[geospatial-indexing]] - geohash, quadtree, S2, H3 and R-tree indexes in depth
 
 ## References
 - Alex Xu and Sahn Lam, *System Design Interview Vol. 2* (proximity service, nearby friends)

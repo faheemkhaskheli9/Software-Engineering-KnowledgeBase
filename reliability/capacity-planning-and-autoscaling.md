@@ -123,6 +123,7 @@ Planning routine:
 - [[rate-limiting]] - protecting capacity from abusive or runaway clients.
 - [[slis-slos-error-budgets]] - saturation-driven budget burn is the signal planning is missing.
 - [[database-connection-pooling]] - sizing pools so scaling out the app does not exhaust database connections.
+- [[backpressure-and-load-shedding]] - what to do with demand above capacity before new instances arrive.
 - See also (AI KB): [Inference servers (vLLM)](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/inference-servers-vllm.md) and [GPU cloud options](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/gpu-cloud-options.md) - sizing and scaling GPU capacity for self-hosted models.
 
 ## References
