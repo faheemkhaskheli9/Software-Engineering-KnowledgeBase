@@ -204,6 +204,7 @@ Hydration and islands in the HTML (fragment):
 - [[choosing-a-caching-strategy]] - stale-while-revalidate and invalidation behind ISR.
 - [[browser-security-cors-csp-headers]] - CSP nonces and escaping serialized state in server HTML.
 - [[accessibility-basics]] - server HTML and real links keep pages usable before and without JS.
+- [[frontend-state-management]] - which state is serialized into server HTML and how the client cache picks it up.
 
 ## References
 - Jason Miller and Addy Osmani, "Rendering on the Web", web.dev.

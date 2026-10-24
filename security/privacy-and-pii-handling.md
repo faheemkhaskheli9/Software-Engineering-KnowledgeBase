@@ -196,6 +196,7 @@ later restore from backup re-applies the deletion.
 - [[owasp-top-10]] - logging and data exposure failures.
 - [[cqrs-and-event-sourcing]] - immutable event logs make erasure hard; crypto-shredding helps.
 - [[backup-and-disaster-recovery]] - erasure and retention inside backups.
+- [[audit-logs-and-temporal-data]] - audit and history tables that copy personal data need retention and redaction too.
 - See also (AI KB): [AI security, privacy and compliance](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/ai-security-privacy-compliance.md) - personal data in prompts, training data and LLM logs.
 
 ## References

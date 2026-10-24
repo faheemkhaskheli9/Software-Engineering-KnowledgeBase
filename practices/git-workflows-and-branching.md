@@ -170,6 +170,7 @@ Subject in imperative mood, about 50 chars; body explains *why*, not what.
 - [[testing-strategy-and-pyramid]] - fast tests are what let you merge to trunk daily
 - [[agile-scrum-kanban]] - delivery cadence that the branching model should match
 - [[release-versioning-and-changelogs]] - version numbers, tags and changelogs for each release
+- [[monorepo-vs-polyrepo]] - repository layout that shapes the branching and release answer.
 
 ## References
 - Trunk Based Development: https://trunkbaseddevelopment.com/

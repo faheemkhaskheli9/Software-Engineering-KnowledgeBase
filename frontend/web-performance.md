@@ -168,6 +168,7 @@ per route and fail CI when the total exceeds the agreed limit.
 - [[ci-cd-pipelines]] - where bundle-size budgets run.
 - [[internationalization-and-localization]] - per-locale bundles and fonts add to page weight.
 - [[rendering-strategies-csr-ssr-ssg]] - where HTML is produced decides how much JavaScript must ship and hydrate.
+- [[frontend-state-management]] - selective subscriptions and colocated state keep re-renders cheap.
 
 ## References
 - MDN, HTTP caching: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching

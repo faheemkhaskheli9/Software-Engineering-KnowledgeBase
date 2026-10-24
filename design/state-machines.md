@@ -138,6 +138,7 @@ UPDATE orders SET status = 'SHIPPED', version = version + 1
 - [[transactions-and-isolation-levels]] - conditional updates that make transitions atomic
 - [[design-payment-system]] - payment lifecycles as the canonical example
 - [[property-based-and-fuzz-testing]] - stateful testing of a machine against a model
+- [[frontend-state-management]] - reducers and state machines for complex UI flows.
 
 ## References
 - Harel, "Statecharts: A Visual Formalism for Complex Systems" (1987)

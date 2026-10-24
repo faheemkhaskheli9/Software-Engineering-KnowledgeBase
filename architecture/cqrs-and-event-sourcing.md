@@ -132,6 +132,7 @@ Operational notes: keep command-side reads on the event store (strong consistenc
 - [[idempotency-and-exactly-once]] - projectors must tolerate replays.
 - [[data-modeling-and-schema-design]] - shaping read models.
 - [[message-queues-and-streams]] - log-based infrastructure for projections.
+- [[audit-logs-and-temporal-data]] - lighter options when you need history and audit, not a full event-sourced model.
 
 ## References
 - Martin Fowler, "CQRS" and "Event Sourcing".
