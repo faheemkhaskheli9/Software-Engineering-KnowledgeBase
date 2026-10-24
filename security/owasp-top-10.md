@@ -187,6 +187,7 @@ artifacts. Never `pickle.loads` or `yaml.load` untrusted data; use
 - [[software-supply-chain-security]] - the controls behind A03 Software Supply Chain Failures.
 - [[privacy-and-pii-handling]] - minimising, protecting and erasing the personal data a breach exposes.
 - [[static-analysis-and-type-checking]] - SAST and taint rules that find injection paths before review.
+- [[browser-security-cors-csp-headers]] - CSP, CORS and security headers as browser-side defence in depth.
 - See also (AI KB): [Prompt injection](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/llm-apps/prompt-injection.md) - the injection class specific to LLM features, which parameterised queries do not stop.
 
 ## References

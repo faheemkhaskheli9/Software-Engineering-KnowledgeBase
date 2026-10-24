@@ -131,6 +131,7 @@ if __name__ == "__main__":
 - [[deployment-strategies]] - rolling, blue-green and canary via the LB.
 - [[networking-fundamentals]] - TCP/HTTP basics behind L4 vs L7.
 - [[cdn-and-edge]] - global distribution in front of regional LBs.
+- [[health-checks-and-graceful-shutdown]] - what instance health endpoints should check and how instances leave rotation.
 
 ## References
 - nginx upstream module: https://nginx.org/en/docs/http/load_balancing.html

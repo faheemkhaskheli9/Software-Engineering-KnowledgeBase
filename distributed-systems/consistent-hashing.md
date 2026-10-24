@@ -118,6 +118,7 @@ Practical choices:
 - [[load-balancing]] - hash-based stickiness and Maglev at the L4/L7 layer
 - [[replication]] - preference lists place R replicas on successive ring nodes
 - [[design-key-value-store]] - worked design that uses a ring plus quorum replication
+- [[gossip-and-failure-detection]] - spreading ring membership and detecting failed nodes.
 
 ## References
 - Karger et al., Consistent Hashing and Random Trees (STOC 1997).

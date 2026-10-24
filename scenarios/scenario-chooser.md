@@ -105,11 +105,13 @@ Read the tables by category. Each row: situation, then topics to read.
 | Replicas disagree, stale reads | [[replication]], [[consistency-models]], [[time-clocks-and-ordering]] |
 | Multi-service business transaction | [[distributed-transactions-and-sagas]], [[idempotency-and-exactly-once]] |
 | Leader election, locks, agreement | [[consensus-raft-paxos]], [[time-clocks-and-ordering]] |
+| Cluster membership and failure detection without a coordinator | [[gossip-and-failure-detection]], [[failure-modes-and-fallacies]], [[consistent-hashing]] |
 | Dependency is slow or down, cascading failure | [[resilience-patterns]], [[failure-modes-and-fallacies]] |
 | Intermittent timeouts or connection resets between services | [[networking-fundamentals]], [[resilience-patterns]] |
 | Retries produce duplicates | [[idempotency-and-exactly-once]], [[resilience-patterns]] |
 | Know when the system is unhealthy | [[observability-logs-metrics-traces]], [[slis-slos-error-budgets]] |
 | Ship safely and roll back | [[deployment-strategies]], [[ci-cd-pipelines]] |
+| Errors spike during deploys or scale-in; health checks restart the whole fleet | [[health-checks-and-graceful-shutdown]], [[kubernetes-basics]], [[load-balancing]] |
 | Run containers in production | [[containers-and-docker]], [[kubernetes-basics]], [[infrastructure-as-code]] |
 | Outage happened | [[incident-response-and-postmortems]], [[observability-logs-metrics-traces]] |
 | Prove timeouts, retries and failover work before an outage does | [[chaos-engineering]], [[resilience-patterns]], [[slis-slos-error-budgets]] |
@@ -120,6 +122,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Situation | Read |
 |---|---|
 | Review a web app for vulnerabilities | [[owasp-top-10]], [[threat-modeling]] |
+| Browser blocks cross-origin API calls; add CSP and security headers | [[browser-security-cors-csp-headers]], [[authentication-and-sessions]] |
 | Pick an auth approach (sessions, JWT, OIDC/SSO, API keys, mTLS) | [[choosing-an-auth-approach]], [[authentication-and-sessions]], [[oauth2-and-oidc]] |
 | Login, sessions, passwords, MFA | [[authentication-and-sessions]], [[cryptography-and-tls]] |
 | Login with Google, API access delegation | [[oauth2-and-oidc]] |

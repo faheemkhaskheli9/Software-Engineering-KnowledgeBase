@@ -150,6 +150,7 @@ log the event.
 - [[rate-limiting]] - throttling login and reset endpoints.
 - [[owasp-top-10]] - A07:2025 Authentication Failures.
 - [[secrets-management]] - protecting signing keys and pepper values.
+- [[browser-security-cors-csp-headers]] - same-origin policy and CORS, and why CORS is not a CSRF defence.
 
 ## References
 - OWASP Authentication, Password Storage and Session Management cheat sheets.

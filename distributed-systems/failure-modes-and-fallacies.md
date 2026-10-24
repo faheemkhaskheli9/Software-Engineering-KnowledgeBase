@@ -128,6 +128,7 @@ Checklist of defences:
 - [[networking-fundamentals]] - latency, packet loss and TCP behaviour behind fallacies 1-3
 - [[incident-response-and-postmortems]] - learning from the failures that do happen
 - [[chaos-engineering]] - injecting these failure modes on purpose, with a hypothesis and a small blast radius
+- [[gossip-and-failure-detection]] - SWIM and phi accrual detectors that turn missed heartbeats into suspicion.
 
 ## References
 - Deutsch and Gosling, The Eight Fallacies of Distributed Computing.
