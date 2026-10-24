@@ -115,6 +115,7 @@ Backoff sketch for the sender: delays of roughly 1 min, 5 min, 30 min, 2 h, 8 h,
 ## Related
 - [[idempotency-and-exactly-once]] - receivers must tolerate duplicates
 - [[rest-api-design]] - webhooks complement request/response APIs for async results
+- [[long-running-operations]] - the 202 + status-resource pattern webhooks often notify about
 - [[message-queues-and-streams]] - internal equivalent with stronger ordering and consumer-pull semantics
 - [[resilience-patterns]] - backoff, jitter, and circuit breaking for deliveries
 - [[design-notification-system]] - delivery pipelines face the same retry and dedupe issues

@@ -116,6 +116,7 @@ Decision pushers: team count and release friction push toward services; domain u
 - [[choosing-communication-style]] - sync vs async between services.
 - [[deployment-strategies]] - release mechanics that make independent deploys safe.
 - [[migrating-monolith-to-services]] - strangler-fig steps once the decision to split is made.
+- [[modular-monolith]] - module boundaries, data ownership and CI checks inside one deployable.
 
 ## References
 - Martin Fowler, "MonolithFirst" and "Microservices" (martinfowler.com).

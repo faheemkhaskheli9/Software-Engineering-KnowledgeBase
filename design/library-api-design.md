@@ -131,6 +131,7 @@ Breaking (MAJOR): remove/rename anything public, reorder positional params, chan
 ## Related
 - [[rest-api-design]] - the same principles for network APIs
 - [[api-versioning-and-evolution]] - versioning and deprecation for remote APIs
+- [[release-versioning-and-changelogs]] - SemVer bumps, pre-release ordering and changelogs
 - [[clean-code-and-naming]] - naming that makes call sites read well
 - [[coupling-cohesion-and-design-principles]] - information hiding is what a small public surface buys
 - [[error-handling-strategies]] - designing an exception hierarchy callers can rely on

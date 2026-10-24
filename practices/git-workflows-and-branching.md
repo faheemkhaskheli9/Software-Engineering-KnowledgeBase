@@ -169,6 +169,7 @@ Subject in imperative mood, about 50 chars; body explains *why*, not what.
 - [[technical-debt-management]] - stale flags and long branches are debt
 - [[testing-strategy-and-pyramid]] - fast tests are what let you merge to trunk daily
 - [[agile-scrum-kanban]] - delivery cadence that the branching model should match
+- [[release-versioning-and-changelogs]] - version numbers, tags and changelogs for each release
 
 ## References
 - Trunk Based Development: https://trunkbaseddevelopment.com/
