@@ -158,6 +158,7 @@ SELECT add_retention_policy('metrics', INTERVAL '30 days');
 - [[choosing-a-database]] - decision table that routes metrics and IoT data here
 - [[graph-databases]] - another specialised store to justify against plain Postgres
 - [[vector-databases-for-engineers]] - another specialised store to justify against plain Postgres
+- [[data-compression]] - general-purpose codecs and the trade-offs behind specialised encodings
 
 ## References
 - Pelkonen, Franklin, Teller, Cavallaro, Huang, Meza, Veeraraghavan, "Gorilla: A Fast, Scalable, In-Memory Time Series Database", PVLDB 8(12), 2015, section 4.1: https://www.vldb.org/pvldb/vol8/p1816-teller.pdf

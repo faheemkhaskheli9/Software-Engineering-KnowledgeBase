@@ -162,6 +162,7 @@ Else                                   -> translate, log once with context, repo
 - [[rest-api-design]] - mapping errors to HTTP status codes and bodies
 - [[observability-logs-metrics-traces]] - logging and alerting on errors usefully
 - [[failure-modes-and-fallacies]] - the failures you are guarding against in distributed systems
+- [[input-validation-and-parsing]] - rejecting bad input at the boundary with all field errors at once
 
 ## References
 - Python docs: errors and exceptions tutorial; built-in exceptions

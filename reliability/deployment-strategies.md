@@ -133,6 +133,7 @@ Release checklist: automated tests and image scan pass (see [[ci-cd-pipelines]])
 - [[incident-response-and-postmortems]] - rollback is usually the first mitigation in an incident.
 - [[feature-flags]] - flag types, deterministic rollout, kill switches and flag debt in depth.
 - [[health-checks-and-graceful-shutdown]] - readiness gates and connection draining that make rollouts zero-downtime.
+- [[ab-testing-and-experimentation]] - measuring a change's impact against a concurrent control, not only its safety.
 
 ## References
 - Kubernetes Deployments (rolling update, rollback): https://kubernetes.io/docs/concepts/workloads/controllers/deployment/

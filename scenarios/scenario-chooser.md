@@ -69,6 +69,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Garbled characters (mojibake), emoji cut in half, lookalike strings | [[strings-and-text-encoding]] |
 | Totals off by a cent, money stored as floats, splits that do not add up | [[floating-point-and-money]], [[data-modeling-and-schema-design]], [[design-payment-system]] |
 | Store images, videos, backups | [[blob-object-storage]], [[cdn-and-edge]] |
+| Payloads, logs or backups too large; many small messages; zip bombs in uploads | [[data-compression]], [[web-performance]], [[cloud-cost-optimization]] |
 | User uploads: validate, process, serve public or private files | [[choosing-file-and-media-storage]], [[blob-object-storage]], [[cdn-and-edge]] |
 
 ### APIs
@@ -131,6 +132,7 @@ Read the tables by category. Each row: situation, then topics to read.
 |---|---|
 | Review a web app for vulnerabilities | [[owasp-top-10]], [[threat-modeling]] |
 | Browser blocks cross-origin API calls; add CSP and security headers | [[browser-security-cors-csp-headers]], [[authentication-and-sessions]] |
+| Malformed or hostile request data reaches business logic; mass assignment, path traversal | [[input-validation-and-parsing]], [[owasp-top-10]], [[rest-api-design]] |
 | Pick an auth approach (sessions, JWT, OIDC/SSO, API keys, mTLS) | [[choosing-an-auth-approach]], [[authentication-and-sessions]], [[oauth2-and-oidc]] |
 | Login, sessions, passwords, MFA | [[authentication-and-sessions]], [[cryptography-and-tls]] |
 | Login with Google, API access delegation | [[oauth2-and-oidc]] |
@@ -150,6 +152,7 @@ Read the tables by category. Each row: situation, then topics to read.
 | Lock down legacy output before refactoring | [[snapshot-and-golden-testing]], [[refactoring-and-code-smells]] |
 | Fixtures break on every model change; safe production-like test data | [[test-data-management]] |
 | Will it handle launch day | [[performance-and-load-testing]], [[capacity-planning-and-autoscaling]] |
+| Does this change actually improve conversion; how many users and days the A/B test needs | [[ab-testing-and-experimentation]], [[feature-flags]], [[observability-logs-metrics-traces]] |
 | Requirements unclear, want executable specs | [[tdd-and-bdd]] |
 | Messy code, hard to change | [[refactoring-and-code-smells]], [[clean-code-and-naming]], [[technical-debt-management]] |
 | Team branching and release flow | [[git-workflows-and-branching]], [[ci-cd-pipelines]] |

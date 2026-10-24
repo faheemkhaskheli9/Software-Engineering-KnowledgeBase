@@ -120,6 +120,7 @@ assert len(truncate_utf8("😀😀", 5).encode()) <= 5
 - [[owasp-top-10]] - injection and spoofing via encoding tricks
 - [[internationalization-and-localization]] - locale formatting, plurals, time zones and RTL on top of Unicode
 - [[floating-point-and-money]] - the numeric counterpart: values that cannot be represented exactly
+- [[input-validation-and-parsing]] - normalize, then validate untrusted text at the boundary
 
 ## References
 - The Unicode Standard; UAX #15 (normalization); UAX #29 (grapheme clusters)

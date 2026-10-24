@@ -135,6 +135,7 @@ retry topics, then DLQ. Do not retry forever in place; it blocks a partition.
 - [[design-metrics-logging-pipeline]] - case study: Kafka as the buffer for telemetry ingest.
 - [[backpressure-and-load-shedding]] - bounded buffers and pull-based consumption when consumers fall behind.
 - [[schema-evolution-and-serialization]] - Avro/Protobuf schemas, registry compatibility modes and deploy order.
+- [[data-compression]] - producer-side batch compression codecs and dictionaries for small messages.
 - See also (AI KB): [Cost and latency](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/deployment/cost-and-latency.md) - batching and async processing for LLM workloads behind a queue.
 
 ## References

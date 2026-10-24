@@ -71,6 +71,7 @@
 - [Design patterns (GoF) in practice](design/design-patterns-gof.md): Design patterns are named, reusable solutions to recurring design problems, mostly about reducing coupling and making variation explicit.
 - [Error handling strategies](design/error-handling-strategies.md): Error handling is deciding, for each failure, who detects it, who can fix it, what the caller sees and what gets recorded.
 - [Functional core, imperative shell](design/functional-core-imperative-shell.md): Split a program into a pure core that makes all the decisions from plain values, and a thin imperative shell that gathers inputs (DB, network, clock, files), calls the core, and carries out its results.
+- [Input validation and parsing at trust boundaries](design/input-validation-and-parsing.md): Every value that crosses a trust boundary (HTTP request, message from another team, file upload, CLI argument, environment, database row written by another system) can be malformed or hostile.
 - [API design for libraries](design/library-api-design.md): A library's public API is a promise: once others depend on it, every name, parameter, default, exception and observable behavior is hard to change.
 - [Refactoring and code smells](design/refactoring-and-code-smells.md): Refactoring is changing the internal structure of code without changing its observable behavior, in small steps, each verified by tests.
 - [SOLID principles](design/solid-principles.md): Five heuristics for organizing classes and modules so that change stays local: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.
@@ -107,6 +108,7 @@
 - [Concurrency and parallelism](fundamentals/concurrency-and-parallelism.md): Concurrency is structuring a program as independently progressing tasks (dealing with many things at once); parallelism is executing tasks literally simultaneously on multiple cores.
 - [Core data structures and when to pick each](fundamentals/core-data-structures.md): Most performance and correctness problems at the code level reduce to picking the wrong container.
 - [CPU caches and the memory hierarchy](fundamentals/cpu-caches-and-memory-hierarchy.md): Storage is arranged in levels: registers, several levels of CPU cache, main memory, then SSD/disk and the network, each level larger and slower than the one above.
+- [Data compression for engineers](fundamentals/data-compression.md): Lossless compression replaces repeated patterns and predictable bytes with shorter codes, trading CPU time for fewer bytes stored or sent.
 - [Floating point, decimals and money](fundamentals/floating-point-and-money.md): Binary floating point (IEEE 754 `float`/`double`) stores numbers as a binary fraction times a power of two, so most decimal fractions such as 0.1 cannot be represented exactly and every operation rounds.
 - [Graph algorithms](fundamentals/graph-algorithms.md): Many engineering problems are graphs in disguise: dependencies, networks, routes, social links, state transitions.
 - [Memory and performance engineering](fundamentals/memory-and-performance.md): Performance work is a measurement discipline: find the real bottleneck with a profiler, change one thing, re-measure.
@@ -116,6 +118,7 @@
 
 ## practices
 
+- [A/B testing and online experimentation](practices/ab-testing-and-experimentation.md): An online controlled experiment (A/B test) randomly splits users between the current experience (control) and a change (treatment), then compares pre-declared metrics to estimate the change's causal effect.
 - [Agile, Scrum and Kanban](practices/agile-scrum-kanban.md): Agile is a set of values for delivering software in small increments with fast feedback; Scrum and Kanban are two concrete frameworks for it.
 - [Architecture decision records (ADRs)](practices/architecture-decision-records.md): An ADR is a short, immutable document capturing one significant architectural decision: the context, the options considered, the choice made, and its consequences.
 - [Code review](practices/code-review.md): Code review is a second engineer examining a change before it lands, to catch defects, keep the design coherent, spread knowledge and maintain shared standards.

@@ -169,6 +169,7 @@ per route and fail CI when the total exceeds the agreed limit.
 - [[internationalization-and-localization]] - per-locale bundles and fonts add to page weight.
 - [[rendering-strategies-csr-ssr-ssg]] - where HTML is produced decides how much JavaScript must ship and hydrate.
 - [[frontend-state-management]] - selective subscriptions and colocated state keep re-renders cheap.
+- [[data-compression]] - how gzip, Brotli and Zstandard work, levels, dictionaries and BREACH.
 
 ## References
 - MDN, HTTP caching: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching
